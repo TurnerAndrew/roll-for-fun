@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .landing-nav {
   display: flex;
   background: #14213D;
@@ -81,7 +85,8 @@
   color: #14213D;
   font-family: "Lato", sans-serif;
 }
-#registration-page #registration-container {
+
+#registration-container {
   width: 35%;
   height: 80%;
   background: #E5E5E5;
@@ -92,7 +97,8 @@
   box-shadow: #000000 0px 10px 50px;
   border-radius: 50px;
 }
-#registration-page #register {
+
+#register {
   width: 80%;
   height: 80%;
   display: flex;
@@ -100,14 +106,14 @@
   align-items: center;
   justify-content: space-evenly;
 }
-#registration-page #register ::placeholder {
+#register ::placeholder {
   font-size: 18px;
   letter-spacing: 1px;
   color: #14213D;
   opacity: 50%;
   text-indent: 15px;
 }
-#registration-page #register .form-input {
+#register .form-input {
   box-sizing: border-box;
   padding: 10px;
   width: 80%;
@@ -115,7 +121,66 @@
   border-radius: 5px;
   border: #14213D solid 1px;
 }
-#registration-page #register #register-button {
+#register button {
+  width: 30%;
+  background-color: #14213D;
+  color: #FCA311;
+  height: 5%;
+  width: 80%;
+  border-radius: 5px;
+  border: #FCA311 solid 1px;
+  font-size: 18px;
+}
+
+#signin-page {
+  height: 100vh;
+  width: 100vw;
+  background: #14213D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#signin-page * {
+  color: #14213D;
+  font-family: "Lato", sans-serif;
+}
+
+#signin-container {
+  width: 35%;
+  height: 80%;
+  background: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: #000000 0px 10px 50px;
+  border-radius: 50px;
+}
+
+#signin {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#signin ::placeholder {
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #14213D;
+  opacity: 50%;
+  text-indent: 15px;
+}
+#signin .form-input {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 80%;
+  height: 5%;
+  border-radius: 5px;
+  border: #14213D solid 1px;
+}
+#signin button {
   width: 30%;
   background-color: #14213D;
   color: #FCA311;

@@ -17,20 +17,83 @@ $staat: 'Staatliches', cursive;
 //mixins
 @mixin action-button {
     height: 25%;
-        width: 15%;
-        border-radius: 7.5px;
-        background: $platinum;   
-        border: $orangeWeb 3px solid;
-        text-align: center;
+    width: 15%;
+    border-radius: 7.5px;
+    background: $platinum;   
+    border: $orangeWeb 3px solid;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    p{
+        color: $oxfordBlue;
+        font-weight: bold;
+        font-size: 1.25em;
+    }
+}
+
+@mixin auth-page {
+    height: 100vh;
+    width: 100vw;
+    background: $oxfordBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    * {
+        color: $oxfordBlue;
+        font-family: $lato;
+    }
+}
+
+@mixin auth-container {
+        width: 35%;
+        height: 80%;
+        background: $platinum;
         display: flex;
-        align-items: center;
         justify-content: center;
-        
-        p{
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $black 0px 10px 50px;
+        border-radius: 50px;
+}
+
+@mixin auth {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        ::placeholder{
+            font-size: 18px;
+            letter-spacing: 1px;
             color: $oxfordBlue;
-            font-weight: bold;
-            font-size: 1.25em;
+            opacity: 50%;
+            text-indent: 15px;
         }
+
+        .form-input{
+            box-sizing: border-box;
+            padding: 10px;
+            width: 80%;
+            height: 5%;
+            border-radius: 5px;
+            border: $oxfordBlue solid 1px;
+            }
+        
+        button{
+            width: 30%;
+            background-color: $oxfordBlue;
+            color: $orangeWeb;
+            height: 5%;
+            width: 80%;
+            border-radius: 5px;
+            border: $orangeWeb solid 1px;
+            font-size: 18px;
+            }
 }
 
 a {
@@ -71,6 +134,7 @@ a {
     
     .action-button{
        @include action-button;
+    }
 }
 
 
@@ -106,65 +170,28 @@ a {
 
 // Registration Page
 #registration-page{
-    height: 100vh;
-    width: 100vw;
-    background: $oxfordBlue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    * {
-        color: $oxfordBlue;
-        font-family: $lato;
+        @include auth-page
     }
 
-    #registration-container {
-        width: 35%;
-        height: 80%;
-        background: $platinum;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: $black 0px 10px 50px;
-        border-radius: 50px;
-    }
+#registration-container {
+    @include auth-container
+}
 
-    #register {
-        width: 80%;
-        height: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-
-        ::placeholder{
-            font-size: 18px;
-            letter-spacing: 1px;
-            color: $oxfordBlue;
-            opacity: 50%;
-            text-indent: 15px;
-        }
-
-        .form-input{
-            box-sizing: border-box;
-            padding: 10px;
-            width: 80%;
-            height: 5%;
-            border-radius: 5px;
-            border: $oxfordBlue solid 1px;
-            }
-        
-        #register-button{
-            width: 30%;
-            background-color: $oxfordBlue;
-            color: $orangeWeb;
-            height: 5%;
-            width: 80%;
-            border-radius: 5px;
-            border: $orangeWeb solid 1px;
-            font-size: 18px;
-            }
-        }
-    }
+#register {
+    @include auth
+}
+    
 // End Registration Page
+
+//Sign In Page
+#signin-page {
+    @include auth-page
+}
+
+#signin-container{
+    @include auth-container
+}
+
+#signin {
+    @include auth
+}

@@ -36,17 +36,17 @@ const Signin = () => {
                     className='form-input'
                     onChange={(e) => setPassword(e.target.value)}
                 ></input>
-                
-
-
-
-
-
+                <button
+                    type='button'
+                    id='signin-button'
+                    onClick={login}>
+                        SIGN IN
+                    </button>
                 </form>
             </section>
         </div>
     )
 
-
-
 }
+
+export default Signin
