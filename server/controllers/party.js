@@ -18,7 +18,7 @@ module.exports = {
 
         const [{party_id}] = await db.parties.create_party(name, user_id, inviteKey)
         
-        const party = await db.parties.create_party_junction(user_id, party_id)
+        await db.parties.create_party_junction(user_id, party_id)
 
         res.status(200).send('Party created.')
         
@@ -39,7 +39,17 @@ module.exports = {
         await db.parties.join_party(user_id, party_id)
 
         res.status(200).send('Welcome to the party!')
+    },
 
+    leaveParty: async (req, res) => {
+        const db = req.app.get('db')
+
+        const {user_id} = req.session.user
+        const {party} = req.body
+
+        await db.leave_party(user_id, party)
+
+        res.status(200).send('You are no longer a member of the party.')
 
     }
 

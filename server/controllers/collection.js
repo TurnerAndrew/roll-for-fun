@@ -5,7 +5,7 @@ module.exports = {
         const {user_id} = req.session.user
 
         const collection = await db.collection.get_collection([user_id])
-        console.log(collection)
+        
 
         res.status(200).send(collection)
     },
@@ -31,7 +31,7 @@ module.exports = {
             res.status(200).send('Game added successfully.')
         }        
         
-        const [{game_id}] = await db.collection.find_game([bga_id])    
+        const [{game_id}] = await db.collection.find_game([title])    
     
         await db.collection.add_to_collection([user_id, game_id])
     

@@ -1,0 +1,170 @@
+// Colors
+$black: #000000;
+$oxfordBlue: #14213D;
+$orangeWeb: #FCA311;
+$platinum: #E5E5E5;
+$white: #FFFFFF;
+$blue: #2a4681;
+
+//Fonts
+$lato: 'Lato', sans-serif;
+$mont: 'Montserrat', sans-serif;
+$open: 'Open Sans', sans-serif;
+$raleway: 'Raleway', sans-serif;
+$source: 'Source Sans Pro', sans-serif;
+$staat: 'Staatliches', cursive;
+
+//mixins
+@mixin action-button {
+    height: 25%;
+        width: 15%;
+        border-radius: 7.5px;
+        background: $platinum;   
+        border: $orangeWeb 3px solid;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        p{
+            color: $oxfordBlue;
+            font-weight: bold;
+            font-size: 1.25em;
+        }
+}
+
+a {
+    text-decoration: none;
+}
+
+.landing-nav{
+    display: flex;
+    background: $oxfordBlue;
+    height: 10vh;
+    width: 100%;
+    justify-content: space-between;
+
+    #title-container {
+        width: 15%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-family: $staat;
+        color: $platinum;
+        font-size: 4em;
+        letter-spacing: 3px;
+    }
+}
+
+.button-container{
+    box-sizing: border-box;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    
+    .action-button{
+       @include action-button;
+}
+
+
+// Landing Page
+.landing-main {
+    background: $platinum;
+    color: $oxfordBlue;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    font-family: $open;
+    
+    #main-text {
+        color: $oxfordBlue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #headline {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    #summary {
+        text-align: center;
+        font-size: 18px;
+        color: $blue;
+    }
+
+}
+
+// Registration Page
+#registration-page{
+    height: 100vh;
+    width: 100vw;
+    background: $oxfordBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    * {
+        color: $oxfordBlue;
+        font-family: $lato;
+    }
+
+    #registration-container {
+        width: 35%;
+        height: 80%;
+        background: $platinum;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: $black 0px 10px 50px;
+        border-radius: 50px;
+    }
+
+    #register {
+        width: 80%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        ::placeholder{
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: $oxfordBlue;
+            opacity: 50%;
+            text-indent: 15px;
+        }
+
+        .form-input{
+            box-sizing: border-box;
+            padding: 10px;
+            width: 80%;
+            height: 5%;
+            border-radius: 5px;
+            border: $oxfordBlue solid 1px;
+            }
+        
+        #register-button{
+            width: 30%;
+            background-color: $oxfordBlue;
+            color: $orangeWeb;
+            height: 5%;
+            width: 80%;
+            border-radius: 5px;
+            border: $orangeWeb solid 1px;
+            font-size: 18px;
+            }
+        }
+    }
+// End Registration Page

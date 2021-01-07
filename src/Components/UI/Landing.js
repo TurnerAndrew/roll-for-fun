@@ -1,8 +1,34 @@
-const Landing = () => {
+import Header from './Header'
 
-    return(
-        <div>
-            
+const Landing = () => {
+  return (
+    <div>
+    <Header/>
+    <div className="landing-main">
+      <section id="main-text">
+        <div id='headline'>
+            <br></br>
+          <h1>PLAY MORE GAMES</h1>
         </div>
-    )
-}
+        <br></br>
+        <div id='summary'>
+          <p>
+            Roll For Fun takes the pain out of choosing what to play at your
+            next game night.
+          </p>
+          <br></br>
+          <br></br>
+          <p>Create or join a group.</p>
+          <p>See all of your group's games in once place.</p>
+          <p>Rank your favorites.</p>
+          <br></br>
+          <br></br>
+          <p>We'll do the rest.</p>
+        </div>
+      </section>
+    </div>
+    </div>
+  );
+};
+
+export default Landing;

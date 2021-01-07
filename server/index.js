@@ -8,6 +8,9 @@ const colCtrl = require('./controllers/collection')
 const partyCtrl = require('./controllers/party')
 
 
+
+
+
 const app = express()
 
 app.use(express.json())
@@ -53,3 +56,7 @@ app.delete('/collection/delete', colCtrl.deleteGame)
 app.get('/parties', partyCtrl.getParties)
 app.post('/parties/create', partyCtrl.createParty)
 app.post('/parties/join', partyCtrl.joinParty)
+app.delete('/parties/leave', partyCtrl.leaveParty)
+
+//library
+// app.get('/party/:id', libCtrl.getLibrary)

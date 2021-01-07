@@ -4,7 +4,7 @@ module.exports = {
 
     register: async (req, res) => {
         const db = req.app.get('db')
-        const {username, password, first_name, last_name, bga_username} = req.body
+        const {username, email, first_name, last_name, password} = req.body
         const profile_pic = `https://avatars.dicebear.com/4.5/api/identicon/${username}.svg`
         const [existingUser] = await db.user.find_user([username])
 
@@ -14,7 +14,7 @@ module.exports = {
 
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-        const [newUser] = await db.user.sign_up([username, first_name, last_name, hash, bga_username, profile_pic])
+        const [newUser] = await db.user.sign_up([username, email, first_name, last_name, hash, profile_pic])
     },
 
     signin: async (req, res) => {
