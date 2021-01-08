@@ -43,6 +43,9 @@ const Signin = () => {
                         SIGN IN
                     </button>
                 </form>
+                <div>
+                    <p>Don't have an account?  Register here!</p>
+                </div>
             </section>
         </div>
     )
