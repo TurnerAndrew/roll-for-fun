@@ -8,9 +8,6 @@ const colCtrl = require('./controllers/collection')
 const partyCtrl = require('./controllers/party')
 
 
-
-
-
 const app = express()
 
 app.use(express.json())
@@ -46,6 +43,7 @@ app.post('/auth/register', userCtrl.register)
 app.post('/auth/signin', userCtrl.signin)
 app.get('/auth/me', userCtrl.getUser)
 app.post('/auth/logout', userCtrl.logout)
+
 
 //collection
 app.get('/collection', colCtrl.getCollection)

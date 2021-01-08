@@ -41,10 +41,11 @@ module.exports = {
     },
 
     getUser: (req, res) => {
-        if(req.session.user) {
-            res.status(200).send(req.session.user)
+        const {user} = req.session
+        if(user) {
+            return res.status(200).send(user)
         } else {
-            res.status(404).send('No session found.')
+            res.status(401)
         }
     },
 
