@@ -40,7 +40,7 @@ massive ({
 
 //auth
 app.post('/auth/register', userCtrl.register)
-app.post('/auth/signin', userCtrl.signin)
+app.post('/auth/signin', userCtrl.signin, userCtrl.getUser)
 app.get('/auth/me', userCtrl.getUser)
 app.post('/auth/logout', userCtrl.logout)
 

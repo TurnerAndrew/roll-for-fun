@@ -1,5 +1,4 @@
 import './App.css';
-import Landing from './Components/UI/Landing'
 import Routes from './Routes'
 
 function App() {

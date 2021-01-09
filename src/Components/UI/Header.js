@@ -8,9 +8,11 @@ const Header = () => {
       </div>
       <div className="button-container">
         
+        <Link to='/signin'>
         <div className="action-button">
           <p>Sign In</p>
         </div>
+        </Link>
         <Link to='/register'>
         <div className="action-button">
           <p>Sign Up</p>

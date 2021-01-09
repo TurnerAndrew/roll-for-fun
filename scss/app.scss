@@ -96,6 +96,27 @@ $staat: 'Staatliches', cursive;
             }
 }
 
+@mixin game-preview{
+    img {
+        max-width: 35%;
+    }
+
+    box-sizing: border-box;
+    width: 18%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: $platinum 1px solid;
+    text-align: center;
+
+    
+}
+
+//end mixins
+
 a {
     text-decoration: none;
 }
@@ -194,4 +215,32 @@ a {
 
 #signin {
     @include auth
+}
+
+//Add Game
+#add-game-main {
+    display: flex;
+    
+}
+
+#game-search {
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+    
+    
+}
+
+#games-results{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    // align-items: space-evenly;
+}
+
+.game-preview {
+    @include game-preview
 }

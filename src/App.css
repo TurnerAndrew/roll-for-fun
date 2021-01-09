@@ -190,3 +190,38 @@ a {
   border: #FCA311 solid 1px;
   font-size: 18px;
 }
+
+#add-game-main {
+  display: flex;
+}
+
+#game-search {
+  height: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#games-results {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.game-preview {
+  box-sizing: border-box;
+  width: 18%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  border: #E5E5E5 1px solid;
+  text-align: center;
+}
+.game-preview img {
+  max-width: 35%;
+}

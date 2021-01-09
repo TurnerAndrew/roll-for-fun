@@ -3,13 +3,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const Register = () => {
-  const [userData, setUserData] = useState({
-    username: "",
-    email: "",
-    first_name: "",
-    last_name: "",
-    password: "",
-  });
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -19,14 +12,8 @@ const Register = () => {
 
   const register = (e) => {
     e.preventDefault();
-    setUserData({
-      username: username,
-      email: email,
-      first_name: firstName,
-      last_name: lastName,
-      password: password,
-    });
-    axios.post("/auth/register", userData);
+    
+    axios.post("/auth/register", {username, email, firstName, lastName, password});
   };
 
   return (

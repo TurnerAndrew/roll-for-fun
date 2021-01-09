@@ -1,23 +1,20 @@
 import {Link} from 'react-router-dom'
 import React, {useState} from 'react'
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {getUserData} from '../../redux/userReducer'
 
-const Signin = () => {
-    const [userData, setUserData] = useState({
-        username: '',
-        password: '',
-    })
+const Signin = (props) => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const login = (e) => {
         e.preventDefault()
-        setUserData({
-            username: username,
-            password: password,
+       
+        axios.post('/auth/signin', {username, password}).then((res) => {
+            props.getUserData(res.data)
         })
-        axios.post('/auth/signin', userData)
     }
 
     return (
@@ -52,4 +49,11 @@ const Signin = () => {
 
 }
 
-export default Signin
+function mapStateToProps(state){
+    return {
+        user: state.user
+    }
+    
+}
+
+export default connect(mapStateToProps, {getUserData})(Signin)

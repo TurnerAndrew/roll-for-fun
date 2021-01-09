@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 //initial state
 const initialState = {
     username: null,
@@ -10,20 +8,18 @@ const initialState = {
 const GET_USER_DATA = 'GET_USER_DATA'
 
 //action creator
-export const getUserData = () => {
-    const data = axios.get('/auth/me').then((res) => res.data)
-
+export const getUserData = (user) => {
     return {
         type: GET_USER_DATA,
-        payload: data,
+        payload: user,
     }
 }
 
 //reducer function
 export default function reducer(state = initialState, action) {
     switch (action.type) {
-        case GET_USER_DATA + '_FULFILLED':
-            const {username, user_id} = action.payload.user
+        case GET_USER_DATA:
+            const {username, user_id} = action.payload
             return {username, user_id}
         default:
             return state
