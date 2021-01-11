@@ -41,7 +41,7 @@ const Signin = (props) => {
                     </button>
                 </form>
                 <div>
-                    <p>Don't have an account?  Register here!</p>
+                    <p>Don't have an account?  Register <Link to='/register'>here!</Link></p>
                 </div>
             </section>
         </div>

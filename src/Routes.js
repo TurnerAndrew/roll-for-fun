@@ -5,6 +5,7 @@ import Register from './Components/Auth/Register'
 import Signin from './Components/Auth/Signin'
 import Home from './Components/Main/Home'
 import AddGame from './Components/Main/AddGame'
+import Game from './Components/Main/Game'
 
 export default (
     <Switch>
@@ -13,5 +14,6 @@ export default (
         <Route exact path='/signin' component={Signin}/>
         <Route exact path='/home' component={Home}/>
         <Route exact path='/addgame' component={AddGame}/>
+        <Route exact path='/game/:game_id' component={Game}/>
     </Switch>
 )

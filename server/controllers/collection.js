@@ -21,17 +21,17 @@ module.exports = {
 
     addGame: async (req, res) => {
         const db = req.app.get('db')
-        const {title, bga_id, thumbnail} = req.body
+        const {name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url} = req.body
         const {user_id} = req.session.user
 
-        const [game] = await db.collection.find_game([bga_id])
+        const [game] = await db.collection.find_game([id])
         
         if(!game) {
-            const [newGame] = await db.collection.add_game([title, bga_id, thumbnail])
+            const [newGame] = await db.collection.add_game([name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url])
             res.status(200).send('Game added successfully.')
         }        
         
-        const [{game_id}] = await db.collection.find_game([title])    
+        const [{game_id}] = await db.collection.find_game([name])    
     
         await db.collection.add_to_collection([user_id, game_id])
     
