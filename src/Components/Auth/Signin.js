@@ -1,23 +1,26 @@
-import {Link} from 'react-router-dom'
-import React, {useState} from 'react'
+import {Link, Redirect} from 'react-router-dom'
+import React, {useState, useHistory} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
 import {getUserData} from '../../redux/userReducer'
 
 const Signin = (props) => {
-
+    
+    // const history = useHistory()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const login = (e) => {
+    const login = async (e) => {
         e.preventDefault()
        
-        axios.post('/auth/signin', {username, password}).then((res) => {
+        await axios.post('/auth/signin', {username, password}).then((res) => {
             props.getUserData(res.data)
-        })
+        }).catch(e => console.log(e))
+        
+        props.history.push('/home')
     }
 
-    return (
+    return (        
         <div id='signin-page'>
             <section id='signin-container'>
                 <h1>SIGN IN</h1>
@@ -48,6 +51,8 @@ const Signin = (props) => {
     )
 
 }
+
+
 
 function mapStateToProps(state){
     return {

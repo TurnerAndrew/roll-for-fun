@@ -8,14 +8,15 @@ const AddGame = () => {
     //hooks
     const [title, setTitle] = useState('')
     const [games, setGames] = useState([])
-    const [name, setName] = useState('')
-    const [id, setId] = useState('')
-    const [thumb_url, setThumbUrl] = useState('')
-    const [min_playtime, setMinPlaytime] = useState('')
-    const [min_players, setMinPlayers]  = useState('')
-    const [max_players, setMaxPlayers] = useState('')
-    const [max_playtime, setMaxPlaytime] = useState('')
-    const [url, setUrl] = useState('')
+    
+    // const [name, setName] = useState('')
+    // const [id, setId] = useState('')
+    // const [thumb_url, setThumbUrl] = useState('')
+    // const [min_playtime, setMinPlaytime] = useState('')
+    // const [min_players, setMinPlayers]  = useState('')
+    // const [max_players, setMaxPlayers] = useState('')
+    // const [max_playtime, setMaxPlaytime] = useState('')
+    // const [url, setUrl] = useState('')
 
 
     const search = () => {
@@ -24,7 +25,7 @@ const AddGame = () => {
     }
 
     const addToCollection = () => {
-        axios.post('/collection/add', {name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url})
+        // axios.post('/collection/add', {name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url})
     }
 
     const gamesMapped = games.map((game) => {

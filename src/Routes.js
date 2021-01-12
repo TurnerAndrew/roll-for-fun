@@ -15,5 +15,6 @@ export default (
         <Route exact path='/home' component={Home}/>
         <Route exact path='/addgame' component={AddGame}/>
         <Route exact path='/game/:game_id' component={Game}/>
+        <Route exact path='/home' component={Home}/>
     </Switch>
 )

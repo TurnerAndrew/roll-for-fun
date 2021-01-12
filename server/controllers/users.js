@@ -26,7 +26,6 @@ module.exports = {
             return res.status(404).send('Username not found, please try again or register.')
         }
 
-
         const isAuthenticated = await bcrypt.compareSync(password, existingUser.hash)
         
         if(!isAuthenticated){
