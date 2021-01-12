@@ -8,13 +8,8 @@ const Header = (props) => {
       <div id="title-container">
         <h1>ROLL FOR FUN</h1>
       </div>
-
-      {props.isLoggedIn ? 
-      <div>
-
-      </div>
       
-      : <div className="button-container">
+       <div className="button-container">
         <Link to="/signin">
           <div className="action-button">
             <p>Sign In</p>
@@ -26,7 +21,6 @@ const Header = (props) => {
           </div>
         </Link>
       </div>
-      }
     </header>
   );
 };
@@ -37,4 +31,3 @@ const mapStateToProps = function(state) {
 
 export default connect(mapStateToProps)(Header);
 
-//working on setting the isLoggedIn value to the header to perform conditional rendering

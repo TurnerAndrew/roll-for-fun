@@ -21,7 +21,9 @@ module.exports = {
 
     addGame: async (req, res) => {
         const db = req.app.get('db')
+        
         const {name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url} = req.body
+
         const {user_id} = req.session.user
 
         const [game] = await db.collection.find_game([id])
@@ -31,7 +33,7 @@ module.exports = {
             res.status(200).send('Game added successfully.')
         }        
         
-        const [{game_id}] = await db.collection.find_game([name])    
+        const [{game_id}] = await db.collection.find_game([id])    
     
         await db.collection.add_to_collection([user_id, game_id])
     

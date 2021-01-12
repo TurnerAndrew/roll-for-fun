@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 //initial state
 const initialState = {
     username: null,
@@ -11,6 +13,7 @@ const LOGOUT = 'LOGOUT'
 
 //action creator
 export const getUserData = (user) => {
+
     return {
         type: GET_USER_DATA,
         payload: user,
@@ -25,6 +28,8 @@ export const logout = () => {
 
 //reducer function
 export default function reducer(state = initialState, action) {
+    // console.log(action)
+
     switch (action.type) {
         case GET_USER_DATA:
             const {username, user_id} = action.payload

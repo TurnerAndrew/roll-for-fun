@@ -6,6 +6,7 @@ import Signin from './Components/Auth/Signin'
 import Home from './Components/Main/Home'
 import AddGame from './Components/Main/AddGame'
 import Game from './Components/Main/Game'
+import Collection from './Components/Main/Collection'
 
 export default (
     <Switch>
@@ -16,5 +17,6 @@ export default (
         <Route exact path='/addgame' component={AddGame}/>
         <Route exact path='/game/:game_id' component={Game}/>
         <Route exact path='/home' component={Home}/>
+        <Route exact path='/collection' component={Collection}/>
     </Switch>
 )

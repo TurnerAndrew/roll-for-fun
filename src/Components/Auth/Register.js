@@ -6,14 +6,14 @@ const Register = () => {
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [first_name, setFirst_Name] = useState("");
+  const [last_name, setLast_Name] = useState("");
   const [password, setPassword] = useState("");
 
   const register = (e) => {
     e.preventDefault();
     
-    axios.post("/auth/register", {username, email, firstName, lastName, password});
+    axios.post("/auth/register", {username, email, first_name, last_name, password});
   };
 
   return (
@@ -37,13 +37,13 @@ const Register = () => {
             type="text"
             placeholder="FIRST NAME"
             className="form-input"
-            onChange={(e) => setFirstName(e.target.value)}
+            onChange={(e) => setFirst_Name(e.target.value)}
           ></input>
           <input
             type="text"
             placeholder="LAST NAME"
             className="form-input"
-            onChange={(e) => setLastName(e.target.value)}
+            onChange={(e) => setLast_Name(e.target.value)}
           ></input>
           <input
             type="password"
