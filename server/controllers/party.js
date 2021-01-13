@@ -31,9 +31,16 @@ module.exports = {
         const {inviteKey} = req.body
 
         const [{party_id}] = await db.parties.check_invite(inviteKey)
+        const [is_member] = await db.parties.check_parties(user_id, party_id)
+
+        if(is_member){
+            return res.status(409).send('Already a member of this party.')
+
+        }
 
         if(!party_id){
-            res.status(409).send('Party invite invalid.')
+            return res.status(409).send('Party invite invalid.')
+            
         } 
 
         await db.parties.join_party(user_id, party_id)

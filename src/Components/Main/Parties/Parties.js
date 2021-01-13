@@ -17,7 +17,7 @@ console.log(parties)
   }, [user_id]);
 
   const partiesMapped = parties.map((party) => {
-    return <Link><h3>{party.party_name}</h3></Link>;
+    return <Link key={party.party_name}><h3>{party.party_name}</h3></Link>;
             
   });
 
