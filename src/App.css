@@ -2,6 +2,10 @@ li {
   list-style-type: none;
 }
 
+Link:hover {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
@@ -49,7 +53,7 @@ a {
 .button-container .action-button p {
   color: #14213D;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1.05em;
 }
 
 .landing-main {

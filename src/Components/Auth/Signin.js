@@ -16,7 +16,7 @@ const Signin = (props) => {
         axios.post('/auth/signin', {username, password}).then((res) => {
             props.getUserData(res.data)
             // console.log(res.data, props)
-        }).catch(e => console.log(e))
+        }).catch(err => console.log(err))
         
 
         if (props.user.isLoggedIn) props.history.push('/home')
@@ -54,8 +54,6 @@ const Signin = (props) => {
     )
 
 }
-
-
 
 function mapStateToProps(state){
     return {

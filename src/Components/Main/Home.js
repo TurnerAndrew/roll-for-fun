@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import Header from '../UI/Header'
+import UserHeader from '../UI/UserHeader'
 import axios from 'axios'
+import {connect} from 'react-redux'
 
-const Home = () => {
+const Home = (props) => {
     return (
         <main>
-        <Header/>
+        {props.isLoggedIn ? <UserHeader/> :<Header/>}
         <div id='home'>
             <section id='top-games'>
                 <h1>YOUR TOP RATED GAMES</h1>
@@ -23,4 +25,8 @@ const Home = () => {
     )
 }
 
-export default Home
+const mapStateToProps = function (state) {
+    return state;
+  };
+
+export default connect(mapStateToProps)(Home)

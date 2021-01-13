@@ -18,6 +18,10 @@ li {
     list-style-type: none;
 }
 
+Link:hover {
+    cursor: pointer;
+}
+
 //mixins
 @mixin action-button {
     height: 25%;
@@ -33,7 +37,7 @@ li {
     p{
         color: $oxfordBlue;
         font-weight: bold;
-        font-size: 1.25em;
+        font-size: 1.05em;
     }
 }
 

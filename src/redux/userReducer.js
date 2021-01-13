@@ -1,9 +1,10 @@
-import axios from 'axios'
 
 //initial state
 const initialState = {
     username: null,
     user_id: null,
+    first_name: null,
+    profile_pic: null,
     isLoggedIn: false,
 }
 
@@ -28,17 +29,14 @@ export const logout = () => {
 
 //reducer function
 export default function reducer(state = initialState, action) {
-    // console.log(action)
 
     switch (action.type) {
         case GET_USER_DATA:
-            const {username, user_id} = action.payload
-            return {username, user_id, isLoggedIn: true}
+            const {username, user_id, first_name, profile_pic} = action.payload
+            return {username, user_id, first_name, profile_pic, isLoggedIn: true}
         case LOGOUT:
             return initialState
         default:
             return state
     }
 }
-
-//sending isLoggedIn value to header to change render method
