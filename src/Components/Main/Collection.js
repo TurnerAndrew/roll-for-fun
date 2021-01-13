@@ -31,6 +31,14 @@ const Collection = (props) => {
     return (
         <div>
             <Header/>
+            <nav>
+                <form>
+                    <input type='text' placeholder='SEARCH YOUR COLLECTION'></input>
+                    <button>SEARCH</button>
+                </form>
+                <li>ADD GAME</li>
+                <li>DELETE GAME</li>
+            </nav>
             {collectionMapped}
         </div>
     )

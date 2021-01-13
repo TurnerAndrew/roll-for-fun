@@ -11,12 +11,12 @@ module.exports = {
     createParty: async (req, res) => {
         const db = req.app.get('db')
         const {user_id} = req.session.user
-        const {name} = req.body
+        const {party_name} = req.body
 
         const inviteKey = () => Math.random().toString(20).substr(2,6)
           
 
-        const [{party_id}] = await db.parties.create_party(name, user_id, inviteKey)
+        const [{party_id}] = await db.parties.create_party(party_name, user_id, inviteKey)
         
         await db.parties.create_party_junction(user_id, party_id)
 
