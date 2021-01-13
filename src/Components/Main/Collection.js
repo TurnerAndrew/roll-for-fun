@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../UI/Header'
+import UserHeader from '../UI/UserHeader'
 import { connect } from 'react-redux'
 import {getUserData} from '../../redux/userReducer'
 import axios from 'axios'
@@ -30,7 +31,7 @@ const Collection = (props) => {
 
     return (
         <div>
-            <Header/>
+            {props.isLoggedIn ? <UserHeader/> :<Header/>}
             <nav>
                 <form>
                     <input type='text' placeholder='SEARCH YOUR COLLECTION'></input>

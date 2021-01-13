@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Header from '../../UI/Header'
+import UserHeader from '../../UI/UserHeader'
 import {connect} from 'react-redux'
 import {getUserData} from '../../../redux/userReducer'
 import axios from 'axios'
@@ -15,7 +16,7 @@ const Create = (props) => {
 
     return (
         <div>
-            <Header/>
+            {props.isLoggedIn ? <UserHeader/> :<Header/>}
             <h1>CREATE A PARTY</h1>
             <form>
                 <input type='text' placeholder='PARTY NAME' onChange={(e) => setPartyName(e.target.value)}></input>

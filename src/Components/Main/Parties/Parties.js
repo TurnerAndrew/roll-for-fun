@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getUserData } from "../../../redux/userReducer";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import UserHeader from '../../UI/UserHeader'
 
 const Parties = (props) => {
   const { user_id } = props;
@@ -23,7 +24,7 @@ console.log(parties)
 
   return (
     <div>
-      <Header />
+      {props.isLoggedIn ? <UserHeader/> :<Header/>}
       <nav>
         <h1>YOUR PARTIES</h1>
 

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Header from '../../UI/Header'
+import UserHeader from '../../UI/UserHeader'
 import {connect} from 'react-redux'
 import {getUserData} from '../../../redux/userReducer'
 import axios from 'axios'
@@ -16,7 +17,7 @@ const Join = (props) => {
 
     return(
         <div>
-            <Header/>
+            {props.isLoggedIn ? <UserHeader/> :<Header/>}
             <h1>JOIN A PARTY</h1>
             <form>
                 <input type='text' placeholder='INVITE KEY' onChange={(e) => setInvite(e.target.value)}></input>

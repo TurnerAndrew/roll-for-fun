@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Header from '../UI/Header'
+import UserHeader from '../UI/UserHeader'
 import axios from 'axios'
 const parse = require('html-react-parser')
 
@@ -14,7 +15,7 @@ const Game = (props) => {
 
     return (
         <div>
-            <Header/>
+            {props.isLoggedIn ? <UserHeader/> :<Header/>}
             <div className='main-content'>
                 <section id='game-info'>
                     <h1>{game.name}</h1>
