@@ -3,6 +3,7 @@ import Header from '../UI/Header'
 import UserHeader from '../UI/UserHeader'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
 
 const AddGame = (props) => {
     const {REACT_APP_CLIENT_ID} = process.env
@@ -60,4 +61,10 @@ const AddGame = (props) => {
     )
 }
 
-export default AddGame
+const mapStateToProps = function (state) {
+    return state;
+  };
+
+
+export default connect(mapStateToProps)(AddGame);
+

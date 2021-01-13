@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Header from '../UI/Header'
 import UserHeader from '../UI/UserHeader'
 import axios from 'axios'
+import {connect} from 'react-redux'
 const parse = require('html-react-parser')
 
 const Game = (props) => {
@@ -15,7 +16,7 @@ const Game = (props) => {
 
     return (
         <div>
-            {props.isLoggedIn ? <UserHeader/> :<Header/>}
+            {props.isLoggedIn ? <UserHeader/> : <Header/>}
             <div className='main-content'>
                 <section id='game-info'>
                     <h1>{game.name}</h1>
@@ -35,4 +36,9 @@ const Game = (props) => {
     )
 }
 
-export default Game
+const mapStateToProps = function (state) {
+    return state;
+  };
+
+
+export default connect(mapStateToProps)(Game);
