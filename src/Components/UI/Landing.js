@@ -1,6 +1,11 @@
 import Header from './Header'
+import {connect} from 'react-redux'
 
-const Landing = () => {
+const Landing = (props) => {
+  if(props.isLoggedIn) {
+    props.history.push('/home')
+  }
+
   return (
     <div>
     <Header/>
@@ -31,4 +36,10 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+function mapStateToProps(state) {
+  return {
+    user: state,
+  };
+}
+
+export default connect(mapStateToProps)(Landing);

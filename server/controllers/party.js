@@ -4,8 +4,15 @@ module.exports = {
         const db = req.app.get('db')
         const {user_id} = req.session.user
         const parties = await db.parties.get_parties(user_id)
+        
+        const party_members = await Promise.all(parties.map(async (party) => {
+            const members = await db.parties.get_party_members(user_id, party.party_id)
+            return {...party, members}
+            })
+        )
 
-        res.status(200).send(parties)
+        res.status(200).send(party_members)
+
     },
 
     createParty: async (req, res) => {

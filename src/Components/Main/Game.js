@@ -6,6 +6,10 @@ import {connect} from 'react-redux'
 const parse = require('html-react-parser')
 
 const Game = (props) => {
+    if(!props.isLoggedIn) {
+        props.history.push('/signin')
+      }
+
     const [game, setGame] = useState({})
     
     const {REACT_APP_CLIENT_ID} = process.env

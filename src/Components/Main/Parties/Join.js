@@ -6,6 +6,9 @@ import {getUserData} from '../../../redux/userReducer'
 import axios from 'axios'
 
 const Join = (props) => {
+    if(!props.isLoggedIn) {
+        props.history.push('/signin')
+      }
 
     const {user_id} = props
     const [inviteKey, setInvite] = useState('')

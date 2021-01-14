@@ -7,6 +7,10 @@ import axios from 'axios'
 
 const Create = (props) => {
 
+        if(!props.isLoggedIn) {
+          props.history.push('/signin')
+        }
+
     const {user_id} = props
     const [party_name, setPartyName] = useState('')
 

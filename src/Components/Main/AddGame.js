@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 
 const AddGame = (props) => {
+    if(!props.isLoggedIn) {
+        props.history.push('/signin')
+      }
+
     const {REACT_APP_CLIENT_ID} = process.env
     //hooks
     const [title, setTitle] = useState('')

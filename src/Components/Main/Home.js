@@ -5,6 +5,9 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 
 const Home = (props) => {
+    if(!props.isLoggedIn) {
+        props.history.push('/signin')
+      }
     return (
         <main>
         {props.isLoggedIn ? <UserHeader/> :<Header/>}

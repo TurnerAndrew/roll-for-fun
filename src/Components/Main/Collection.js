@@ -4,9 +4,13 @@ import UserHeader from '../UI/UserHeader'
 import { connect } from 'react-redux'
 import {getUserData} from '../../redux/userReducer'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 
 const Collection = (props) => {
+    if(!props.isLoggedIn) {
+        props.history.push('/signin')
+      }
 
     const {user_id} = props
     const [collection, setCollection] = useState([])
@@ -37,7 +41,7 @@ const Collection = (props) => {
                     <input type='text' placeholder='SEARCH YOUR COLLECTION'></input>
                     <button>SEARCH</button>
                 </form>
-                <li>ADD GAME</li>
+                <Link to='/addgame'><h3>ADD GAME</h3></Link>
                 <li>DELETE GAME</li>
             </nav>
             {collectionMapped}
