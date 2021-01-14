@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 
 const AddGame = (props) => {
-    if(!props.isLoggedIn) {
+    const {isLoggedIn} = props
+
+    if(isLoggedIn == false) {
         props.history.push('/signin')
       }
 
@@ -30,7 +32,7 @@ const AddGame = (props) => {
         <div key={game.id} className='game-preview'>
                 <img src={game.images.small} alt='thumbnail'/>
                 <p>{game.name}</p>
-                <button onClick={addToCollection(game)}>Add to Collection</button>
+                <button onClick={() => addToCollection(game)}>Add to Collection</button>
                 <Link game_id={game.id} to={`/game/${game.id}`}>
                 <button>View Details</button>
                 </Link>
@@ -42,7 +44,7 @@ const AddGame = (props) => {
 
     return (
         <div>
-            {props.isLoggedIn ? <UserHeader/> :<Header/>}
+            {isLoggedIn ? <UserHeader/> :<Header/>}
         <div id='add-game-main'>
             <section id='game-search-container'>'
                 <form id='game-search'>

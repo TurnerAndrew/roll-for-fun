@@ -6,7 +6,8 @@ import {getUserData} from '../../../redux/userReducer'
 import axios from 'axios'
 
 const Join = (props) => {
-    if(!props.isLoggedIn) {
+    const {isLoggedIn} = props
+    if(isLoggedIn == false) {
         props.history.push('/signin')
       }
 
@@ -20,7 +21,7 @@ const Join = (props) => {
 
     return(
         <div>
-            {props.isLoggedIn ? <UserHeader/> :<Header/>}
+            {isLoggedIn ? <UserHeader/> :<Header/>}
             <h1>JOIN A PARTY</h1>
             <form>
                 <input type='text' placeholder='INVITE KEY' onChange={(e) => setInvite(e.target.value)}></input>

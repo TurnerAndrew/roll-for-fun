@@ -6,6 +6,7 @@ const session = require('express-session')
 const userCtrl = require('./controllers/users')
 const colCtrl = require('./controllers/collection')
 const partyCtrl = require('./controllers/party')
+const libCtrl = require('/controllers/library')
 
 
 const app = express()
@@ -55,6 +56,4 @@ app.get('/parties', partyCtrl.getParties)
 app.post('/parties/create', partyCtrl.createParty)
 app.post('/parties/join', partyCtrl.joinParty)
 app.delete('/parties/leave', partyCtrl.leaveParty)
-
-//library
-// app.get('/party/:id', libCtrl.getLibrary)
+app.get('/party/:party_id', partyCtrl.getParty, libCtrl.getLibrary)

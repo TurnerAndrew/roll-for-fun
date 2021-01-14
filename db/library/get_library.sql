@@ -1,11 +1,5 @@
--- get all games from every member of the party
-
--- find all members of party passed in from the body
--- get collection for all members
-
--- collections are stored on collection table
-
--- party_junction holds party members
-
-SELECT * FROM collection
-WHERE owner = $1 OR ()
+SELECT p.party_name, p.party_id, pj.pj_id, pj.member, g.title, g.bga_id, g.thumbnail, g.min_players, g.max_players, g.max_playtime, g.url  FROM party_junction pj
+JOIN parties p ON pj.party = p.party_id
+JOIN collection c ON pj.member = c.owner
+JOIN games g ON c.game = g.game_id
+WHERE party_id = $1

@@ -10,6 +10,7 @@ import Collection from './Components/Main/Collection'
 import Parties from './Components/Main/Parties/Parties'
 import Create from './Components/Main/Parties/Create'
 import Join from './Components/Main/Parties/Join'
+import Party from './Components/Main/Parties/Party'
 
 export default (
     <Switch>
@@ -24,5 +25,6 @@ export default (
         <Route exact path='/parties' component={Parties}/>
         <Route exact path='/parties/create' component={Create}/>
         <Route exact path='/parties/join' component={Join}/>
+        <Route exact path='/party/:party_id' component={Party}/>
     </Switch>
 )

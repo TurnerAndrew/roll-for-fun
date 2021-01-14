@@ -6,10 +6,11 @@ import {connect} from 'react-redux'
 const parse = require('html-react-parser')
 
 const Game = (props) => {
-    if(!props.isLoggedIn) {
+    const {isLoggedIn} = props
+
+    if(isLoggedIn == false) {
         props.history.push('/signin')
       }
-
     const [game, setGame] = useState({})
     
     const {REACT_APP_CLIENT_ID} = process.env
@@ -20,7 +21,7 @@ const Game = (props) => {
 
     return (
         <div>
-            {props.isLoggedIn ? <UserHeader/> : <Header/>}
+            {isLoggedIn ? <UserHeader/> : <Header/>}
             <div className='main-content'>
                 <section id='game-info'>
                     <h1>{game.name}</h1>

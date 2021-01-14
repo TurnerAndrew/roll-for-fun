@@ -8,7 +8,10 @@ import {Link} from 'react-router-dom'
 
 
 const Collection = (props) => {
-    if(!props.isLoggedIn) {
+
+    const {isLoggedIn} = props
+
+    if(isLoggedIn == false) {
         props.history.push('/signin')
       }
 
@@ -23,11 +26,14 @@ const Collection = (props) => {
     console.log(collection)
 
     const collectionMapped = collection.map(game => {
-        axios.get('')
+
         return (
             <div key={game.id} className='game-preview'>
                 <img src={game.thumbnail} alt='thumbnail'/>
                 <p>{game.title}</p>
+                <Link to={`/game/${game.bga_id}`}>
+                <button>View Details</button>
+                </Link>
             </div>
         )
     })
@@ -35,7 +41,7 @@ const Collection = (props) => {
 
     return (
         <div>
-            {props.isLoggedIn ? <UserHeader/> :<Header/>}
+            {isLoggedIn ? <UserHeader/> :<Header/>}
             <nav>
                 <form>
                     <input type='text' placeholder='SEARCH YOUR COLLECTION'></input>

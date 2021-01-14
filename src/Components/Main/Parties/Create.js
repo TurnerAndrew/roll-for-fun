@@ -7,9 +7,13 @@ import axios from 'axios'
 
 const Create = (props) => {
 
-        if(!props.isLoggedIn) {
-          props.history.push('/signin')
-        }
+    const {isLoggedIn} = props
+
+    console.log(isLoggedIn)
+
+    if(isLoggedIn == false) {
+        props.history.push('/signin')
+      }
 
     const {user_id} = props
     const [party_name, setPartyName] = useState('')
@@ -20,7 +24,7 @@ const Create = (props) => {
 
     return (
         <div>
-            {props.isLoggedIn ? <UserHeader/> :<Header/>}
+            {isLoggedIn ? <UserHeader/> : <Header/>}
             <h1>CREATE A PARTY</h1>
             <form>
                 <input type='text' placeholder='PARTY NAME' onChange={(e) => setPartyName(e.target.value)}></input>

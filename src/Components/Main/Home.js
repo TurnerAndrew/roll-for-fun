@@ -5,12 +5,15 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 
 const Home = (props) => {
-    if(!props.isLoggedIn) {
+    const {isLoggedIn} = props
+
+    if(isLoggedIn == false) {
         props.history.push('/signin')
       }
+
     return (
         <main>
-        {props.isLoggedIn ? <UserHeader/> :<Header/>}
+        {isLoggedIn ? <UserHeader/> :<Header/>}
         <div id='home'>
             <section id='top-games'>
                 <h1>YOUR TOP RATED GAMES</h1>

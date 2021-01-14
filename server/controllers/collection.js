@@ -30,7 +30,7 @@ module.exports = {
         
         if(!game) {
             const [newGame] = await db.collection.add_game([name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url])
-            res.status(200).send('Game added successfully.')
+           return res.status(200).send('Game added successfully.')
         }        
         
         const [{game_id}] = await db.collection.find_game([id])    

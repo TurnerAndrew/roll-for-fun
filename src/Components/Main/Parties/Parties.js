@@ -8,32 +8,48 @@ import UserHeader from '../../UI/UserHeader'
 
 const Parties = (props) => {
 
-  if(props.isLoggedIn === false) {
-    props.history.push('/signin')
-  }
+  const {isLoggedIn} = props
+
+  if(isLoggedIn == false) {
+      props.history.push('/signin')
+    }
   const { user_id } = props;
 
   const [parties, setParties] = useState([]);
 
-console.log(parties)
+
 
   useEffect(() => {
     axios.get("/parties", user_id).then((res) => setParties(res.data));
   }, [user_id]);
 
   const partiesMapped = parties.map((party) => {
+    console.log(party)
     return (
-      <div>
-        <Link key={party.party_name}>
+      <div key={party.party_id}>
+        <Link to={`/party/${party.party_id}`}>
           <h3>{party.party_name}</h3>
         </Link>
       </div>
     );
   });
 
+  const members = parties.map((party) => {
+    return (
+      <div key={party.party_id}>
+        <h2>{party.party_name}</h2>
+        {party.members.map((member) => {
+          return (
+            <h4>{member.username}</h4>
+          )
+        })}
+      </div>
+    );
+  });
+
   return (
     <div>
-      {props.isLoggedIn ? <UserHeader/> :<Header/>}
+      {isLoggedIn ? <UserHeader/> :<Header/>}
       <nav>
         <h1>YOUR PARTIES</h1>
         {partiesMapped}
@@ -44,6 +60,9 @@ console.log(parties)
           <h3>JOIN PARTY</h3>
         </Link>
       </nav>
+      <div>
+        {members}
+      </div>
     </div>
   );
 };
