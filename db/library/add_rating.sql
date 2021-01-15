@@ -1,2 +1,2 @@
 INSERT INTO rating (game, party, score)
-    VALUES $1, $2, $3
+VALUES ($1, $2, $3)

@@ -25,7 +25,7 @@ const Party = (props) => {
     )})
 
     const libraryMapped = library.map(game => {
-        return <GamePreview game={game} library={library} party={party}/>
+        return <GamePreview game={game} library={library} party_id={party_id}/>
     })
 
     return (
