@@ -4,6 +4,7 @@ import UserHeader from '../../UI/UserHeader'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
+import GamePreview from '../GamePreview'
 
 const Party = (props) => {
     const {party_id} = props.match.params
@@ -24,16 +25,7 @@ const Party = (props) => {
     )})
 
     const libraryMapped = library.map(game => {
-
-        return (
-            <div key={game.id} className='game-preview'>
-                <img src={game.thumbnail} alt='thumbnail'/>
-                <p>{game.title}</p>
-                <Link to={`/game/${game.bga_id}`}>
-                <button>View Details</button>
-                </Link>
-            </div>
-        )
+        return <GamePreview game={game} library={library} party={party}/>
     })
 
     return (

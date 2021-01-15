@@ -18,9 +18,6 @@ const Collection = (props) => {
     const {user_id} = props
     const [collection, setCollection] = useState([])
 
-
-    // console.log(props)
-
     useEffect (() => {axios.get('/collection', (user_id)).then(res => setCollection(res.data))}, [user_id])
 
     console.log(collection)

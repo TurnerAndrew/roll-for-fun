@@ -57,3 +57,6 @@ app.post('/parties/create', partyCtrl.createParty)
 app.post('/parties/join', partyCtrl.joinParty)
 app.delete('/parties/leave', partyCtrl.leaveParty)
 app.get('/party/:party_id', partyCtrl.getParty)
+
+//library
+app.post('/library/rank', libCtrl.rateGame)
