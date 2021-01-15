@@ -24,7 +24,6 @@ const Parties = (props) => {
   }, [user_id]);
 
   const partiesMapped = parties.map((party) => {
-    console.log(party)
     return (
       <div key={party.party_id}>
         <Link to={`/party/${party.party_id}`}>

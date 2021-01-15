@@ -18,10 +18,13 @@ module.exports = {
     getParty: async (req, res) => {
         const db = req.app.get('db')
         const {party_id} = req.params
-        const partyName = await db.parties.get_party_name(party_id)
+
         const party = await db.parties.get_party(party_id)
 
-        res.status(200).send(partyName)
+        const library = await db.library.get_library(party_id)
+        
+
+        res.status(200).send({party, library})
 
         },
 
