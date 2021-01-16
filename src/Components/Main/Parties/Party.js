@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Header from '../../UI/Header'
 import UserHeader from '../../UI/UserHeader'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dogit cm'
 import {connect} from 'react-redux'
 import GamePreview from '../GamePreview'
 
