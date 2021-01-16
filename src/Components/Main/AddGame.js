@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 const AddGame = (props) => {
     const {isLoggedIn} = props
 
-    if(isLoggedIn == false) {
+    if(isLoggedIn === false) {
         props.history.push('/signin')
       }
 

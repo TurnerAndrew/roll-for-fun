@@ -9,7 +9,7 @@ import UserHeader from "../../UI/UserHeader";
 const Parties = (props) => {
   const { isLoggedIn } = props;
 
-  if (isLoggedIn == false) {
+  if (isLoggedIn === false) {
     props.history.push("/signin");
   }
   const { user_id } = props;

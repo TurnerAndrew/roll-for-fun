@@ -8,7 +8,7 @@ const parse = require('html-react-parser')
 const Game = (props) => {
     const {isLoggedIn} = props
 
-    if(isLoggedIn == false) {
+    if(isLoggedIn === false) {
         props.history.push('/signin')
       }
     const [game, setGame] = useState({})

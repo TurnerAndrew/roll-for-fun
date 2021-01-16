@@ -11,7 +11,7 @@ const Home = (props) => {
   const [topLibrary, setTopLibrary] = useState([]);
   const [popularGames, setPopularGames] = useState([])
 
-  if (isLoggedIn == false) {
+  if (isLoggedIn === false) {
     props.history.push("/signin");
   }
 

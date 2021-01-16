@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const Join = (props) => {
     const {isLoggedIn} = props
-    if(isLoggedIn == false) {
+    if(isLoggedIn === false) {
         props.history.push('/signin')
       }
 

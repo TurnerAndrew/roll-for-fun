@@ -9,9 +9,7 @@ const Create = (props) => {
 
     const {isLoggedIn} = props
 
-    console.log(isLoggedIn)
-
-    if(isLoggedIn == false) {
+    if(isLoggedIn === false) {
         props.history.push('/signin')
       }
 

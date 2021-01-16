@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Collection = (props) => {
   const { isLoggedIn } = props;
 
-  if (isLoggedIn == false) {
+  if (isLoggedIn === false) {
     props.history.push("/signin");
   }
 

@@ -13,6 +13,12 @@ const Party = (props) => {
     const [library, setLibrary] = useState([])
     const [inviteKey, setInviteKey] = useState([])
 
+    const { isLoggedIn } = props;
+
+  if (isLoggedIn === false) {
+    props.history.push("/signin");
+  }
+
     console.log(inviteKey)
 
     useEffect (() => {
@@ -36,6 +42,7 @@ const Party = (props) => {
 
     return (
         <div>
+            {isLoggedIn ? <UserHeader/> : <Header/>}
             {partyName}
             {invite}
             {members}
