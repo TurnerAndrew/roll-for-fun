@@ -51,8 +51,9 @@ module.exports = {
     deleteGame: (req, res) => {
         const db = req.app.get('db')
         const {game} = req.body
+        const {user_id} = req.session.user
 
-        db.collection.delete_game(game)
+        db.collection.delete_game(game, user_id)
 
         res.status(200).send('Removed successfully')
     }

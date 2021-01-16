@@ -4,20 +4,17 @@ import { connect } from "react-redux";
 import { getUserData } from "../../../redux/userReducer";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import UserHeader from '../../UI/UserHeader'
+import UserHeader from "../../UI/UserHeader";
 
 const Parties = (props) => {
+  const { isLoggedIn } = props;
 
-  const {isLoggedIn} = props
-
-  if(isLoggedIn == false) {
-      props.history.push('/signin')
-    }
+  if (isLoggedIn == false) {
+    props.history.push("/signin");
+  }
   const { user_id } = props;
 
   const [parties, setParties] = useState([]);
-
-
 
   useEffect(() => {
     axios.get("/parties", user_id).then((res) => setParties(res.data));
@@ -36,32 +33,30 @@ const Parties = (props) => {
   const members = parties.map((party) => {
     return (
       <div key={party.party_id}>
-        <h2>{party.party_name}</h2>
-        {party.members.map((member) => {
-          return (
-            <h4>{member.username}</h4>
-          )
-        })}
+        <div>
+          <h2>{party.party_name}</h2>
+          {party.members.map((member) => {
+            return <h4>{member.username}</h4>;
+          })}
+        </div>
       </div>
     );
   });
 
   return (
     <div>
-      {isLoggedIn ? <UserHeader/> :<Header/>}
+      {isLoggedIn ? <UserHeader /> : <Header />}
       <nav>
         <h1>YOUR PARTIES</h1>
         {partiesMapped}
         <Link to="/parties/create">
-          <h3>CREATE PARTY</h3>
+          <h3>Create</h3>
         </Link>
         <Link to="/parties/join">
-          <h3>JOIN PARTY</h3>
+          <h3>Join</h3>
         </Link>
       </nav>
-      <div>
-        {members}
-      </div>
+      <div>{members}</div>
     </div>
   );
 };
