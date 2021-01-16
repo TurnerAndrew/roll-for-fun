@@ -11,18 +11,24 @@ const Party = (props) => {
     const [party, setParty] = useState([])
     const [partyName, setPartyName] = useState('')
     const [library, setLibrary] = useState([])
+    const [inviteKey, setInviteKey] = useState([])
+
+    console.log(inviteKey)
 
     useEffect (() => {
         axios.get(`/party/${party_id}`).then((res) => {
             console.log(res)
             setParty(res.data.party)
             setPartyName(res.data.party[0].party_name)
-            setLibrary(res.data.library)})
+            setLibrary(res.data.library)
+            setInviteKey(res.data.inviteKey)})
     }, [party_id, setParty])
 
     const members = party.map((party) => {return (
         <h1>{party.username}</h1>
     )})
+
+    const invite = inviteKey.map(party => <h3>Invite Key: {party.invite_key}</h3>)
 
     const libraryMapped = library.map(game => {
         return <GamePreview game={game} library={library} party_id={party_id}/>
@@ -31,9 +37,9 @@ const Party = (props) => {
     return (
         <div>
             {partyName}
+            {invite}
             {members}
-            {libraryMapped}
-            
+            {libraryMapped}            
         </div>
     )
 }

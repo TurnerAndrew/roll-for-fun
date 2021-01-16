@@ -7,12 +7,18 @@ $white: #FFFFFF;
 $blue: #2a4681;
 
 //Fonts
-$lato: 'Lato', sans-serif;
-$mont: 'Montserrat', sans-serif;
-$open: 'Open Sans', sans-serif;
-$raleway: 'Raleway', sans-serif;
-$source: 'Source Sans Pro', sans-serif;
-$staat: 'Staatliches', cursive;
+$lato: 'Lato',
+sans-serif;
+$mont: 'Montserrat',
+sans-serif;
+$open: 'Open Sans',
+sans-serif;
+$raleway: 'Raleway',
+sans-serif;
+$source: 'Source Sans Pro',
+sans-serif;
+$staat: 'Staatliches',
+cursive;
 
 li {
     list-style-type: none;
@@ -27,14 +33,14 @@ Link:hover {
     height: 25%;
     width: 15%;
     border-radius: 7.5px;
-    background: $platinum;   
+    background: $platinum;
     border: $orangeWeb 3px solid;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    p{
+
+    p {
         color: $oxfordBlue;
         font-weight: bold;
         font-size: 1.05em;
@@ -45,14 +51,14 @@ Link:hover {
     height: 25%;
     width: 25%;
     border-radius: 7.5px;
-    background: $platinum;   
+    background: $platinum;
     border: $orangeWeb 3px solid;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    p{
+
+    p {
         color: $oxfordBlue;
         font-weight: bold;
         font-size: 1.05em;
@@ -74,55 +80,55 @@ Link:hover {
 }
 
 @mixin auth-container {
-        width: 35%;
-        height: 80%;
-        background: $platinum;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: $black 0px 10px 50px;
-        border-radius: 50px;
+    width: 35%;
+    height: 80%;
+    background: $platinum;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: $black 0px 10px 50px;
+    border-radius: 50px;
 }
 
 @mixin auth {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    ::placeholder {
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: $oxfordBlue;
+        opacity: 50%;
+        text-indent: 15px;
+    }
+
+    .form-input {
+        box-sizing: border-box;
+        padding: 10px;
         width: 80%;
-        height: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+        height: 5%;
+        border-radius: 5px;
+        border: $oxfordBlue solid 1px;
+    }
 
-        ::placeholder{
-            font-size: 18px;
-            letter-spacing: 1px;
-            color: $oxfordBlue;
-            opacity: 50%;
-            text-indent: 15px;
-        }
-
-        .form-input{
-            box-sizing: border-box;
-            padding: 10px;
-            width: 80%;
-            height: 5%;
-            border-radius: 5px;
-            border: $oxfordBlue solid 1px;
-            }
-        
-        button{
-            width: 30%;
-            background-color: $oxfordBlue;
-            color: $orangeWeb;
-            height: 5%;
-            width: 80%;
-            border-radius: 5px;
-            border: $orangeWeb solid 1px;
-            font-size: 18px;
-            }
+    button {
+        width: 30%;
+        background-color: $oxfordBlue;
+        color: $orangeWeb;
+        height: 5%;
+        width: 80%;
+        border-radius: 5px;
+        border: $orangeWeb solid 1px;
+        font-size: 18px;
+    }
 }
 
-@mixin game-preview{
+@mixin game-preview {
     img {
         max-width: 35%;
     }
@@ -138,12 +144,10 @@ Link:hover {
     border: $platinum 1px solid;
     text-align: center;
 
-    
+
 }
 
-@mixin dropdown-main {
-    
-}
+@mixin dropdown-main {}
 
 //end mixins
 
@@ -151,7 +155,7 @@ a {
     text-decoration: none;
 }
 
-.landing-nav{
+.landing-nav {
     display: flex;
     background: $oxfordBlue;
     height: 10vh;
@@ -174,7 +178,7 @@ a {
     }
 }
 
-.button-container{
+.button-container {
     box-sizing: border-box;
     width: 25%;
     height: 100%;
@@ -182,9 +186,9 @@ a {
     justify-content: space-evenly;
     align-items: center;
 
-    
-    .action-button{
-       @include action-button;
+
+    .action-button {
+        @include action-button;
     }
 }
 
@@ -197,7 +201,7 @@ a {
     justify-content: center;
     height: 80vh;
     font-family: $open;
-    
+
     #main-text {
         color: $oxfordBlue;
         display: flex;
@@ -220,9 +224,9 @@ a {
 }
 
 // Registration Page
-#registration-page{
-        @include auth-page
-    }
+#registration-page {
+    @include auth-page
+}
 
 #registration-container {
     @include auth-container
@@ -231,7 +235,7 @@ a {
 #register {
     @include auth
 }
-    
+
 // End Registration Page
 
 //Sign In Page
@@ -239,7 +243,7 @@ a {
     @include auth-page
 }
 
-#signin-container{
+#signin-container {
     @include auth-container
 }
 
@@ -250,7 +254,7 @@ a {
 //Add Game
 #add-game-main {
     display: flex;
-    
+
 }
 
 #game-search {
@@ -258,10 +262,10 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
 }
 
-#games-results{
+#games-results {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -277,7 +281,7 @@ a {
 .main-content {
     display: flex;
     max-width: 100vw;
-    
+
 }
 
 #game-info {
@@ -293,6 +297,7 @@ a {
     max-height: 100vh;
     justify-content: center;
     padding-top: 10%;
+
     img {
         max-width: 50%;
         max-height: 50%;
@@ -306,6 +311,7 @@ a {
     width: 40%;
     display: flex;
     justify-content: flex-end;
+
     .user-nav {
         display: flex;
         align-items: center;
@@ -314,21 +320,22 @@ a {
 
         .dropdown-links {
             display: none;
-        }    
-        
+        }
+
         .nav-dropdown {
             @include user-button;
+
             &:hover {
 
-            .dropdown-links {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+                .dropdown-links {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
             }
         }
 
-        }
+    }
 
 
     .user-info {
@@ -337,11 +344,11 @@ a {
         align-items: center;
         width: 30%;
         height: 100%;
-    
+
         h3 {
             color: $platinum;
         }
-    
+
         #avatar-container {
             height: 4em;
             width: 4em;
@@ -351,6 +358,7 @@ a {
             display: flex;
             justify-content: center;
             align-items: center;
+
             img {
                 max-width: 60%;
             }
