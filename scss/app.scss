@@ -307,6 +307,7 @@ a {
 
 //User Header
 
+
 .user-container {
     width: 40%;
     display: flex;
@@ -318,23 +319,9 @@ a {
         justify-content: space-evenly;
         width: 75%;
 
-        .dropdown-links {
-            display: none;
-        }
-
         .nav-dropdown {
             @include user-button;
-
-            &:hover {
-
-                .dropdown-links {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-            }
         }
-
     }
 
 

@@ -15,20 +15,14 @@ const UserHeader = (props) => {
 
       <div className="user-container">
         <nav className="user-nav">
-          <button className="nav-dropdown"><p>COLLECTION ▼</p></button>
-            <div className="dropdown-links">
-              <a href="/collection">VIEW</a>
-              <a href="/collection/add">ADD</a>
-              <a href="/collection/delete">DELETE</a>
-            </div>
-          <button className="nav-dropdown"><p>PARTIES ▼</p></button>
-            <div className="dropdown-links">
-              <a href="/parties">MY PARTIES</a>
-              <a href="/parties/create">CREATE</a>
-              <a href="/parties/join">JOIN</a>'
-            </div>
+          <Link to="/collection" className="nav-dropdown">
+            <p>COLLECTION</p>
+          </Link>
+          <Link to="/parties" className="nav-dropdown">
+            <p>PARTIES</p>
+          </Link>
           <div className="user-info">
-              <h3>{username}</h3>
+            <h3>{username}</h3>
             <div id="avatar-container">
               <img src={profile_pic} alt="avatar" />
             </div>

@@ -6,7 +6,16 @@ module.exports = {
 
         const collection = await db.collection.get_collection([user_id])        
 
-        res.status(200).send(collection)
+        return res.status(200).send(collection)
+    },
+
+    getTopGames: async (req, res) => {
+        const db = req.app.get('db')
+        const {user_id} = req.session.user
+
+        const topGames = await db.collection.get_top_games(user_id)
+
+        return res.status(200).send(topGames)
     },
 
     findGame: async (req, res) => {

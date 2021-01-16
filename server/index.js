@@ -50,6 +50,7 @@ app.post('/auth/logout', userCtrl.logout)
 app.get('/collection', colCtrl.getCollection)
 app.post('/collection/add', colCtrl.addGame)
 app.delete('/collection/delete', colCtrl.deleteGame)
+app.get('/collection/topgames', colCtrl.getTopGames)
 
 //parties
 app.get('/parties', partyCtrl.getParties)
@@ -60,3 +61,4 @@ app.get('/party/:party_id', partyCtrl.getParty)
 
 //library
 app.post('/library/rank', libCtrl.rateGame)
+app.get('/library/topgames', libCtrl.getTopGames)
