@@ -12,6 +12,7 @@ const Party = (props) => {
   const [partyName, setPartyName] = useState("");
   const [library, setLibrary] = useState([]);
   const [inviteKey, setInviteKey] = useState([]);
+  const [gamesRated, setGamesRated]= useState([])
 
   const { isLoggedIn } = props;
 
@@ -26,6 +27,9 @@ const Party = (props) => {
       setLibrary(res.data.library);
       setInviteKey(res.data.inviteKey);
     });
+    axios.get(`/library/gameratings/${party_id}`).then(res => {
+      setGamesRated(res.data)
+    })
   }, [party_id, setParty]);
 
   const members = party.map((party) => {
@@ -40,6 +44,16 @@ const Party = (props) => {
     return <GamePreview game={game} library={library} party_id={party_id} />;
   });
 
+  const top10 = gamesRated.map((game, index) => {
+    return <h5>{index + 1}:{game.title}</h5>
+  })
+
+  const rollForFun = () => {
+    const random = Math.floor(Math.random() * top10.length)
+    console.log(top10[random])
+    return top10[random]
+  }
+
   return (
     <div>
       {isLoggedIn ? <UserHeader /> : <Header />}
@@ -48,6 +62,9 @@ const Party = (props) => {
           <h1>{partyName}</h1>
           {invite}
           <div className='members'>{members}</div>
+          <h2>Top 10 Games</h2>
+          {inviteKey.length > 0 ? <button onClick={rollForFun}> ROLL! </button> : null}
+          {top10}
         </nav>
         <div className="collection-container">{libraryMapped}</div>
       </div>

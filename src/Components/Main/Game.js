@@ -6,9 +6,8 @@ import {connect} from 'react-redux'
 const parse = require('html-react-parser')
 
 const Game = (props) => {
-    const {isLoggedIn} = props.user
-
-    if(isLoggedIn === false) {
+    const {isLoggedIn} = props
+        if(isLoggedIn === false) {
         props.history.push('/signin')
       }
     const [game, setGame] = useState({})

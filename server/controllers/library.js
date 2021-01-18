@@ -25,15 +25,24 @@ module.exports = {
     console.log('rating added')
     return res.status(200).send("Rating added.");
     },
+
+    getTopGames: async (req, res) => {
+      const db = req.app.get("db");
+      const { user_id } = req.session.user;
+  
+      const topGames = await db.library.get_top_games(user_id);
+  
+      return res.status(200).send(topGames);
+    },
   
 
-  getTopGames: async (req, res) => {
+  getRatings: async (req, res) => {
     const db = req.app.get("db");
-    const { user_id } = req.session.user;
+    const { party_id} = req.params
 
-    const topGames = await db.library.get_top_games(user_id);
+    const ratings = await db.library.get_ratings(party_id);
 
-    return res.status(200).send(topGames);
+    return res.status(200).send(ratings);
   },
 
   getTopByParty: async (req, res) => {

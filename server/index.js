@@ -61,5 +61,5 @@ app.get('/party/:party_id', partyCtrl.getParty)
 
 //library
 app.post('/library/rank', libCtrl.rateGame)
+app.get('/library/gameratings/:party_id', libCtrl.getRatings)
 app.get('/library/topgames', libCtrl.getTopGames)
-app.get('/library/topbyparty', libCtrl.getTopByParty)

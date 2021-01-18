@@ -15,7 +15,6 @@ const Signin = (props) => {
        
         axios.post('/auth/signin', {username, password}).then((res) => {
             props.getUserData(res.data)
-            // console.log(res.data, props)
         }).catch(err => console.log(err))
         
 

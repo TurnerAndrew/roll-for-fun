@@ -3,8 +3,10 @@ module.exports = {
     getCollection: async (req, res) => {
         const db = req.app.get('db')
         const {user_id} = req.session.user
+        const {search = ''} = req.query
+        
 
-        const collection = await db.collection.get_collection([user_id])        
+        const collection = await db.collection.get_collection([user_id, `%${search}%`])        
 
         return res.status(200).send(collection)
     },

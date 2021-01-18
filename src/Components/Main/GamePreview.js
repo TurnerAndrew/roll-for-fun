@@ -9,7 +9,6 @@ const GamePreview = (props) => {
   const [rank, setRank] = useState("");
 
   const rating = [game_id, party_id, rank]
-  console.log(rating)
 
   const addRating = (details) => {
     axios.post("/library/rank", details);

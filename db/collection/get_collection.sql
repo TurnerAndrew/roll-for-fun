@@ -1,4 +1,4 @@
-SELECT * FROM games
+SELECT * FROM games g
 JOIN collection
-ON collection.game = games.game_id
-WHERE owner = $1
+ON collection.game = g.game_id
+WHERE owner = $1 AND g.title ILIKE $2

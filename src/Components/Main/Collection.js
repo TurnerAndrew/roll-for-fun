@@ -15,15 +15,17 @@ const Collection = (props) => {
 
   const { user_id } = props;
   const [collection, setCollection] = useState([]);
+  const [param, setParam] = useState('')
 
   useEffect(() => {
-    axios.get("/collection", user_id).then((res) => setCollection(res.data));
-  }, [user_id]);
+    axios.get(`/collection?search=${param}`, user_id).then((res) => setCollection(res.data));
+  }, [user_id, param]);
 
   const removeGame = (game) => {
     axios.delete("/collection/delete", { data: { game_id: game } });
     axios.get("/collection", user_id).then((res) => setCollection(res.data))
   };
+
 
   const collectionMapped = collection.map((game) => {
     const { game_id } = game;
@@ -51,8 +53,8 @@ const Collection = (props) => {
       <div className='collection-main'>
         <nav className="sidebar">
           <form>
-            <input type="text" placeholder="SEARCH YOUR COLLECTION"></input>
-            <button>SEARCH</button>
+            <input type="text" placeholder="SEARCH YOUR COLLECTION" onChange={((e) => setParam(e.target.value))}></input>
+            {/* <button  onClick={() => search(param)}>SEARCH</button> */}
           <Link to="/addgame">
             <h3>ADD GAME</h3>
           </Link>
