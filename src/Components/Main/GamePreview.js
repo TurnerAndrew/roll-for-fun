@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 const GamePreview = (props) => {
-  const { game, library, party_id } = props;
+  const { game, party_id } = props;
   const { game_id } = game;
   const [rank, setRank] = useState("");
 

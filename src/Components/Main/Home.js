@@ -20,7 +20,7 @@ const Home = (props) => {
     axios.get("/collection/topgames").then((res) => setTopGames(res.data));
     axios.get("/library/topgames").then((res) => setTopLibrary(res.data));
     axios.get(`https://api.boardgameatlas.com/api/search?limit=10&order_by=popularity&client_id=${REACT_APP_CLIENT_ID}`).then((res) => setPopularGames(res.data.games))
-  }, [user_id]);
+  }, [user_id, REACT_APP_CLIENT_ID]);
 
   const topGamesMapped = topGames.map((game) => {
     return (
