@@ -10,6 +10,7 @@ const Home = (props) => {
   const [topGames, setTopGames] = useState([]);
   const [topLibrary, setTopLibrary] = useState([]);
   const [popularGames, setPopularGames] = useState([])
+  const {REACT_APP_CLIENT_ID} = process.env
 
   if (isLoggedIn === false) {
     props.history.push("/signin");
@@ -18,7 +19,7 @@ const Home = (props) => {
   useEffect(() => {
     axios.get("/collection/topgames").then((res) => setTopGames(res.data));
     axios.get("/library/topgames").then((res) => setTopLibrary(res.data));
-    axios.get('https://api.boardgameatlas.com/api/search?limit=10&order_by=popularity&client_id=X34BsI3If9').then((res) => setPopularGames(res.data.games))
+    axios.get(`https://api.boardgameatlas.com/api/search?limit=10&order_by=popularity&client_id=${REACT_APP_CLIENT_ID}`).then((res) => setPopularGames(res.data.games))
   }, [user_id]);
 
   const topGamesMapped = topGames.map((game) => {

@@ -34,4 +34,13 @@ module.exports = {
 
     return res.status(200).send(topGames);
   },
+
+  getTopByParty: async (req, res) => {
+    const db = req.app.get('db')
+    const {party_id} = req.body
+
+    const topGames = await db.collection.get_top_by_party.sql(party_id)
+
+    return res.status(200).send(topGames)
+  }
 };
