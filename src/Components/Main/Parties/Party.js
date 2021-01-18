@@ -5,6 +5,7 @@ import axios from "axios";
 // import { Link } from 'react-router-dogit cm'
 import { connect } from "react-redux";
 import GamePreview from "../GamePreview";
+import RollModal from './RollModal'
 
 const Party = (props) => {
   const { party_id } = props.match.params;
@@ -13,6 +14,8 @@ const Party = (props) => {
   const [library, setLibrary] = useState([]);
   const [inviteKey, setInviteKey] = useState([]);
   const [gamesRated, setGamesRated]= useState([])
+  const [showRoll, setShowRoll] = useState(false)
+  const [winner, setWinner] = useState({})
 
   const { isLoggedIn } = props;
 
@@ -49,9 +52,9 @@ const Party = (props) => {
   })
 
   const rollForFun = () => {
+    setShowRoll(prev => !prev)
     const random = Math.floor(Math.random() * top10.length)
-    console.log(top10[random])
-    return top10[random]
+    setWinner(top10[random])
   }
 
   return (
@@ -64,6 +67,7 @@ const Party = (props) => {
           <div className='members'>{members}</div>
           <h2>Top 10 Games</h2>
           {inviteKey.length > 0 ? <button onClick={rollForFun}> ROLL! </button> : null}
+          <RollModal showRoll={showRoll} setShowRoll={setShowRoll} winner={winner}/>
           {top10}
         </nav>
         <div className="collection-container">{libraryMapped}</div>
