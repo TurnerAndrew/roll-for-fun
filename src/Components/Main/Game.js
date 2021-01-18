@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 const parse = require('html-react-parser')
 
 const Game = (props) => {
-    const {isLoggedIn} = props
+    const {isLoggedIn} = props.user
 
     if(isLoggedIn === false) {
         props.history.push('/signin')

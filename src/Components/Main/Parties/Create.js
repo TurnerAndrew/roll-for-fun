@@ -6,7 +6,7 @@ import { getUserData } from "../../../redux/userReducer";
 import axios from "axios";
 
 const Create = (props) => {
-  const { isLoggedIn } = props;
+  const { isLoggedIn } = props.user;
 
   if (isLoggedIn === false) {
     props.history.push("/signin");

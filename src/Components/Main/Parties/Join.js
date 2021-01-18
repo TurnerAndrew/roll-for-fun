@@ -11,7 +11,7 @@ const Join = (props) => {
     props.history.push("/signin");
   }
 
-  const { user_id } = props;
+  const { user_id } = props.user;
   const [inviteKey, setInvite] = useState("");
 
   const joinParty = () => {

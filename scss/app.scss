@@ -20,10 +20,6 @@ sans-serif;
 $staat: 'Staatliches',
 cursive;
 
-*{
-    overflow: hidden;
-}
-
 li {
     list-style-type: none;
 }
@@ -76,7 +72,6 @@ Link:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
     * {
         color: $oxfordBlue;
         font-family: $lato;
@@ -136,7 +131,6 @@ Link:hover {
     img {
         max-width: 35%;
     }
-
     box-sizing: border-box;
     width: 18%;
     padding: 10px;
@@ -145,7 +139,6 @@ Link:hover {
     justify-content: center;
     align-items: center;
     margin: 10px;
-    // border: $platinum 1px solid;
     text-align: center;
     box-shadow: 1px 0 10px $platinum;
 
@@ -153,10 +146,10 @@ Link:hover {
 }
 
 @mixin sidebar {
-        width: 15%;
-        height: 100vh;
-        padding-left: 1%;
-    }
+    width: 15%;
+    height: 100vh;
+    padding-left: 1%;
+}
 
 //end mixins
 
@@ -261,30 +254,55 @@ a {
 }
 
 //Add Game
+.game-preview {
+    @include game-preview
+}
+
 #add-game-main {
     display: flex;
 
-}
+    .sidebar {
+        @include sidebar;
+        margin-top: 2%;
 
-#game-search {
-    height: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+        form {
+            display: flex;
+            height: 20%;
+            flex-direction: column;
+
+            input {
+                width: 50%;
+                height: 10%;
+                border-radius: 5px;
+                border: 1px solid $oxfordBlue;
+                text-align: center;
+                margin-bottom: 5%;
+            }
+
+            button {
+                width: 50%;
+                height: 10%;
+                border-radius: 10px;
+                background: $oxfordBlue;
+                color: $platinum;
+                border: 2px solid $orangeWeb;
+            }
+
+            h3 {
+                margin-left: 5%;
+            }
+        }
+    }
 }
 
 #games-results {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    // justify-content: flex-end;
     // align-items: space-evenly;
 }
 
-.game-preview {
-    @include game-preview
-}
 
 //Game Page
 .main-content {
@@ -327,12 +345,7 @@ a {
         align-items: center;
         justify-content: space-evenly;
         width: 75%;
-
-        .nav-dropdown {
-            @include user-button;
-        }
     }
-
 
     .user-info {
         display: flex;
@@ -340,7 +353,6 @@ a {
         align-items: center;
         width: 30%;
         height: 100%;
-
         h3 {
             color: $platinum;
         }
@@ -362,94 +374,156 @@ a {
     }
 
 }
-    //home page
-    
-    #home {
-        display: flex;
-        width: 100%;
-        .sidebar {
-            @include sidebar;
-        }
-        #top-games{
-            display: flex;
-            width: 80%;
-            flex-direction: column;
-            .home-games-container{
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-            }
-        }
-    
+
+//home page
+
+#home {
+    display: flex;
+    width: 100%;
+    .sidebar {
+        @include sidebar;
     }
 
+    #top-games {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        .home-games-container {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
 
-    //parties
-    
-    .members {
+}
+
+
+//parties
+
+.members {
+    margin-left: 1%;
+}
+
+.party-list{
+    margin-left: 1%;
+}
+
+.parties-main {
+    display: flex;
+    .sidebar {
+        @include sidebar;
+    }
+    .party-list {
+        width: 80%;
         margin-left: 1%;
-    }
-    .parties-main{
-        display: flex;
-        .sidebar {
-            @include sidebar;
-        }
-        .party-list{
-            width: 80%;
-            margin-left: 1%;
-            margin-top: 1%;
-            display: flex;
-            flex-direction: column;
-        }
-
-    }
-
-    //create party
-
-    .party-main{
-        background: $platinum;
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-
-        * {
-            color: $oxfordBlue;
-            font-family: $lato;
-        }
-    }
-
-    .party-container{
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        margin-top: 5%;
-    }
-
-    .party-action {
+        margin-top: 1%;
         display: flex;
         flex-direction: column;
+    }
+
+}
+
+//create/join party
+
+.party-main {
+    background: $platinum;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    * {
+        color: $oxfordBlue;
+        font-family: $lato;
+    }
+}
+
+.party-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.party-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+        display: flex;
+        height: 20%;
+        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
-        form {
-            display: flex;
+        input {
+            width: 90%;
+            height: 15%;
+            border-radius: 5px;
+            border: 1px solid $oxfordBlue;
+            text-align: center;
+        }
+        button {
+            width: 75%;
             height: 20%;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            input {
-                width: 90%;
-                height: 15%;
-                border-radius: 5px;
-                border: 1px solid $oxfordBlue;
-                text-align: center;
-            }
-            button {
-                width: 75%;
-                height: 20%;
-                border-radius: 10px;
-                background: $oxfordBlue;
-                color: $platinum;
-                border: 2px solid $orangeWeb;
-            }
+            border-radius: 10px;
+            background: $oxfordBlue;
+            color: $platinum;
+            border: 2px solid $orangeWeb;
         }
     }
+}
+
+//collection
+.collection-main {
+    display: flex;
+}
+
+.sidebar {
+    @include sidebar;
+    margin-top: 2%;
+
+    form {
+        display: flex;
+        height: 20%;
+        flex-direction: column;
+
+        input {
+            width: 50%;
+            height: 10%;
+            border-radius: 5px;
+            border: 1px solid $oxfordBlue;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+
+        button {
+            width: 50%;
+            height: 10%;
+            border-radius: 10px;
+            background: $oxfordBlue;
+            color: $platinum;
+            border: 2px solid $orangeWeb;
+        }
+
+        h3 {
+            margin-left: 5%;
+        }
+    }
+}
+
+.collection-container {
+    width: 80%;
+    height: 100vh;;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+//party
+
+.party-view-main{
+    display: flex;
+
+    .members{
+        margin-left: 1%;
+    }
+}

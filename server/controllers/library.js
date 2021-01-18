@@ -13,18 +13,19 @@ module.exports = {
     const [game_id, party_id, rank] = req.body;
     const {user_id} = req.session.user
 
-    const rating = await db.library.check_rating(game_id, party_id);
+    const [rating] = await db.library.check_rating(game_id, party_id, user_id);
 
     if (rating) {
-      await db.library.update_rating(game_id, party_id, rank);
+      await db.library.update_rating(game_id, party_id, rank, user_id);
       return res.status(200).send("Rating updated");
     }
 
-    await db.library.add_rating(game_id, party_id, rank);
+    await db.library.add_rating(game_id, party_id, rank, user_id);
     await db.collection.rate_game(game_id, rank, user_id)
-
+    console.log('rating added')
     return res.status(200).send("Rating added.");
-  },
+    },
+  
 
   getTopGames: async (req, res) => {
     const db = req.app.get("db");

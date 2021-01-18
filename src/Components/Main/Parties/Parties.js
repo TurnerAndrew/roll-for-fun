@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import UserHeader from "../../UI/UserHeader";
 
 const Parties = (props) => {
-  const { isLoggedIn } = props;
+  const { isLoggedIn } = props.user;
 
   if (isLoggedIn === false) {
     props.history.push("/signin");
@@ -22,7 +22,7 @@ const Parties = (props) => {
 
   const partiesMapped = parties.map((party) => {
     return (
-      <div key={party.party_id}>
+      <div key={party.party_id} className='party-list'>
         <Link to={`/party/${party.party_id}`}>
           <h3>{party.party_name}</h3>
         </Link>
@@ -34,7 +34,7 @@ const Parties = (props) => {
     return (
       <div key={party.party_id}>
         <div>
-          <h2>{party.party_name}</h2>
+          <Link to={`/party/${party.party_id}`}><h1>{party.party_name}</h1></Link>
           {party.members.map((member) => {
             return <h4 className='members'>{member.username}</h4>;
           })}

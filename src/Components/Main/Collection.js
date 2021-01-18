@@ -7,7 +7,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Collection = (props) => {
-  const { isLoggedIn } = props;
+  const { isLoggedIn } = props.user;
 
   if (isLoggedIn === false) {
     props.history.push("/signin");
@@ -21,12 +21,12 @@ const Collection = (props) => {
   }, [user_id]);
 
   const removeGame = (game) => {
-    axios.delete('/collection/delete', {data: {game_id: game}});
-    console.log(game)
+    axios.delete("/collection/delete", { data: { game_id: game } });
+    axios.get("/collection", user_id).then((res) => setCollection(res.data))
   };
-  
+
   const collectionMapped = collection.map((game) => {
-    const {game_id} = game
+    const { game_id } = game;
     return (
       <div key={game.id} className="game-preview">
         <img src={game.thumbnail} alt="thumbnail" />
@@ -48,16 +48,19 @@ const Collection = (props) => {
   return (
     <div>
       {isLoggedIn ? <UserHeader /> : <Header />}
-      <nav className='collection-nav'>
-        <form>
-          <input type="text" placeholder="SEARCH YOUR COLLECTION"></input>
-          <button>SEARCH</button>
-        </form>
-        <Link to="/addgame">
-          <h3>ADD GAME</h3>
-        </Link>
-      </nav>
-      {collectionMapped}
+      <div className='collection-main'>
+        <nav className="sidebar">
+          <form>
+            <input type="text" placeholder="SEARCH YOUR COLLECTION"></input>
+            <button>SEARCH</button>
+          <Link to="/addgame">
+            <h3>ADD GAME</h3>
+          </Link>
+          </form>
+
+        </nav>
+        <div className="collection-container">{collectionMapped}</div>
+      </div>
     </div>
   );
 };
