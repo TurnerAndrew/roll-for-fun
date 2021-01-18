@@ -73,7 +73,7 @@ const Home = (props) => {
         </section>
         <section id="top-others">
           <h1>BEING PLAYED BY OTHERS</h1>
-          <div classname='home-games-container'>{popularGamesMapped}</div>
+          <div className='home-games-container'>{popularGamesMapped}</div>
         </section>
       </div>
     </main>

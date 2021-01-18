@@ -21,10 +21,12 @@ const Collection = (props) => {
   }, [user_id]);
 
   const removeGame = (game) => {
-    axios.delete("/collection/delete", game);
+    axios.delete('/collection/delete', {data: {game_id: game}});
+    console.log(game)
   };
   
   const collectionMapped = collection.map((game) => {
+    const {game_id} = game
     return (
       <div key={game.id} className="game-preview">
         <img src={game.thumbnail} alt="thumbnail" />
@@ -33,8 +35,8 @@ const Collection = (props) => {
           <button>View Details</button>
         </Link>
         <button
-          onCLick={() => {
-            removeGame(game);
+          onClick={() => {
+            removeGame(game_id);
           }}
         >
           Remove Game

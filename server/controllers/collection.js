@@ -48,12 +48,14 @@ module.exports = {
         res.status(200).send('Added to collection')
     },
     
-    deleteGame: (req, res) => {
+    deleteGame: async (req, res) => {
         const db = req.app.get('db')
-        const {game} = req.body
+        const {game_id} = req.body
         const {user_id} = req.session.user
 
-        db.collection.delete_game(game, user_id)
+        console.log(game_id, user_id)
+
+        await db.collection.delete_game(game_id, user_id)
 
         res.status(200).send('Removed successfully')
     }

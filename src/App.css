@@ -221,14 +221,14 @@ a {
 .game-preview {
   box-sizing: border-box;
   width: 18%;
-  padding-top: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 10px;
-  border: #E5E5E5 1px solid;
   text-align: center;
+  box-shadow: 1px 0 10px #E5E5E5;
 }
 .game-preview img {
   max-width: 35%;
@@ -307,4 +307,11 @@ a {
 }
 .user-container .user-info #avatar-container img {
   max-width: 60%;
+}
+.user-container .top-games {
+  display: flex;
+  flex-direction: column;
+}
+.user-container .top-games div {
+  display: flex;
 }

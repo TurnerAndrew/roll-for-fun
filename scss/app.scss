@@ -135,14 +135,15 @@ Link:hover {
 
     box-sizing: border-box;
     width: 18%;
-    padding-top: 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 10px;
-    border: $platinum 1px solid;
+    // border: $platinum 1px solid;
     text-align: center;
+    box-shadow: 1px 0 10px $platinum;
 
 
 }
@@ -351,4 +352,16 @@ a {
             }
         }
     }
+
+    //home page
+
+    
+    .top-games {
+        display: flex;
+        flex-direction: column;
+        div {
+            display: flex;
+        }
+    }
+
 }
