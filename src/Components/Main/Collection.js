@@ -48,7 +48,7 @@ const Collection = (props) => {
   return (
     <div>
       {isLoggedIn ? <UserHeader /> : <Header />}
-      <nav>
+      <nav className='collection-nav'>
         <form>
           <input type="text" placeholder="SEARCH YOUR COLLECTION"></input>
           <button>SEARCH</button>

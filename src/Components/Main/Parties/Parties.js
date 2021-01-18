@@ -36,7 +36,7 @@ const Parties = (props) => {
         <div>
           <h2>{party.party_name}</h2>
           {party.members.map((member) => {
-            return <h4>{member.username}</h4>;
+            return <h4 className='members'>{member.username}</h4>;
           })}
         </div>
       </div>
@@ -44,9 +44,10 @@ const Parties = (props) => {
   });
 
   return (
-    <div>
-      {isLoggedIn ? <UserHeader /> : <Header />}
-      <nav>
+    <main>
+    {isLoggedIn ? <UserHeader /> : <Header />}
+    <div className='parties-main'>
+      <nav className='sidebar'>
         <h1>YOUR PARTIES</h1>
         {partiesMapped}
         <Link to="/parties/create">
@@ -56,8 +57,9 @@ const Parties = (props) => {
           <h3>Join</h3>
         </Link>
       </nav>
-      <div>{members}</div>
+      <div className='party-list'>{members}</div>
     </div>
+    </main>
   );
 };
 

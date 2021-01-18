@@ -9,8 +9,8 @@ const Home = (props) => {
   const { isLoggedIn, user_id } = props;
   const [topGames, setTopGames] = useState([]);
   const [topLibrary, setTopLibrary] = useState([]);
-  const [popularGames, setPopularGames] = useState([])
-  const {REACT_APP_CLIENT_ID} = process.env
+  const [popularGames, setPopularGames] = useState([]);
+  const { REACT_APP_CLIENT_ID } = process.env;
 
   if (isLoggedIn === false) {
     props.history.push("/signin");
@@ -19,7 +19,11 @@ const Home = (props) => {
   useEffect(() => {
     axios.get("/collection/topgames").then((res) => setTopGames(res.data));
     axios.get("/library/topgames").then((res) => setTopLibrary(res.data));
-    axios.get(`https://api.boardgameatlas.com/api/search?limit=10&order_by=popularity&client_id=${REACT_APP_CLIENT_ID}`).then((res) => setPopularGames(res.data.games))
+    axios
+      .get(
+        `https://api.boardgameatlas.com/api/search?limit=10&order_by=popularity&client_id=${REACT_APP_CLIENT_ID}`
+      )
+      .then((res) => setPopularGames(res.data.games));
   }, [user_id, REACT_APP_CLIENT_ID]);
 
   const topGamesMapped = topGames.map((game) => {
@@ -48,33 +52,54 @@ const Home = (props) => {
 
   const popularGamesMapped = popularGames.map((game) => {
     return (
-        <div key={game.id} className='game-preview'>
-                <img src={game.images.small} alt='thumbnail'/>
-                <p>{game.name}</p>
-                <Link game_id={game.id} to={`/game/${game.id}`}>
-                <button>View Details</button>
-                </Link>
-                
-        </div>
-        )
+      <div key={game.id} className="game-preview">
+        <img src={game.images.small} alt="thumbnail" />
+        <p>{game.name}</p>
+        <Link game_id={game.id} to={`/game/${game.id}`}>
+          <button>View Details</button>
+        </Link>
+      </div>
+    );
   });
 
   return (
     <main>
       {isLoggedIn ? <UserHeader /> : <Header />}
       <div id="home">
+        <nav className="sidebar">
+          <h3>Your Parties</h3>
+          <Link to="/parties">
+            <h4>View</h4>
+          </Link>
+          <Link to="/parties/create">
+            <h4>Create</h4>
+          </Link>
+          <Link to="/parties/join">
+            <h4>Join</h4>
+          </Link>
+
+          <h3>Your Collection</h3>
+          <Link to="/collection">
+            <h4>View</h4>
+          </Link>
+          <Link to="/addgame">
+            <h4>Add</h4>
+          </Link>
+        </nav>
+        <div>
         <section id="top-games">
           <h1>YOUR TOP RATED GAMES</h1>
           <div className="home-games-container">{topGamesMapped}</div>
         </section>
-        <section id="top-games-parties">
+        <section id="top-games">
           <h1>TOP GAMES FROM YOUR PARTIES</h1>
           <div className="home-games-container">{topLibraryMapped}</div>
         </section>
-        <section id="top-others">
+        <section id="top-games">
           <h1>BEING PLAYED BY OTHERS</h1>
-          <div className='home-games-container'>{popularGamesMapped}</div>
+          <div className="home-games-container">{popularGamesMapped}</div>
         </section>
+        </div>
       </div>
     </main>
   );
