@@ -18,15 +18,16 @@ const Home = (props) => {
 
   useEffect(() => {
     axios.get("/collection/topgames").then((res) => setTopGames(res.data));
-    axios.get("/library/topgames").then((res) => setTopLibrary(res.data));
+    axios.get("/library/topgames").then((res) => setTopLibrary(res.data))
     axios
       .get(
         `https://api.boardgameatlas.com/api/search?limit=10&order_by=popularity&client_id=${REACT_APP_CLIENT_ID}`
       )
       .then((res) => setPopularGames(res.data.games));
-  }, [user_id, REACT_APP_CLIENT_ID]);
+  }, [user_id, REACT_APP_CLIENT_ID, isLoggedIn]);
 
   const topGamesMapped = topGames.map((game) => {
+    console.log(topLibrary)
     return (
       <div key={game.id} className="game-preview">
         <img src={game.thumbnail} alt="thumbnail" />
@@ -63,6 +64,7 @@ const Home = (props) => {
   });
 
   return (
+    
     <main>
       {isLoggedIn ? <UserHeader /> : <Header />}
       <div id="home">
@@ -87,15 +89,15 @@ const Home = (props) => {
           </Link>
         </nav>
         <div>
-        <section id="top-games">
+        <section className="top-games">
           <h1>YOUR TOP RATED GAMES</h1>
           <div className="home-games-container">{topGamesMapped}</div>
         </section>
-        <section id="top-games">
+        <section className="top-games">
           <h1>TOP GAMES FROM YOUR PARTIES</h1>
           <div className="home-games-container">{topLibraryMapped}</div>
         </section>
-        <section id="top-games">
+        <section className="top-games">
           <h1>BEING PLAYED BY OTHERS</h1>
           <div className="home-games-container">{popularGamesMapped}</div>
         </section>

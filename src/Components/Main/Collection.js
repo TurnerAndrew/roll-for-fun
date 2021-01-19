@@ -30,7 +30,7 @@ const Collection = (props) => {
   const collectionMapped = collection.map((game) => {
     const { game_id } = game;
     return (
-      <div key={game.id} className="game-preview">
+      <div key={game.id} className="library-preview">
         <img src={game.thumbnail} alt="thumbnail" />
         <p>{game.title}</p>
         <Link to={`/game/${game.bga_id}`}>

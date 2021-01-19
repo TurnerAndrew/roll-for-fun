@@ -10,6 +10,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .landing-nav {
   display: flex;
   background: #14213D;
@@ -288,21 +292,40 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 75%;
+  width: 100%;
+}
+.user-container .user-nav .nav-button {
+  height: 25%;
+  width: 15%;
+  border-radius: 7.5px;
+  background: #E5E5E5;
+  border: #FCA311 3px solid;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-container .user-nav .nav-button p {
+  color: #14213D;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+.user-container .user-nav .nav-button :hover {
+  cursor: pointer;
 }
 .user-container .user-info {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 20%;
   height: 100%;
 }
 .user-container .user-info h3 {
   color: #E5E5E5;
 }
 .user-container .user-info #avatar-container {
-  height: 4em;
-  width: 4em;
+  height: 25%;
+  width: 20%;
   border-radius: 50%;
   border: 3px solid #FCA311;
   background: #E5E5E5;
@@ -323,12 +346,12 @@ a {
   height: 100vh;
   padding-left: 1%;
 }
-#home #top-games {
+#home .top-games {
   display: flex;
   width: 80%;
   flex-direction: column;
 }
-#home #top-games .home-games-container {
+#home .top-games .home-games-container {
   width: 100%;
   height: 20%;
   display: flex;
@@ -443,7 +466,6 @@ a {
 
 .collection-container {
   width: 80%;
-  height: 100vh;
   display: flex;
   flex-wrap: wrap;
 }
@@ -453,4 +475,60 @@ a {
 }
 .party-view-main .members {
   margin-left: 1%;
+  position: relative;
+}
+
+.winning-game {
+  width: 750px;
+  height: 750px;
+  border-radius: 5%;
+  box-shadow: 0px 0px 50px #14213D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: fixed;
+  left: 40%;
+  top: 25%;
+  background-color: #E5E5E5;
+}
+.winning-game img {
+  max-height: 60%;
+  border-radius: 5%;
+}
+.winning-game #close {
+  text-align: right;
+  width: 5%;
+  border: none;
+  background: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+.winning-game #close:hover {
+  cursor: pointer;
+}
+.winning-game #how-to {
+  width: 200%;
+  height: 50%;
+}
+
+.library-preview {
+  box-sizing: border-box;
+  width: 18%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 1px 0 10px #E5E5E5;
+  height: 23%;
+}
+.library-preview img {
+  max-width: 35%;
 }

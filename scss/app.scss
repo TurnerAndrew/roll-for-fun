@@ -49,7 +49,7 @@ Link:hover {
 
 @mixin user-button {
     height: 25%;
-    width: 25%;
+    width: 15%;
     border-radius: 7.5px;
     background: $platinum;
     border: $orangeWeb 3px solid;
@@ -155,6 +155,10 @@ Link:hover {
 
 a {
     text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
 }
 
 .landing-nav {
@@ -334,7 +338,6 @@ a {
 
 //User Header
 
-
 .user-container {
     width: 40%;
     display: flex;
@@ -344,22 +347,27 @@ a {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        width: 75%;
+        width: 100%;
+        .nav-button{
+            @include user-button;
+            :hover {
+                cursor: pointer;
+            }
+        }
     }
 
     .user-info {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
-        width: 30%;
+        width: 20%;
         height: 100%;
         h3 {
             color: $platinum;
         }
-
         #avatar-container {
-            height: 4em;
-            width: 4em;
+            height: 25%;
+            width: 20%;
             border-radius: 50%;
             border: 3px solid $orangeWeb;
             background: $platinum;
@@ -384,7 +392,7 @@ a {
         @include sidebar;
     }
 
-    #top-games {
+    .top-games {
         display: flex;
         width: 80%;
         flex-direction: column;
@@ -513,7 +521,6 @@ a {
 
 .collection-container {
     width: 80%;
-    height: 100vh;;
     display: flex;
     flex-wrap: wrap;
 }
@@ -525,5 +532,51 @@ a {
 
     .members{
         margin-left: 1%;
+        position: relative;
     }
+}
+
+//winning-game
+.winning-game{
+    width: 750px;
+    height: 750px;
+    border-radius: 5%;
+    box-shadow: 0px 0px 50px $oxfordBlue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    left: 40%;
+    top: 25%;
+    background-color: $platinum;
+        img {
+        max-height: 60%;
+        border-radius: 5%;
+    }
+    #close {
+        text-align: right;
+        width: 5%;
+        border: none;
+        background: none;
+        font-weight: bold;
+        font-size: 1.5em;
+        position: absolute;
+        top: 2%;
+        right: 2%;
+    }
+    #close:hover{
+        cursor: pointer;
+    }
+    #how-to{
+        // @include action-button;
+        width: 200%;
+        height: 50%;
+    }
+}
+
+.library-preview{
+    @include game-preview;
+    height: 23%;
 }

@@ -5,7 +5,7 @@ import axios from "axios";
 // import { Link } from 'react-router-dogit cm'
 import { connect } from "react-redux";
 import GamePreview from "../GamePreview";
-import RollModal from './RollModal'
+import RollModal from "./RollModal";
 
 const Party = (props) => {
   const { party_id } = props.match.params;
@@ -13,9 +13,10 @@ const Party = (props) => {
   const [partyName, setPartyName] = useState("");
   const [library, setLibrary] = useState([]);
   const [inviteKey, setInviteKey] = useState([]);
-  const [gamesRated, setGamesRated]= useState([])
-  const [showRoll, setShowRoll] = useState(false)
-  const [winner, setWinner] = useState({})
+  const [gamesRated, setGamesRated] = useState([]);
+  const [showRoll, setShowRoll] = useState(false);
+  const [winner, setWinner] = useState({});
+  
 
   const { isLoggedIn } = props;
 
@@ -30,13 +31,13 @@ const Party = (props) => {
       setLibrary(res.data.library);
       setInviteKey(res.data.inviteKey);
     });
-    axios.get(`/library/gameratings/${party_id}`).then(res => {
-      setGamesRated(res.data)
-    })
+    axios.get(`/library/gameratings/${party_id}`).then((res) => {
+      setGamesRated(res.data);
+    });
   }, [party_id, setParty]);
 
   const members = party.map((party) => {
-    return <h4 className='members'>{party.username}</h4>;
+    return <h4 className="members">{party.username}</h4>;
   });
 
   const invite = inviteKey.map((party) => (
@@ -48,14 +49,24 @@ const Party = (props) => {
   });
 
   const top10 = gamesRated.map((game, index) => {
-    return <h5>{index + 1}:{game.title}</h5>
-  })
+    return (
+      <h5>
+        {index + 1}:{game.title}
+      </h5>
+    );
+  });
+
+  const gameDetails = gamesRated.map((game) => {
+    return {game}
+  });
+ 
 
   const rollForFun = () => {
-    setShowRoll(prev => !prev)
-    const random = Math.floor(Math.random() * top10.length)
-    setWinner(top10[random])
-  }
+    setShowRoll((prev) => !prev);
+    const random = Math.floor(Math.random() * gameDetails.length);
+    setWinner(gameDetails[random]);
+    console.log(showRoll)
+  };
 
   return (
     <div>
@@ -64,10 +75,12 @@ const Party = (props) => {
         <nav className="sidebar">
           <h1>{partyName}</h1>
           {invite}
-          <div className='members'>{members}</div>
+          <div className="members">{members}</div>
           <h2>Top 10 Games</h2>
-          {inviteKey.length > 0 ? <button onClick={rollForFun}> ROLL! </button> : null}
-          <RollModal showRoll={showRoll} setShowRoll={setShowRoll} winner={winner}/>
+          {inviteKey.length > 0 ? (
+            <button onClick={rollForFun}> ROLL! </button>
+            ) : null}
+            <RollModal showRoll={showRoll} setShowRoll={setShowRoll} winner={winner}/>
           {top10}
         </nav>
         <div className="collection-container">{libraryMapped}</div>

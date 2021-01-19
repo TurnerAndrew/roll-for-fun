@@ -1,23 +1,29 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const RollModal = (props) => {
-    const {showRoll, setShowRoll, winner} = props
-    console.log(winner)
-    return (
-        <div>{showRoll ? 
-            <div>
-                {winner}
-                {/* {winner.title}
-                <img src={winner.thumbnail} alt='thumbnail'/>
-                {winner.min_players} - {winner.max_players} players
-                {winner.max_playtime} minutes
-                <Link to={`https://www.youtube.com/results?search_query=how+to+play+${winner.title}`}>How to Play: Youtube</Link> */}
-            </div> 
-                : null}
-        </div>
-        
-    )
-}
+  const { showRoll, setShowRoll, winner } = props;
 
-export default RollModal
+  return (
+    <div>
+      {showRoll ? (
+        <div className="winning-game">
+            <button id='close' onClick={()=> setShowRoll(prev => !prev)}>X</button>
+            <h1>{winner.game.title}</h1>
+            <img src={winner.game.thumbnail} alt="thumbnail" />
+            <h4>
+              {winner.game.min_players} - {winner.game.max_players} players
+            </h4>
+            <h4>{winner.game.max_playtime} minutes</h4>
+            <a href={`https://www.youtube.com/results?search_query=how+to+play+${winner.game.title}`}
+            >
+              <button id='how-to'>How to Play</button>
+            </a>
+          </div>
+        
+      ) : null}
+    </div>
+  );
+};
+
+export default RollModal;
