@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../UI/Header";
 import UserHeader from "../../UI/UserHeader";
 import { connect } from "react-redux";
@@ -7,9 +7,11 @@ import axios from "axios";
 
 const Join = (props) => {
   const { isLoggedIn } = props;
-  if (isLoggedIn === false) {
-    props.history.push("/signin");
-  }
+  useEffect(() => {
+    if (isLoggedIn === false) {
+      props.history.push("/signin");
+    }
+  }, []);
 
   const { user_id } = props.user;
   const [inviteKey, setInvite] = useState("");

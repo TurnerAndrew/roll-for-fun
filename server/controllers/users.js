@@ -61,8 +61,9 @@ module.exports = {
         delete existingUser.hash
 
         req.session.user = existingUser
+        console.log(req.session.user)
 
-        res.status(200).send(existingUser)
+        res.status(200).send(req.session.user)
     },
 
     getUser: (req, res) => {

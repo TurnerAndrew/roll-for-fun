@@ -20,9 +20,11 @@ const Party = (props) => {
 
   const { isLoggedIn } = props;
 
-  if (isLoggedIn === false) {
-    props.history.push("/signin");
-  }
+  useEffect(() => {
+    if (isLoggedIn === false) {
+      props.history.push("/signin");
+    }
+  }, []);
 
   useEffect(() => {
     axios.get(`/party/${party_id}`).then((res) => {

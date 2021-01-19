@@ -9,9 +9,11 @@ import { Link } from "react-router-dom";
 const Collection = (props) => {
   const { isLoggedIn } = props.user;
 
-  if (isLoggedIn === false) {
-    props.history.push("/signin");
-  }
+  useEffect(() => {
+    if (isLoggedIn === false) {
+      props.history.push("/signin");
+    }
+  }, []);
 
   const { user_id } = props;
   const [collection, setCollection] = useState([]);

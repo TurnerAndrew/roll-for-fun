@@ -1,15 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
+import {logout} from '../../redux/userReducer'
 
 
 const UserHeader = (props) => {
   const { profile_pic, username} = props;
   
-  const logout = () => {
-    axios.post('/auth/logout').then()
-  }
+  const logout = (e) => {
+    e.preventDefault();
+    axios.post("/auth/logout").then(() => {
+      props.logout();
+      props.history.push("/");
+    });
+  };
 
   return (
     <header className="landing-nav">
@@ -27,7 +32,7 @@ const UserHeader = (props) => {
           <Link to="/parties" className="nav-button">
             <p>PARTIES</p>
           </Link>
-          <div className='nav-button' onClick={logout()}><p>LOG OUT</p></div>
+          <div className='nav-button' onClick={logout}><p>LOG OUT</p></div>
           <div className="user-info">
             <h3>{username}</h3>
             <div id="avatar-container">
@@ -38,10 +43,10 @@ const UserHeader = (props) => {
       </div>
     </header>
   );
-};
+}
 
 const mapStateToProps = function (state) {
   return state;
 };
 
-export default connect(mapStateToProps)(UserHeader);
+export default withRouter (connect(mapStateToProps, {logout})(UserHeader));

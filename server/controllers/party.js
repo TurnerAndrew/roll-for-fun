@@ -75,12 +75,21 @@ module.exports = {
         const db = req.app.get('db')
 
         const {user_id} = req.session.user
-        const {party} = req.body
+        const {party_id} = req.params
+        console.log(party_id)
 
-        await db.leave_party(user_id, party)
+        await db.parties.leave_party(user_id, party_id)
 
         res.status(200).send('You are no longer a member of the party.')
 
+    },
+
+    deleteParty: async (req, res) => {
+        const db = req.app.get('db')
+
+        const {party_id} = req.params
+
+        await db.parties.disband_party(party_id)
     }
 
 }

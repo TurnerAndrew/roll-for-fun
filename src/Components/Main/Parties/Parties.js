@@ -8,24 +8,35 @@ import UserHeader from "../../UI/UserHeader";
 
 const Parties = (props) => {
   const { isLoggedIn } = props.user;
-
-  if (isLoggedIn === false) {
-    props.history.push("/signin");
-  }
-  const { user_id } = props;
-
+  const { user_id } = props.user
   const [parties, setParties] = useState([]);
 
   useEffect(() => {
-    axios.get("/parties", user_id).then((res) => setParties(res.data));
-  }, [user_id]);
+    if (isLoggedIn === false) {
+      props.history.push("/signin");
+    }
+  }, []);
 
+  useEffect(() => {
+    axios.get("/parties").then((res) => setParties(res.data));
+  }, []);
+
+  const disband = (party) => {
+    axios.delete(`/parties/disband/${party}`).then(props.history.push('/home'))
+  }
+
+  const leaveParty = (party) => {
+    axios.delete(`/parties/leave/${party}`).then(props.history.push('/home'))
+  }
+  
+  
   const partiesMapped = parties.map((party) => {
     return (
       <div key={party.party_id} className='party-list'>
         <Link to={`/party/${party.party_id}`}>
           <h3>{party.party_name}</h3>
         </Link>
+        {party.leader === user_id ? <button onClick={() => disband(party.party_id)}>Disband Party</button> : <button onClick={() => leaveParty(party.party_id)}>Leave Party</button>}
       </div>
     );
   });

@@ -41,7 +41,7 @@ massive ({
 
 //auth
 app.post('/auth/register', userCtrl.register)
-app.post('/auth/signin', userCtrl.signin, userCtrl.getUser)
+app.post('/auth/signin', userCtrl.signin)
 app.get('/auth/me', userCtrl.getUser)
 app.post('/auth/logout', userCtrl.logout)
 
@@ -56,7 +56,8 @@ app.get('/collection/topgames', colCtrl.getTopGames)
 app.get('/parties', partyCtrl.getParties)
 app.post('/parties/create', partyCtrl.createParty)
 app.post('/parties/join', partyCtrl.joinParty)
-app.delete('/parties/leave', partyCtrl.leaveParty)
+app.delete('/parties/leave/:party_id', partyCtrl.leaveParty)
+app.delete('/parties/disband/:party_id', partyCtrl.deleteParty)
 app.get('/party/:party_id', partyCtrl.getParty)
 
 //library

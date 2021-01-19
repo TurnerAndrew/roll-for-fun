@@ -15,11 +15,9 @@ const Signin = (props) => {
        
         axios.post('/auth/signin', {username, password}).then((res) => {
             props.getUserData(res.data)
+            props.history.push('/home')
+
         }).catch(err => console.log(err))
-        
-
-        if (props.user.isLoggedIn) props.history.push('/home')
-
         }
 
     return (        

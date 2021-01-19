@@ -7,9 +7,11 @@ const parse = require('html-react-parser')
 
 const Game = (props) => {
     const {isLoggedIn} = props
-        if(isLoggedIn === false) {
-        props.history.push('/signin')
-      }
+    useEffect(() => {
+        if (isLoggedIn === false) {
+          props.history.push("/signin");
+        }
+      }, []);
     const [game, setGame] = useState({})
     
     const {REACT_APP_CLIENT_ID} = process.env

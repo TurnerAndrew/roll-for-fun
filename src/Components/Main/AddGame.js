@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../UI/Header";
 import UserHeader from "../UI/UserHeader";
 import axios from "axios";
@@ -8,9 +8,11 @@ import { connect } from "react-redux";
 const AddGame = (props) => {
   const { isLoggedIn } = props;
 
-  if (isLoggedIn === false) {
-    props.history.push("/signin");
-  }
+  useEffect(() => {
+    if (isLoggedIn === false) {
+      props.history.push("/signin");
+    }
+  }, []);
 
   const { REACT_APP_CLIENT_ID } = process.env;
   //hooks
@@ -26,8 +28,8 @@ const AddGame = (props) => {
       .catch((err) => console.log(err));
   };
 
-  const addToCollection = async (game) => {
-    await axios.post("/collection/add", game).then(window.location.href='/#/collection')
+  const addToCollection = (game) => {
+    axios.post("/collection/add", game).then(alert('Game Added'))
   };
 
   const gamesMapped = games.map((game) => {
