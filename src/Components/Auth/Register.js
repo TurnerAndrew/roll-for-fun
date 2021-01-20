@@ -20,7 +20,7 @@ const Register = (props) => {
     <div id="registration-page">
       <section id="registration-container">
         <h1>CREATE ACCOUNT</h1>
-        <form name='register' data-netlify="true" npid="register">
+        <form >
           <input
             type="text"
             name='username'
