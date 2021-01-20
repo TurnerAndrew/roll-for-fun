@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 
-const Register = () => {
+const Register = (props) => {
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -10,10 +10,10 @@ const Register = () => {
   const [last_name, setLast_Name] = useState("");
   const [password, setPassword] = useState("");
 
-  const register = (e) => {
+  const register = async (e) => {
     e.preventDefault();
     
-    axios.post("/auth/register", {username, email, first_name, last_name, password});
+    await axios.post("/auth/register", {username, email, first_name, last_name, password}).then(props.history.push('/home'));
   };
 
   return (

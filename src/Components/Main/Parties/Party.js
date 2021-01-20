@@ -52,7 +52,7 @@ const Party = (props) => {
 
   const top10 = gamesRated.map((game, index) => {
     return (
-      <h5>
+      <h5 className='top-10'>
         {index + 1}:{game.title}
       </h5>
     );
