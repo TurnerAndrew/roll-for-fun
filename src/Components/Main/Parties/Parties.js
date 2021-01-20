@@ -15,7 +15,7 @@ const Parties = (props) => {
     if (isLoggedIn === false) {
       props.history.push("/signin");
     }
-  }, []);
+  });
 
   useEffect(() => {
     axios.get("/parties").then((res) => setParties(res.data));
