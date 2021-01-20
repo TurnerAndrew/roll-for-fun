@@ -24,8 +24,8 @@ const Signin = (props) => {
         <div id='signin-page'>
             <section id='signin-container'>
                 <h1>SIGN IN</h1>
-                <form id='signin' name='signin' method='post' netlify netflify-honeypot='bot-field'>
-                <input type='hidden' name='hidden' value='hidden'></input>
+                <form id='signin' name='signin' method='post' data-netlify='true' netflify-honeypot='bot-field'>
+                <input type='hidden' name='form-name' value='signin'></input>
                 <input
                     type='text'
                     name='username'
