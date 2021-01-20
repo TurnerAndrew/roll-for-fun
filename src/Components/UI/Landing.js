@@ -23,8 +23,8 @@ const Landing = (props) => {
           </p>
           <br></br>
           <br></br>
-          <p>Create or join a group.</p>
-          <p>See all of your group's games in once place.</p>
+          <p>Create or join a party.</p>
+          <p>See all of your party's games in once place.</p>
           <p>Rank your favorites.</p>
           <br></br>
           <br></br>
