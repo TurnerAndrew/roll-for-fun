@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Collection = (props) => {
   const { isLoggedIn } = props.user;
 
-  useEffect(() => {
+   useEffect(() => {
     if (isLoggedIn === false) {
       props.history.push("/signin");
     }

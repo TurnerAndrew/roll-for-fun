@@ -28,7 +28,7 @@ const AddGame = (props) => {
       .catch((err) => console.log(err));
   };
 
-  const addToCollection = (game) => {
+  const addToCollection = async (game) => {
     axios.post("/collection/add", game).then(alert('Game Added'))
   };
 

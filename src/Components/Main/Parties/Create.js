@@ -18,7 +18,7 @@ const Create = (props) => {
   const [party_name, setPartyName] = useState("");
 
   const createParty = () => {
-    axios.post("/parties/create", { user_id, party_name });
+    axios.post("/parties/create", { user_id, party_name}).then(props.history.push('/parties'));
   };
 
   return (

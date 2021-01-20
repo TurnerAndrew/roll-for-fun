@@ -16,8 +16,8 @@ const Join = (props) => {
   const { user_id } = props.user;
   const [inviteKey, setInvite] = useState("");
 
-  const joinParty = () => {
-    axios.post("/parties/join", { user_id, inviteKey });
+  const joinParty = async () => {
+    await axios.post("/parties/join", { user_id, inviteKey }).then(props.history.push('/parties'));
   };
 
   return (

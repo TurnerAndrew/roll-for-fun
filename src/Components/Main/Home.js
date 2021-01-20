@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Home = (props) => {
-  const { isLoggedIn, user_id } = props;
+  const { isLoggedIn } = props;
   const [topGames, setTopGames] = useState([]);
   const [topLibrary, setTopLibrary] = useState([]);
   const [popularGames, setPopularGames] = useState([]);
