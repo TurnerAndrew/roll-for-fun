@@ -48,6 +48,5 @@
       "last 1 safari version"
     ]
   },
-  "main": "server/index.js",
-  "proxy": "http://localhost:5418"
+  "main": "server/index.js"
 }
