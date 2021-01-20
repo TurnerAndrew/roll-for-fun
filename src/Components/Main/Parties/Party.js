@@ -24,7 +24,7 @@ const Party = (props) => {
     if (isLoggedIn === false) {
       props.history.push("/signin");
     }
-  }, []);
+  });
 
   useEffect(() => {
     axios.get(`/party/${party_id}`).then((res) => {

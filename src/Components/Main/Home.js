@@ -16,7 +16,7 @@ const Home = (props) => {
     if (isLoggedIn === false) {
       props.history.push("/signin");
     }
-  }, []);
+  });
 
   useEffect(() => {
     axios.get("/collection/topgames").then((res) => setTopGames(res.data));

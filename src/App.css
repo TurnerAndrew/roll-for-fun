@@ -209,14 +209,14 @@ a:hover {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: 10px;
   text-align: center;
   box-shadow: 1px 0 10px #E5E5E5;
 }
 .game-preview img {
-  max-width: 35%;
+  max-width: 25%;
 }
 
 #add-game-main {
@@ -526,7 +526,7 @@ a:hover {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: 10px;
   text-align: center;
@@ -534,7 +534,10 @@ a:hover {
   height: 23%;
 }
 .library-preview img {
-  max-width: 35%;
+  max-width: 25%;
+}
+.library-preview img {
+  max-height: 45%;
 }
 
 .roll {

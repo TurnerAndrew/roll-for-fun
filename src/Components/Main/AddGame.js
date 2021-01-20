@@ -12,7 +12,7 @@ const AddGame = (props) => {
     if (isLoggedIn === false) {
       props.history.push("/signin");
     }
-  }, []);
+  });
 
   const { REACT_APP_CLIENT_ID } = process.env;
   //hooks

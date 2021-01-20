@@ -12,7 +12,7 @@ const Create = (props) => {
     if (isLoggedIn === false) {
       props.history.push("/signin");
     }
-  }, []);
+  });
 
   const { user_id } = props;
   const [party_name, setPartyName] = useState("");

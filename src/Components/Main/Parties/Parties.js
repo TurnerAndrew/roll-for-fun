@@ -19,7 +19,7 @@ const Parties = (props) => {
 
   useEffect(() => {
     axios.get("/parties").then((res) => setParties(res.data));
-  }, []);
+  });
 
   const disband = (party) => {
     axios.delete(`/parties/disband/${party}`).then(props.history.push('/home'))

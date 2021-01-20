@@ -11,7 +11,7 @@ const Join = (props) => {
     if (isLoggedIn === false) {
       props.history.push("/signin");
     }
-  }, []);
+  });
 
   const { user_id } = props.user;
   const [inviteKey, setInvite] = useState("");

@@ -11,7 +11,7 @@ const Game = (props) => {
         if (isLoggedIn === false) {
           props.history.push("/signin");
         }
-      }, []);
+      });
     const [game, setGame] = useState({})
     
     const {REACT_APP_CLIENT_ID} = process.env
