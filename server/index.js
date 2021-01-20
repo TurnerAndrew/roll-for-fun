@@ -13,6 +13,8 @@ const app = express()
 
 app.use(express.json())
 
+app.use( express.static( `${__dirname}/../build` ) )
+
 //session/cookies
 app.use(session({
     secret: SESSION_SECRET,

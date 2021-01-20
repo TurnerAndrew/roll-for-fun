@@ -20,33 +20,38 @@ const Register = (props) => {
     <div id="registration-page">
       <section id="registration-container">
         <h1>CREATE ACCOUNT</h1>
-        <form id="register">
+        <form name='register' data-netlify="true" id="register">
           <input
             type="text"
+            name='username'
             placeholder="USERNAME"
             className="form-input"
             onChange={(e) => setUsername(e.target.value)}
           ></input>
           <input
             type="email"
+            name='email'
             placeholder="EMAIL"
             className="form-input"
             onChange={(e) => setEmail(e.target.value)}
           ></input>
           <input
             type="text"
+            name='first-name'
             placeholder="FIRST NAME"
             className="form-input"
             onChange={(e) => setFirst_Name(e.target.value)}
           ></input>
           <input
             type="text"
+            name='last-name'
             placeholder="LAST NAME"
             className="form-input"
             onChange={(e) => setLast_Name(e.target.value)}
           ></input>
           <input
             type="password"
+            name='password'
             placeholder="PASSWORD"
             className="form-input"
             onChange={(e) => setPassword(e.target.value)}
