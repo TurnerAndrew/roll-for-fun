@@ -78,10 +78,10 @@ const Party = (props) => {
           <h1>{partyName}</h1>
           {invite}
           <div className="members">{members}</div>
-          <h2>Top 10 Games</h2>
           {inviteKey.length > 0 ? (
-            <button onClick={rollForFun}> ROLL! </button>
+            <button onClick={rollForFun} className='roll'> ROLL! </button>
             ) : null}
+          <h2>Top 10 Games</h2>
             <RollModal showRoll={showRoll} setShowRoll={setShowRoll} winner={winner}/>
           {top10}
         </nav>

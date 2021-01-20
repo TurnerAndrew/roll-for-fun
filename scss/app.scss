@@ -414,7 +414,7 @@ a:hover{
 }
 
 .top-10 {
-    margin-left: 1%;
+    margin-left: 5%;
 }
 
 .party-list{
@@ -583,4 +583,13 @@ a:hover{
 .library-preview{
     @include game-preview;
     height: 23%;
+}
+
+.roll {
+    width: 50%;
+    height: 2.5%;
+    border: 2px $orangeWeb solid;
+    background: $oxfordBlue;
+    color: $platinum;
+    border-radius: 5%;
 }

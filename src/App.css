@@ -363,7 +363,7 @@ a:hover {
 }
 
 .top-10 {
-  margin-left: 1%;
+  margin-left: 5%;
 }
 
 .party-list {
@@ -535,4 +535,13 @@ a:hover {
 }
 .library-preview img {
   max-width: 35%;
+}
+
+.roll {
+  width: 50%;
+  height: 2.5%;
+  border: 2px #FCA311 solid;
+  background: #14213D;
+  color: #E5E5E5;
+  border-radius: 5%;
 }
