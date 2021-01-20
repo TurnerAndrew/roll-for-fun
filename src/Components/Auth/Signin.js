@@ -24,14 +24,17 @@ const Signin = (props) => {
         <div id='signin-page'>
             <section id='signin-container'>
                 <h1>SIGN IN</h1>
-                <form id='signin'>
+                <form id='signin' name='signin' method='post' netlify netflify-honeypot='bot-field'>
+                <input type='hidden' name='hidden' value='hidden'></input>
                 <input
                     type='text'
+                    name='username'
                     placeholder='USERNAME'
                     className='form-input'
                     onChange={(e) => setUsername(e.target.value)}></input>
                 <input
                     type='password'
+                    name='password'
                     placeholder='PASSWORD'
                     className='form-input'
                     onChange={(e) => setPassword(e.target.value)}
