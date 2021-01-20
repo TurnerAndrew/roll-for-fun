@@ -24,8 +24,23 @@ li {
     list-style-type: none;
 }
 
-Link:hover {
+a {
+    color: inherit;
+}
+
+Link {
+    color: inherit;
+    :hover {
     cursor: pointer;
+    }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+* {
+    font-family: $lato;
 }
 
 //mixins
@@ -195,6 +210,9 @@ a:hover{
 
     .action-button {
         @include action-button;
+        :hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -273,9 +291,10 @@ a:hover{
             display: flex;
             height: 20%;
             flex-direction: column;
+            align-items: center;
 
             input {
-                width: 50%;
+                width: 75%;
                 height: 10%;
                 border-radius: 5px;
                 border: 1px solid $oxfordBlue;
@@ -366,8 +385,8 @@ a:hover{
             color: $platinum;
         }
         #avatar-container {
-            height: 25%;
-            width: 20%;
+            height: 3em;
+            width: 3em;
             border-radius: 50%;
             border: 3px solid $orangeWeb;
             background: $platinum;
@@ -390,6 +409,10 @@ a:hover{
     width: 100%;
     .sidebar {
         @include sidebar;
+        h4 {
+            padding-left: 5%;
+            color: $oxfordBlue;
+        }
     }
 
     .top-games {
@@ -411,14 +434,12 @@ a:hover{
 
 .members {
     margin-left: 5%;
+    color: $oxfordBlue;
 }
 
 .top-10 {
     margin-left: 5%;
-}
-
-.party-list{
-    margin-left: 1%;
+    color: $oxfordBlue;
 }
 
 .parties-main {
@@ -428,7 +449,7 @@ a:hover{
     }
     .party-list {
         width: 80%;
-        margin-left: 1%;
+        // margin-left: 5%;
         margin-top: 1%;
         display: flex;
         flex-direction: column;
@@ -447,6 +468,15 @@ a:hover{
     * {
         color: $oxfordBlue;
         font-family: $lato;
+    }
+}
+
+.party-view {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    button {
+        margin-left: 7.5%;
     }
 }
 
@@ -498,27 +528,14 @@ a:hover{
         display: flex;
         height: 20%;
         flex-direction: column;
-
+        align-items: center;
         input {
-            width: 50%;
+            width: 75%;
             height: 10%;
             border-radius: 5px;
             border: 1px solid $oxfordBlue;
             text-align: center;
             margin-bottom: 5%;
-        }
-
-        button {
-            width: 50%;
-            height: 10%;
-            border-radius: 10px;
-            background: $oxfordBlue;
-            color: $platinum;
-            border: 2px solid $orangeWeb;
-        }
-
-        h3 {
-            margin-left: 5%;
         }
     }
 }
@@ -578,6 +595,9 @@ a:hover{
         width: 200%;
         height: 50%;
     }
+    button {
+        @include action-button;
+    }
 }
 
 .library-preview{
@@ -588,6 +608,9 @@ a:hover{
     }
 }
 
+.rating-preview {
+    @include game-preview;
+}
 .roll {
     width: 50%;
     height: 2.5%;

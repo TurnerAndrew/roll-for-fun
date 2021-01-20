@@ -40,9 +40,6 @@ massive ({
     console.log(`Running on ${SERVER_PORT}`)
     })
 }))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
-  })
 //endpoints
 
 //auth

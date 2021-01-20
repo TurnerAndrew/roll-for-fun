@@ -39,7 +39,7 @@ const Party = (props) => {
   }, [party_id, setParty]);
 
   const members = party.map((party) => {
-    return <h4 className="members">{party.username}</h4>;
+    return <h4>{party.username}</h4>;
   });
 
   const invite = inviteKey.map((party) => (

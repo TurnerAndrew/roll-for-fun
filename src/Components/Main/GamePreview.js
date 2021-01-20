@@ -16,7 +16,7 @@ const GamePreview = (props) => {
 
 
   return (
-    <div key={game.id} className="library-preview">
+    <div key={game.id} className="rating-preview">
       <img src={game.thumbnail} alt="thumbnail" />
       <p>{game.title}</p>
       <Link to={`/game/${game.bga_id}`}>

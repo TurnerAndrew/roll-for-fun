@@ -2,8 +2,23 @@ li {
   list-style-type: none;
 }
 
-Link:hover {
+a {
+  color: inherit;
+}
+
+Link {
+  color: inherit;
+}
+Link :hover {
   cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+* {
+  font-family: "Lato", sans-serif;
 }
 
 a {
@@ -58,6 +73,9 @@ a:hover {
   color: #14213D;
   font-weight: bold;
   font-size: 1.05em;
+}
+.button-container .action-button :hover {
+  cursor: pointer;
 }
 
 .landing-main {
@@ -232,9 +250,10 @@ a:hover {
   display: flex;
   height: 20%;
   flex-direction: column;
+  align-items: center;
 }
 #add-game-main .sidebar form input {
-  width: 50%;
+  width: 75%;
   height: 10%;
   border-radius: 5px;
   border: 1px solid #14213D;
@@ -324,8 +343,8 @@ a:hover {
   color: #E5E5E5;
 }
 .user-container .user-info #avatar-container {
-  height: 25%;
-  width: 20%;
+  height: 3em;
+  width: 3em;
   border-radius: 50%;
   border: 3px solid #FCA311;
   background: #E5E5E5;
@@ -346,6 +365,10 @@ a:hover {
   height: 100vh;
   padding-left: 1%;
 }
+#home .sidebar h4 {
+  padding-left: 5%;
+  color: #14213D;
+}
 #home .top-games {
   display: flex;
   width: 80%;
@@ -360,14 +383,12 @@ a:hover {
 
 .members {
   margin-left: 5%;
+  color: #14213D;
 }
 
 .top-10 {
   margin-left: 5%;
-}
-
-.party-list {
-  margin-left: 1%;
+  color: #14213D;
 }
 
 .parties-main {
@@ -380,7 +401,6 @@ a:hover {
 }
 .parties-main .party-list {
   width: 80%;
-  margin-left: 1%;
   margin-top: 1%;
   display: flex;
   flex-direction: column;
@@ -396,6 +416,15 @@ a:hover {
 .party-main * {
   color: #14213D;
   font-family: "Lato", sans-serif;
+}
+
+.party-view {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.party-view button {
+  margin-left: 7.5%;
 }
 
 .party-container {
@@ -447,25 +476,15 @@ a:hover {
   display: flex;
   height: 20%;
   flex-direction: column;
+  align-items: center;
 }
 .sidebar form input {
-  width: 50%;
+  width: 75%;
   height: 10%;
   border-radius: 5px;
   border: 1px solid #14213D;
   text-align: center;
   margin-bottom: 5%;
-}
-.sidebar form button {
-  width: 50%;
-  height: 10%;
-  border-radius: 10px;
-  background: #14213D;
-  color: #E5E5E5;
-  border: 2px solid #FCA311;
-}
-.sidebar form h3 {
-  margin-left: 5%;
 }
 
 .collection-container {
@@ -538,6 +557,22 @@ a:hover {
 }
 .library-preview img {
   max-height: 45%;
+}
+
+.rating-preview {
+  box-sizing: border-box;
+  width: 18%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 1px 0 10px #E5E5E5;
+}
+.rating-preview img {
+  max-width: 25%;
 }
 
 .roll {

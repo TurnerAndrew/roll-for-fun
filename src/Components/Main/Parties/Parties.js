@@ -32,11 +32,11 @@ const Parties = (props) => {
   
   const partiesMapped = parties.map((party) => {
     return (
-      <div key={party.party_id} className='party-list'>
+      <div key={party.party_id} className='party-view'>
         <Link to={`/party/${party.party_id}`}>
           <h3>{party.party_name}</h3>
         </Link>
-        {party.leader === user_id ? <button onClick={() => disband(party.party_id)}>Disband Party</button> : <button onClick={() => leaveParty(party.party_id)}>Leave Party</button>}
+        {party.leader === user_id ? <button className='roll' onClick={() => disband(party.party_id)}>Disband Party</button> : <button className='roll' onClick={() => leaveParty(party.party_id)}>Leave Party</button>}
       </div>
     );
   });
@@ -44,7 +44,7 @@ const Parties = (props) => {
   const members = parties.map((party) => {
     return (
       <div key={party.party_id}>
-        <div>
+        <div >
           <Link to={`/party/${party.party_id}`}><h1>{party.party_name}</h1></Link>
           {party.members.map((member) => {
             return <h4 className='members'>{member.username}</h4>;
@@ -60,7 +60,7 @@ const Parties = (props) => {
     <div className='parties-main'>
       <nav className='sidebar'>
         <h1>YOUR PARTIES</h1>
-        {partiesMapped}
+        <div className='party-list'>{partiesMapped}</div>
         <Link to="/parties/create">
           <h3>Create</h3>
         </Link>
@@ -68,7 +68,7 @@ const Parties = (props) => {
           <h3>Join</h3>
         </Link>
       </nav>
-      <div className='party-list'>{members}</div>
+      <div className='members'>{members}</div>
     </div>
     </main>
   );

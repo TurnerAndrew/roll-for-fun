@@ -20,6 +20,7 @@ const UserHeader = (props) => {
     <header className="landing-nav">
       <div id="title-container">
         <Link to="/home">
+        <img src='../../public/dice-game.svg' alt='die logo'/>
           <h1>ROLL FOR FUN</h1>
         </Link>
       </div>

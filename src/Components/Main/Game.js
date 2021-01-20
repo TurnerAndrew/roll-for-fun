@@ -3,7 +3,8 @@ import Header from '../UI/Header'
 import UserHeader from '../UI/UserHeader'
 import axios from 'axios'
 import {connect} from 'react-redux'
-const parse = require('html-react-parser')
+import parse from 'html-react-parser'
+// const parse = require('html-react-parser')
 
 const Game = (props) => {
     const {isLoggedIn} = props
