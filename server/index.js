@@ -1,4 +1,5 @@
 require ('dotenv').config()
+const path = require('path')
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 const express = require('express')
 const massive = require('massive')
@@ -67,3 +68,5 @@ app.get('/party/:party_id', partyCtrl.getParty)
 app.post('/library/rank', libCtrl.rateGame)
 app.get('/library/gameratings/:party_id', libCtrl.getRatings)
 app.get('/library/topgames', libCtrl.getTopGames)
+
+app.get('*', (req, res) => {   res.sendFile(path.join(__dirname, '../build/index.html')) })
