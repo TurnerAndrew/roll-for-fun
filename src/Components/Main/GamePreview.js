@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -13,6 +13,9 @@ const GamePreview = (props) => {
   const addRating = (details) => {
     axios.post("/library/rank", details);
   };
+
+  //useEffect to get the current rating of a game and set it to a variable current
+  //change default option to {current}
 
 
   return (

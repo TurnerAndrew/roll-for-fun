@@ -58,7 +58,6 @@ module.exports = {
 
         if(is_member){
             return res.status(409).send('Already a member of this party.')
-
         }
 
         if(!party_id){

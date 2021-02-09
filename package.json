@@ -49,5 +49,5 @@
     ]
   },
   "main": "server/index.js",
-  "proxy": "roll-for-fun-2ov76.ondigitalocean.app:5418"
+  "proxy": "http://localhost:5418"
 }

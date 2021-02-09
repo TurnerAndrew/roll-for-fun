@@ -17,6 +17,7 @@ const Party = (props) => {
   const [showRoll, setShowRoll] = useState(false);
   const [winner, setWinner] = useState({});
   
+  //set something for the useEffect to watch to rerun the get request for gamesRated
 
   const { isLoggedIn } = props;
 
@@ -33,10 +34,11 @@ const Party = (props) => {
       setLibrary(res.data.library);
       setInviteKey(res.data.inviteKey);
     });
+
     axios.get(`/library/gameratings/${party_id}`).then((res) => {
       setGamesRated(res.data);
     });
-  }, [party_id, setParty]);
+  }, [party_id, ]);
 
   const members = party.map((party) => {
     return <h4>{party.username}</h4>;
