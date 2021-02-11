@@ -70,5 +70,5 @@ app.get('/library/gameratings/:party_id', libCtrl.getRatings)
 app.get('/library/topgames', libCtrl.getTopGames)
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
+    res.sendFile(path.join(__dirname, '/build/index.html'))
   })
