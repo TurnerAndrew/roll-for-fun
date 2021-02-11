@@ -14,8 +14,8 @@ const app = express()
 
 app.use(express.json())
 
-app.use(express.static(`${__dirname}/../build`))
 
+app.use(express.static(`${__dirname}/../build`))
 
 
 //session/cookies
@@ -69,4 +69,6 @@ app.post('/library/rank', libCtrl.rateGame)
 app.get('/library/gameratings/:party_id', libCtrl.getRatings)
 app.get('/library/topgames', libCtrl.getTopGames)
 
-app.get('*', (req, res) => {   res.sendFile(path.join(__dirname, '../build/index.html')) })
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+  })
