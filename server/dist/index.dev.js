@@ -25,7 +25,7 @@ var libCtrl = require('./controllers/library');
 
 var app = express();
 app.use(express.json());
-app.use(express["static"]("".concat(__dirname, "/../build"))); //session/cookies
+app.use(express["static"](path.join(__dirname, 'build'))); //session/cookies
 
 app.use(session({
   secret: SESSION_SECRET,
@@ -70,6 +70,6 @@ app.get('/party/:party_id', partyCtrl.getParty); //library
 app.post('/library/rank', libCtrl.rateGame);
 app.get('/library/gameratings/:party_id', libCtrl.getRatings);
 app.get('/library/topgames', libCtrl.getTopGames);
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../build/index.html'));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
