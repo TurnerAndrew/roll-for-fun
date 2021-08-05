@@ -360,6 +360,7 @@ a:hover {
   display: flex;
   width: 100%;
 }
+
 #home .sidebar {
   width: 15%;
   height: 100vh;
@@ -369,6 +370,7 @@ a:hover {
   padding-left: 5%;
   color: #14213D;
 }
+
 #home .top-games {
   display: flex;
   width: 80%;
