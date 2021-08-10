@@ -1,10 +1,7 @@
-# Getting Started with Create React App
+# Roll For Fun
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Take the arguing out of choosing games for your next game night.
 
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
