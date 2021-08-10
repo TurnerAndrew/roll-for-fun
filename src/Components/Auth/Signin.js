@@ -35,6 +35,7 @@ const Signin = (props) => {
           <input
             type='password'
             name='password'
+            value=''
             placeholder='PASSWORD'
             className='form-input'
             onChange={(e) => setPassword(e.target.value)}
