@@ -39,7 +39,7 @@ const Signin = (props) => {
             placeholder='PASSWORD'
             className='form-input'
             onChange={(e) => setPassword(e.target.value)}
-          ></input>
+          />
           <button type='button' id='signin-button' onClick={login}>
             SIGN IN
           </button>
