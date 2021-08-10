@@ -35,11 +35,10 @@ const Signin = (props) => {
           <input
             type='password'
             name='password'
-            value=''
             placeholder='PASSWORD'
             className='form-input'
             onChange={(e) => setPassword(e.target.value)}
-          />
+          ></input>
           <button type='button' id='signin-button' onClick={login}>
             SIGN IN
           </button>
