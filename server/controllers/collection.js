@@ -36,15 +36,14 @@ module.exports = {
 
         const {user_id} = req.session.user
 
-        const [game] = await db.collection.find_game([id])
-        console.log(game)
+        let [game] = await db.collection.find_game([id])
         
         if(!game) {
-        const [newGame] = await db.collection.add_game([name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url])
-        console.log(newGame)
-           return res.status(200).send('Game added successfully.')
+        game = await db.collection.add_game([name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url])
+        return res.status(200).send('Game added successfully.')
         }        
         
+        console.log(game)
 
         const [{game_id}] = await db.collection.find_game([id])    
     

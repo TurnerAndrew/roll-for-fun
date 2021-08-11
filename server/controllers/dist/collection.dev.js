@@ -78,7 +78,7 @@ module.exports = {
     });
   },
   addGame: function addGame(req, res) {
-    var db, _req$body, name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url, user_id, _ref, _ref2, game, _ref3, _ref4, newGame, _ref5, _ref6, game_id;
+    var db, _req$body, name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url, user_id, _ref, _ref2, game, _ref3, _ref4, game_id;
 
     return regeneratorRuntime.async(function addGame$(_context4) {
       while (1) {
@@ -94,38 +94,34 @@ module.exports = {
             _ref = _context4.sent;
             _ref2 = _slicedToArray(_ref, 1);
             game = _ref2[0];
-            console.log(game);
 
             if (game) {
-              _context4.next = 17;
+              _context4.next = 13;
               break;
             }
 
-            _context4.next = 12;
+            _context4.next = 11;
             return regeneratorRuntime.awrap(db.collection.add_game([name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url]));
 
-          case 12:
-            _ref3 = _context4.sent;
-            _ref4 = _slicedToArray(_ref3, 1);
-            newGame = _ref4[0];
-            console.log(newGame);
+          case 11:
+            game = _context4.sent;
             return _context4.abrupt("return", res.status(200).send('Game added successfully.'));
 
-          case 17:
-            _context4.next = 19;
+          case 13:
+            _context4.next = 15;
             return regeneratorRuntime.awrap(db.collection.find_game([id]));
 
-          case 19:
-            _ref5 = _context4.sent;
-            _ref6 = _slicedToArray(_ref5, 1);
-            game_id = _ref6[0].game_id;
-            _context4.next = 24;
+          case 15:
+            _ref3 = _context4.sent;
+            _ref4 = _slicedToArray(_ref3, 1);
+            game_id = _ref4[0].game_id;
+            _context4.next = 20;
             return regeneratorRuntime.awrap(db.collection.add_to_collection([user_id, game_id]));
 
-          case 24:
+          case 20:
             res.status(200).send('Added to collection');
 
-          case 25:
+          case 21:
           case "end":
             return _context4.stop();
         }
