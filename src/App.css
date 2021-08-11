@@ -136,7 +136,7 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
 }
-#register ::placeholder {
+#register::placeholder {
   font-size: 18px;
   letter-spacing: 1px;
   color: #14213D;
@@ -195,7 +195,7 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
 }
-#signin ::placeholder {
+#signin::placeholder {
   font-size: 18px;
   letter-spacing: 1px;
   color: #14213D;
