@@ -84,20 +84,20 @@ module.exports = {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
-            console.log(req.session.user);
             db = req.app.get('db');
             _req$body = req.body, name = _req$body.name, id = _req$body.id, thumb_url = _req$body.thumb_url, min_players = _req$body.min_players, max_players = _req$body.max_players, min_playtime = _req$body.min_playtime, max_playtime = _req$body.max_playtime, url = _req$body.url;
             user_id = req.session.user.user_id;
-            _context4.next = 6;
+            _context4.next = 5;
             return regeneratorRuntime.awrap(db.collection.find_game([id]));
 
-          case 6:
+          case 5:
             _ref = _context4.sent;
             _ref2 = _slicedToArray(_ref, 1);
             game = _ref2[0];
+            console.log(game);
 
             if (game) {
-              _context4.next = 16;
+              _context4.next = 17;
               break;
             }
 
@@ -108,23 +108,24 @@ module.exports = {
             _ref3 = _context4.sent;
             _ref4 = _slicedToArray(_ref3, 1);
             newGame = _ref4[0];
+            console.log(newGame);
             return _context4.abrupt("return", res.status(200).send('Game added successfully.'));
 
-          case 16:
-            _context4.next = 18;
+          case 17:
+            _context4.next = 19;
             return regeneratorRuntime.awrap(db.collection.find_game([id]));
 
-          case 18:
+          case 19:
             _ref5 = _context4.sent;
             _ref6 = _slicedToArray(_ref5, 1);
             game_id = _ref6[0].game_id;
-            _context4.next = 23;
+            _context4.next = 24;
             return regeneratorRuntime.awrap(db.collection.add_to_collection([user_id, game_id]));
 
-          case 23:
+          case 24:
             res.status(200).send('Added to collection');
 
-          case 24:
+          case 25:
           case "end":
             return _context4.stop();
         }
