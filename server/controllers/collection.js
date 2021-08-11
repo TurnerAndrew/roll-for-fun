@@ -30,6 +30,7 @@ module.exports = {
     },
 
     addGame: async (req, res) => {
+        console.log(req.session.user)
         const db = req.app.get('db')
         
         const {name, id, thumb_url, min_players, max_players, min_playtime, max_playtime, url} = req.body

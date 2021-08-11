@@ -1,5 +1,6 @@
 -- CREATE TABLE users (
 --   user_id serial primary key,
+--   email varchar(256),
 --   username varchar(256),
 --   first_name varchar(128),
 --   last_name varchar(128),
