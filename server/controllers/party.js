@@ -36,8 +36,7 @@ module.exports = {
         const {user_id} = req.session.user
         const {party_name} = req.body
 
-        const inviteKey = () => Math.random().toString(20).substr(2,6)
-          
+        const inviteKey = () => Math.random().toString(20).substr(2,6)          
 
         const [{party_id}] = await db.parties.create_party(party_name, user_id, inviteKey)
         
