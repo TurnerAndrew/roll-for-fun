@@ -16,7 +16,7 @@
     h1 {
         font-family: $staat;
         color: $platinum;
-        font-size: 4em;
+        font-size: 2em;
         letter-spacing: 3px;
     }
 }
@@ -33,6 +33,16 @@
         @include action-button;
         :hover {
             cursor: pointer;
+        }
+    }
+}
+
+@media(max-width: $mobile-breakpoint){
+    .button-container {
+        width: 50%;
+
+        .action-button {
+            @include action-button-phone
         }
     }
 }

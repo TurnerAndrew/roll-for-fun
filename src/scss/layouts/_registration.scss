@@ -9,3 +9,17 @@
 #register {
     @include auth
 }
+
+@media (max-width: $mobile-breakpoint){
+    #registration-page {
+        @include auth-page-phone
+    }
+    
+    #registration-container {
+        @include auth-container-phone
+    }
+    
+    #register {
+        @include auth-phone
+    }
+}

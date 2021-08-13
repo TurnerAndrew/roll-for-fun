@@ -61,20 +61,11 @@
 }
     
     @mixin action-button-phone {
-        display: hide;
-        height: 25%;
-        width: 15%;
-        border-radius: 7.5px;
-        background: $platinum;
-        border: $orangeWeb 3px solid;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 25%;
+        border-radius: 7px;
+        border: $orangeWeb 2px solid;
     
         p {
-            color: $oxfordBlue;
-            font-weight: bold;
-            font-size: 1em;
+            font-size: .75em;
         }
     }

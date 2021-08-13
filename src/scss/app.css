@@ -30,34 +30,6 @@ button:hover {
   font-family: "Lato", sans-serif;
 }
 
-.action-button {
-  height: 25%;
-  width: 15%;
-  border-radius: 7.5px;
-  background: #E5E5E5;
-  border: #FCA311 3px solid;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.action-button p {
-  color: #14213D;
-  font-weight: bold;
-  font-size: 1em;
-}
-
-.action-button :hover {
-  cursor: pointer;
-}
-
 .user-container {
   width: 40%;
   display: -webkit-box;
@@ -383,7 +355,7 @@ button:hover {
 .landing-nav h1 {
   font-family: "Staatliches";
   color: #E5E5E5;
-  font-size: 4em;
+  font-size: 2em;
   letter-spacing: 3px;
 }
 
@@ -429,6 +401,20 @@ button:hover {
 
 .button-container .action-button :hover {
   cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .button-container {
+    width: 50%;
+  }
+  .button-container .action-button {
+    width: 25%;
+    border-radius: 7px;
+    border: #FCA311 2px solid;
+  }
+  .button-container .action-button p {
+    font-size: .75em;
+  }
 }
 
 .landing-main {
@@ -720,6 +706,112 @@ button:hover {
   font-size: 18px;
 }
 
+@media (max-width: 400px) {
+  #registration-page {
+    height: 100vh;
+    width: 100vw;
+    background: #14213D;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #registration-page * {
+    color: #14213D;
+    font-family: "Lato", sans-serif;
+  }
+  #registration-container {
+    width: 80%;
+    height: 80%;
+    background: #E5E5E5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: #000000 0px 10px 50px;
+            box-shadow: #000000 0px 10px 50px;
+    border-radius: 15px;
+  }
+  #register {
+    width: 80%;
+    height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #register ::-webkit-input-placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #register :-ms-input-placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #register ::-ms-input-placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #register ::placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #register .form-input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    width: 80%;
+    height: 5%;
+    border-radius: 5px;
+    border: #14213D solid 1px;
+  }
+  #register button {
+    width: 30%;
+    background-color: #14213D;
+    color: #FCA311;
+    height: 5%;
+    width: 80%;
+    border-radius: 5px;
+    border: #FCA311 solid 1px;
+    font-size: 18px;
+  }
+}
+
 #signin-page {
   height: 100vh;
   width: 100vw;
@@ -831,6 +923,112 @@ button:hover {
   border-radius: 5px;
   border: #FCA311 solid 1px;
   font-size: 18px;
+}
+
+@media (max-width: 400px) {
+  #signin-page {
+    height: 100vh;
+    width: 100vw;
+    background: #14213D;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #signin-page * {
+    color: #14213D;
+    font-family: "Lato", sans-serif;
+  }
+  #signin-container {
+    width: 80%;
+    height: 80%;
+    background: #E5E5E5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: #000000 0px 10px 50px;
+            box-shadow: #000000 0px 10px 50px;
+    border-radius: 15px;
+  }
+  #signin {
+    width: 80%;
+    height: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #signin ::-webkit-input-placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #signin :-ms-input-placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #signin ::-ms-input-placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #signin ::placeholder {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #14213D;
+    opacity: 50%;
+    text-indent: 15px;
+  }
+  #signin .form-input {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    width: 80%;
+    height: 5%;
+    border-radius: 5px;
+    border: #14213D solid 1px;
+  }
+  #signin button {
+    width: 30%;
+    background-color: #14213D;
+    color: #FCA311;
+    height: 5%;
+    width: 80%;
+    border-radius: 5px;
+    border: #FCA311 solid 1px;
+    font-size: 18px;
+  }
 }
 
 .winning-game {
@@ -977,345 +1175,5 @@ button:hover {
   background: #14213D;
   color: #E5E5E5;
   border-radius: 5%;
-}
-
-@media (max-width: 1500px) {
-  .landing-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background: #14213D;
-    height: 10vh;
-    width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .landing-nav #title-container {
-    width: 15%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .landing-nav h1 {
-    font-family: "Staatliches";
-    color: #E5E5E5;
-    font-size: 4em;
-    letter-spacing: 3px;
-  }
-  .button-container {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    width: 25%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .button-container .action-button {
-    height: 25%;
-    width: 15%;
-    border-radius: 7.5px;
-    background: #E5E5E5;
-    border: #FCA311 2.5px solid;
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .button-container .action-button p {
-    color: #14213D;
-    font-weight: bold;
-    font-size: .65em;
-  }
-  .button-container .action-button :hover {
-    cursor: pointer;
-  }
-}
-
-@media (max-width: 800px) {
-  .landing-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background: #14213D;
-    height: 10vh;
-    width: 100%;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .landing-nav #title-container {
-    width: 15%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  .landing-nav h1 {
-    font-family: "Staatliches";
-    color: #E5E5E5;
-    font-size: 4em;
-    letter-spacing: 3px;
-  }
-  .button-container .action-button {
-    height: 25%;
-    width: 15%;
-    border-radius: 5px;
-    background: #E5E5E5;
-    border: #FCA311 1.5px solid;
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .button-container .action-button p {
-    color: #14213D;
-    font-weight: bold;
-    font-size: .5em;
-  }
-  .button-container .action-button :hover {
-    cursor: pointer;
-  }
-}
-
-@media (max-width: 400px) {
-  #registration-page {
-    height: 100vh;
-    width: 100vw;
-    background: #14213D;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  #registration-page * {
-    color: #14213D;
-    font-family: "Lato", sans-serif;
-  }
-  #registration-container {
-    width: 80%;
-    height: 80%;
-    background: #E5E5E5;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-shadow: #000000 0px 10px 50px;
-            box-shadow: #000000 0px 10px 50px;
-    border-radius: 15px;
-  }
-  #register {
-    width: 80%;
-    height: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  #register ::-webkit-input-placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #register :-ms-input-placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #register ::-ms-input-placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #register ::placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #register .form-input {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 10px;
-    width: 80%;
-    height: 5%;
-    border-radius: 5px;
-    border: #14213D solid 1px;
-  }
-  #register button {
-    width: 30%;
-    background-color: #14213D;
-    color: #FCA311;
-    height: 5%;
-    width: 80%;
-    border-radius: 5px;
-    border: #FCA311 solid 1px;
-    font-size: 18px;
-  }
-  #signin-page {
-    height: 100vh;
-    width: 100vw;
-    background: #14213D;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  #signin-page * {
-    color: #14213D;
-    font-family: "Lato", sans-serif;
-  }
-  #signin-container {
-    width: 80%;
-    height: 80%;
-    background: #E5E5E5;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-shadow: #000000 0px 10px 50px;
-            box-shadow: #000000 0px 10px 50px;
-    border-radius: 15px;
-  }
-  #signin {
-    width: 80%;
-    height: 80%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  #signin ::-webkit-input-placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #signin :-ms-input-placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #signin ::-ms-input-placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #signin ::placeholder {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #14213D;
-    opacity: 50%;
-    text-indent: 15px;
-  }
-  #signin .form-input {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    padding: 10px;
-    width: 80%;
-    height: 5%;
-    border-radius: 5px;
-    border: #14213D solid 1px;
-  }
-  #signin button {
-    width: 30%;
-    background-color: #14213D;
-    color: #FCA311;
-    height: 5%;
-    width: 80%;
-    border-radius: 5px;
-    border: #FCA311 solid 1px;
-    font-size: 18px;
-  }
 }
 /*# sourceMappingURL=app.css.map */
