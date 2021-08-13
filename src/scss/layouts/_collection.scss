@@ -27,3 +27,11 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+@media (max-width: $mobile-breakpoint){
+    .collection-container {
+        .library-preview {
+            height: 10%;
+        }
+    }
+}

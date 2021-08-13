@@ -91,7 +91,7 @@ const Home = (props) => {
         <div>
           <section className="top-games">
             <h1>YOUR TOP RATED GAMES</h1>
-            <div>{topGamesMapped.length > 0 ? <div className='home-games-container'>{topGamesMapped}</div> : <p>You haven't added any games to your collection yet.  Add games <Link to='/addgame'>here</Link></p>}</div>
+            <div className='home-games-main'>{topGamesMapped.length > 0 ? <div className='home-games-container'>{topGamesMapped}</div> : <p>You haven't added any games to your collection yet.  Add games <Link to='/addgame'>here</Link></p>}</div>
           </section>
           <section className="top-games">
             <h1>TOP GAMES FROM YOUR PARTIES</h1>
