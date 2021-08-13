@@ -1,0 +1,89 @@
+.members {
+    margin-left: 5%;
+    color: $oxfordBlue;
+}
+
+.top-10 {
+    margin-left: 5%;
+    color: $oxfordBlue;
+}
+
+.parties-main {
+    display: flex;
+    .sidebar {
+        @include sidebar;
+    }
+    .party-list {
+        width: 80%;
+        // margin-left: 5%;
+        margin-top: 1%;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.party-main {
+    background: $platinum;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    * {
+        color: $oxfordBlue;
+        font-family: $lato;
+    }
+}
+
+.party-view-main{
+    display: flex;
+
+    .members{
+        margin-left: 1%;
+        position: relative;
+    }
+}
+
+.party-view {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    button {
+        margin-left: 7.5%;
+    }
+}
+
+.party-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.party-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    form {
+        display: flex;
+        height: 20%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        input {
+            width: 90%;
+            height: 15%;
+            border-radius: 5px;
+            border: 1px solid $oxfordBlue;
+            text-align: center;
+        }
+        button {
+            width: 75%;
+            height: 20%;
+            border-radius: 10px;
+            background: $oxfordBlue;
+            color: $platinum;
+            border: 2px solid $orangeWeb;
+        }
+    }
+}

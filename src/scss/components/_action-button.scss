@@ -1,0 +1,6 @@
+.action-button {
+    @include action-button;
+    :hover {
+        cursor: pointer;
+    }
+}

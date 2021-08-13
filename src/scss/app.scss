@@ -1,876 +1,975 @@
-// Colors
-$black: #000000;
-$oxfordBlue: #14213D;
-$orangeWeb: #FCA311;
-$platinum: #E5E5E5;
-$white: #FFFFFF;
-$blue: #2a4681;
+@charset 'utf-8';
 
-//Fonts
-$lato: 'Lato',
-sans-serif;
-$mont: 'Montserrat',
-sans-serif;
-$open: 'Open Sans',
-sans-serif;
-$raleway: 'Raleway',
-sans-serif;
-$source: 'Source Sans Pro',
-sans-serif;
-$staat: 'Staatliches',
-cursive;
+//Abstracts
+@import 'abstracts/__abstracts-dir';
+
+//Base Styles
+@import 'base/__base-dir';
+
+//Components
+@import 'components/__components-dir';
+
+//Layout
+@import 'layouts/__layouts-dir';
+
+
+// // Colors
+// $black: #000000;
+// $oxfordBlue: #14213D;
+// $orangeWeb: #FCA311;
+// $platinum: #E5E5E5;
+// $white: #FFFFFF;
+// $blue: #2a4681;
+
+
+// //Fonts
+// $lato: 'Lato',
+// sans-serif;
+// $mont: 'Montserrat',
+// sans-serif;
+// $open: 'Open Sans',
+// sans-serif;
+// $raleway: 'Raleway',
+// sans-serif;
+// $source: 'Source Sans Pro',
+// sans-serif;
+// $staat: 'Staatliches',
+// cursive;
 
 //breakpoints
-$desktop-breakpoint: 1500px;
-$tablet-breakpoint: 800px;
-$mobile-breakpoint: 400px; 
+// $desktop-breakpoint: 1500px;
+// $tablet-breakpoint: 800px;
+// $mobile-breakpoint: 400px; 
 
-li {
-    list-style-type: none;
-}
+// li {
+//     list-style-type: none;
+// }
 
-a {
-    color: inherit;
-}
+// a {
+//     color: inherit;
+// }
 
-Link {
-    color: inherit;
-    :hover {
-    cursor: pointer;
-    }
-}
+// Link {
+//     color: inherit;
+//     :hover {
+//     cursor: pointer;
+//     }
+// }
 
-button:hover {
-    cursor: pointer;
-}
+// button:hover {
+//     cursor: pointer;
+// }
 
-* {
-    font-family: $lato;
-}
+// * {
+//     font-family: $lato;
+// }
 
 //mixins
-@mixin action-button {
-    height: 25%;
-    width: 15%;
-    border-radius: 7.5px;
-    background: $platinum;
-    border: $orangeWeb 3px solid;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// @mixin action-button {
+//     height: 25%;
+//     width: 15%;
+//     border-radius: 7.5px;
+//     background: $platinum;
+//     border: $orangeWeb 3px solid;
+//     text-align: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    p {
-        color: $oxfordBlue;
-        font-weight: bold;
-        font-size: 1em;
-    }
-}
+//     p {
+//         color: $oxfordBlue;
+//         font-weight: bold;
+//         font-size: 1em;
+//     }
+// }
 
-@mixin user-button {
-    height: 25%;
-    width: 15%;
-    border-radius: 7.5px;
-    background: $platinum;
-    border: $orangeWeb 3px solid;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// @mixin user-button {
+//     height: 25%;
+//     width: 15%;
+//     border-radius: 7.5px;
+//     background: $platinum;
+//     border: $orangeWeb 3px solid;
+//     text-align: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    p {
-        color: $oxfordBlue;
-        font-weight: bold;
-        font-size: 1.05em;
-    }
-}
+//     p {
+//         color: $oxfordBlue;
+//         font-weight: bold;
+//         font-size: 1.05em;
+//     }
+// }
 
-@mixin auth-page {
-    height: 100vh;
-    width: 100vw;
-    background: $oxfordBlue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    * {
-        color: $oxfordBlue;
-        font-family: $lato;
-    }
-}
+// @mixin auth-page {
+//     height: 100vh;
+//     width: 100vw;
+//     background: $oxfordBlue;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     * {
+//         color: $oxfordBlue;
+//         font-family: $lato;
+//     }
+// }
 
-@mixin auth-container {
-    width: 35%;
-    height: 80%;
-    background: $platinum;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: $black 0px 10px 50px;
-    border-radius: 50px;
-}
+// @mixin auth-container {
+//     width: 35%;
+//     height: 80%;
+//     background: $platinum;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     box-shadow: $black 0px 10px 50px;
+//     border-radius: 50px;
+// }
 
-@mixin auth {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+// @mixin auth {
+//     width: 80%;
+//     height: 80%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-evenly;
 
-    ::placeholder {
-        font-size: 18px;
-        letter-spacing: 1px;
-        color: $oxfordBlue;
-        opacity: 50%;
-        text-indent: 15px;
-    }
+//     ::placeholder {
+//         font-size: 18px;
+//         letter-spacing: 1px;
+//         color: $oxfordBlue;
+//         opacity: 50%;
+//         text-indent: 15px;
+//     }
 
-    .form-input {
-        box-sizing: border-box;
-        padding: 10px;
-        width: 80%;
-        height: 5%;
-        border-radius: 5px;
-        border: $oxfordBlue solid 1px;
-    }
+//     .form-input {
+//         box-sizing: border-box;
+//         padding: 10px;
+//         width: 80%;
+//         height: 5%;
+//         border-radius: 5px;
+//         border: $oxfordBlue solid 1px;
+//     }
 
-    button {
-        width: 30%;
-        background-color: $oxfordBlue;
-        color: $orangeWeb;
-        height: 5%;
-        width: 80%;
-        border-radius: 5px;
-        border: $orangeWeb solid 1px;
-        font-size: 18px;
-    }
-}
+//     button {
+//         width: 30%;
+//         background-color: $oxfordBlue;
+//         color: $orangeWeb;
+//         height: 5%;
+//         width: 80%;
+//         border-radius: 5px;
+//         border: $orangeWeb solid 1px;
+//         font-size: 18px;
+//     }
+// }
 
-@mixin game-preview {
-    img {
-        max-width: 25%;
-    }
-    box-sizing: border-box;
-    width: 18%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-    box-shadow: 1px 0 10px $platinum;
+// @mixin game-preview {
+//     img {
+//         max-width: 25%;
+//     }
+//     box-sizing: border-box;
+//     width: 18%;
+//     padding: 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     margin: 10px;
+//     text-align: center;
+//     box-shadow: 1px 0 10px $platinum;
 
 
-}
+// }
 
-@mixin sidebar {
-    width: 15%;
-    height: 100vh;
-    padding-left: 1%;
-}
+// @mixin sidebar {
+//     width: 15%;
+//     height: 100vh;
+//     padding-left: 1%;
+// }
 
 //1500px mixins
-@mixin action-button-medium {
-    height: 25%;
-    width: 15%;
-    border-radius: 7.5px;
-    background: $platinum;
-    border: $orangeWeb 2.5px solid;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// @mixin action-button-medium {
+//     height: 25%;
+//     width: 15%;
+//     border-radius: 7.5px;
+//     background: $platinum;
+//     border: $orangeWeb 2.5px solid;
+//     text-align: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    p {
-        color: $oxfordBlue;
-        font-weight: bold;
-        font-size: .65em;
-    }
-}
+//     p {
+//         color: $oxfordBlue;
+//         font-weight: bold;
+//         font-size: .65em;
+//     }
+// }
 
-@mixin user-button {
-    height: 25%;
-    width: 15%;
-    border-radius: 7.5px;
-    background: $platinum;
-    border: $orangeWeb 3px solid;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// @mixin user-button {
+//     height: 25%;
+//     width: 15%;
+//     border-radius: 7.5px;
+//     background: $platinum;
+//     border: $orangeWeb 3px solid;
+//     text-align: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    p {
-        color: $oxfordBlue;
-        font-weight: bold;
-        font-size: .5em;
-    }
-}
+//     p {
+//         color: $oxfordBlue;
+//         font-weight: bold;
+//         font-size: .5em;
+//     }
+// }
 
-@mixin auth-page {
-    height: 100vh;
-    width: 100vw;
-    background: $oxfordBlue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    * {
-        color: $oxfordBlue;
-        font-family: $lato;
-    }
-}
+// @mixin auth-page {
+//     height: 100vh;
+//     width: 100vw;
+//     background: $oxfordBlue;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     * {
+//         color: $oxfordBlue;
+//         font-family: $lato;
+//     }
+// }
 
-@mixin auth-container {
-    width: 35%;
-    height: 80%;
-    background: $platinum;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: $black 0px 10px 50px;
-    border-radius: 50px;
-}
+// @mixin auth-container {
+//     width: 35%;
+//     height: 80%;
+//     background: $platinum;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     box-shadow: $black 0px 10px 50px;
+//     border-radius: 50px;
+// }
 
-@mixin auth {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+// @mixin auth {
+//     width: 80%;
+//     height: 80%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-evenly;
 
-    ::placeholder {
-        font-size: 18px;
-        letter-spacing: 1px;
-        color: $oxfordBlue;
-        opacity: 50%;
-        text-indent: 15px;
-    }
+//     ::placeholder {
+//         font-size: 18px;
+//         letter-spacing: 1px;
+//         color: $oxfordBlue;
+//         opacity: 50%;
+//         text-indent: 15px;
+//     }
 
-    .form-input {
-        box-sizing: border-box;
-        padding: 10px;
-        width: 80%;
-        height: 5%;
-        border-radius: 5px;
-        border: $oxfordBlue solid 1px;
-    }
+//     .form-input {
+//         box-sizing: border-box;
+//         padding: 10px;
+//         width: 80%;
+//         height: 5%;
+//         border-radius: 5px;
+//         border: $oxfordBlue solid 1px;
+//     }
 
-    button {
-        width: 30%;
-        background-color: $oxfordBlue;
-        color: $orangeWeb;
-        height: 5%;
-        width: 80%;
-        border-radius: 5px;
-        border: $orangeWeb solid 1px;
-        font-size: 18px;
-    }
-}
+//     button {
+//         width: 30%;
+//         background-color: $oxfordBlue;
+//         color: $orangeWeb;
+//         height: 5%;
+//         width: 80%;
+//         border-radius: 5px;
+//         border: $orangeWeb solid 1px;
+//         font-size: 18px;
+//     }
+// }
 
-@mixin game-preview {
-    img {
-        max-width: 25%;
-    }
-    box-sizing: border-box;
-    width: 18%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-    box-shadow: 1px 0 10px $platinum;
+// @mixin game-preview {
+//     img {
+//         max-width: 25%;
+//     }
+//     box-sizing: border-box;
+//     width: 18%;
+//     padding: 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     margin: 10px;
+//     text-align: center;
+//     box-shadow: 1px 0 10px $platinum;
 
-}
+// }
 
-@mixin sidebar {
-    width: 15%;
-    height: 100vh;
-    padding-left: 1%;
-}
+// @mixin sidebar {
+//     width: 15%;
+//     height: 100vh;
+//     padding-left: 1%;
+// }
 
 //tablet mixins
-@mixin action-button-tablet {
-    height: 25%;
-    width: 15%;
-    border-radius: 5px;
-    background: $platinum;
-    border: $orangeWeb 1.5px solid;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// @mixin action-button-tablet {
+//     height: 25%;
+//     width: 15%;
+//     border-radius: 5px;
+//     background: $platinum;
+//     border: $orangeWeb 1.5px solid;
+//     text-align: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    p {
-        color: $oxfordBlue;
-        font-weight: bold;
-        font-size: .5em;
-    }
-}
+//     p {
+//         color: $oxfordBlue;
+//         font-weight: bold;
+//         font-size: .5em;
+//     }
+// }
 
-@mixin user-button {
-    height: 25%;
-    width: 15%;
-    border-radius: 7.5px;
-    background: $platinum;
-    border: $orangeWeb 3px solid;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// @mixin user-button {
+//     height: 25%;
+//     width: 15%;
+//     border-radius: 7.5px;
+//     background: $platinum;
+//     border: $orangeWeb 3px solid;
+//     text-align: center;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
 
-    p {
-        color: $oxfordBlue;
-        font-weight: bold;
-        font-size: .5em;
-    }
-}
+//     p {
+//         color: $oxfordBlue;
+//         font-weight: bold;
+//         font-size: .5em;
+//     }
+// }
 
-@mixin auth-page {
-    height: 100vh;
-    width: 100vw;
-    background: $oxfordBlue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    * {
-        color: $oxfordBlue;
-        font-family: $lato;
-    }
-}
+// @mixin auth-page {
+//     height: 100vh;
+//     width: 100vw;
+//     background: $oxfordBlue;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+    // * {
+//         color: $oxfordBlue;
+//         font-family: $lato;
+//     }
+// }
 
-@mixin auth-container {
-    width: 35%;
-    height: 80%;
-    background: $platinum;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: $black 0px 10px 50px;
-    border-radius: 50px;
-}
+// @mixin auth-container {
+//     width: 35%;
+//     height: 80%;
+//     background: $platinum;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     box-shadow: $black 0px 10px 50px;
+//     border-radius: 50px;
+// }
 
-@mixin auth {
-    width: 80%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+// @mixin auth {
+//     width: 80%;
+//     height: 80%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-evenly;
 
-    ::placeholder {
-        font-size: 18px;
-        letter-spacing: 1px;
-        color: $oxfordBlue;
-        opacity: 50%;
-        text-indent: 15px;
-    }
+//     ::placeholder {
+//         font-size: 18px;
+//         letter-spacing: 1px;
+//         color: $oxfordBlue;
+//         opacity: 50%;
+//         text-indent: 15px;
+//     }
 
-    .form-input {
-        box-sizing: border-box;
-        padding: 10px;
-        width: 80%;
-        height: 5%;
-        border-radius: 5px;
-        border: $oxfordBlue solid 1px;
-    }
+//     .form-input {
+//         box-sizing: border-box;
+//         padding: 10px;
+//         width: 80%;
+//         height: 5%;
+//         border-radius: 5px;
+//         border: $oxfordBlue solid 1px;
+//     }
 
-    button {
-        width: 30%;
-        background-color: $oxfordBlue;
-        color: $orangeWeb;
-        height: 5%;
-        width: 80%;
-        border-radius: 5px;
-        border: $orangeWeb solid 1px;
-        font-size: 18px;
-    }
-}
+//     button {
+//         width: 30%;
+//         background-color: $oxfordBlue;
+//         color: $orangeWeb;
+//         height: 5%;
+//         width: 80%;
+//         border-radius: 5px;
+//         border: $orangeWeb solid 1px;
+//         font-size: 18px;
+//     }
+// }
 
-@mixin game-preview {
-    img {
-        max-width: 25%;
-    }
-    box-sizing: border-box;
-    width: 18%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-    box-shadow: 1px 0 10px $platinum;
+// @mixin game-preview {
+//     img {
+//         max-width: 25%;
+//     }
+//     box-sizing: border-box;
+//     width: 18%;
+//     padding: 10px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     margin: 10px;
+//     text-align: center;
+//     box-shadow: 1px 0 10px $platinum;
 
-}
+// }
 
-@mixin sidebar {
-    width: 15%;
-    height: 100vh;
-    padding-left: 1%;
-}
+// @mixin sidebar {
+//     width: 15%;
+//     height: 100vh;
+//     padding-left: 1%;
+// }
+
+//phone mixins
+
+// @mixin auth-container-phone {
+//     width: 80%;
+//     height: 80%;
+//     background: $platinum;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     box-shadow: $black 0px 10px 50px;
+//     border-radius: 15px;
+// }
+
+// @mixin auth-page-phone {
+//     height: 100vh;
+//     width: 100vw;
+//     background: $oxfordBlue;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     * {
+//         color: $oxfordBlue;
+//         font-family: $lato;
+//     }
+// }
+
+// @mixin auth-phone {
+//     width: 80%;
+//     height: 80%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: space-evenly;
+
+//     ::placeholder {
+//         font-size: 18px;
+//         letter-spacing: 1px;
+//         color: $oxfordBlue;
+//         opacity: 50%;
+//         text-indent: 15px;
+//     }
+
+//     .form-input {
+//         box-sizing: border-box;
+//         padding: 10px;
+//         width: 80%;
+//         height: 5%;
+//         border-radius: 5px;
+//         border: $oxfordBlue solid 1px;
+//     }
+
+//     button {
+//         width: 30%;
+//         background-color: $oxfordBlue;
+//         color: $orangeWeb;
+//         height: 5%;
+//         width: 80%;
+//         border-radius: 5px;
+//         border: $orangeWeb solid 1px;
+//         font-size: 18px;
+//     }
+// }
+    
+//     @mixin action-button-phone {
+//         display: hide;
+//         height: 25%;
+//         width: 15%;
+//         border-radius: 7.5px;
+//         background: $platinum;
+//         border: $orangeWeb 3px solid;
+//         text-align: center;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+    
+//         p {
+//             color: $oxfordBlue;
+//             font-weight: bold;
+//             font-size: 1em;
+//         }
+//     }
 
 //end mixins
 
-a {
-    text-decoration: none;
-}
+// a {
+//     text-decoration: none;
+// }
 
-a:hover{
-    cursor: pointer;
-}
+// a:hover{
+//     cursor: pointer;
+// }
 
-.landing-nav {
-    display: flex;
-    background: $oxfordBlue;
-    height: 10vh;
-    width: 100%;
-    justify-content: space-between;
+// .landing-nav {
+//     display: flex;
+//     background: $oxfordBlue;
+//     height: 10vh;
+//     width: 100%;
+//     justify-content: space-between;
 
-    #title-container {
-        width: 15%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+//     #title-container {
+//         width: 15%;
+//         height: 100%;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     }
 
-    h1 {
-        font-family: $staat;
-        color: $platinum;
-        font-size: 4em;
-        letter-spacing: 3px;
-    }
-}
+//     h1 {
+//         font-family: $staat;
+//         color: $platinum;
+//         font-size: 4em;
+//         letter-spacing: 3px;
+//     }
+// }
 
-.button-container {
-    box-sizing: border-box;
-    width: 25%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+// .button-container {
+//     box-sizing: border-box;
+//     width: 25%;
+//     height: 100%;
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
 
-
-    .action-button {
-        @include action-button;
-        :hover {
-            cursor: pointer;
-        }
-    }
-}
+//     .action-button {
+//         @include action-button;
+//         :hover {
+//             cursor: pointer;
+//         }
+//     }
+// }
 
 
 // Landing Page
-.landing-main {
-    background-image: url(https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80);
-    color: $oxfordBlue;
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    font-family: $open;
+// .landing-main {
+//     background-image: url(https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80);
+//     color: $oxfordBlue;
+//     display: flex;
+//     justify-content: center;
+//     height: 80vh;
+//     font-family: $open;
 
-    #main-text {
-        color: $oxfordBlue;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+//     #main-text {
+//         color: $oxfordBlue;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//     }
 
-    #headline {
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-    }
+//     #headline {
+//         text-align: center;
+//         font-size: 24px;
+//         font-weight: bold;
+//     }
 
-    #summary {
-        text-align: center;
-        font-size: 18px;
-        color: $blue;
-    }
+//     #summary {
+//         text-align: center;
+//         font-size: 18px;
+//         color: $blue;
+//     }
 
-}
+// }
 
 // Registration Page
-#registration-page {
-    @include auth-page
-}
+// #registration-page {
+//     @include auth-page
+// }
 
-#registration-container {
-    @include auth-container
-}
+// #registration-container {
+//     @include auth-container
+// }
 
-#register {
-    @include auth
-}
+// #register {
+//     @include auth
+// }
 
 // End Registration Page
 
 //Sign In Page
-#signin-page {
-    @include auth-page
-}
+// #signin-page {
+//     @include auth-page
+// }
 
-#signin-container {
-    @include auth-container
-}
+// #signin-container {
+//     @include auth-container
+// }
 
-#signin {
-    @include auth
-}
+// #signin {
+//     @include auth
+// }
 
 //Add Game
-.game-preview {
-    @include game-preview
-}
+// .game-preview {
+//     @include game-preview
+// }
 
-#add-game-main {
-    display: flex;
+// #add-game-main {
+//     display: flex;
 
-    .sidebar {
-        @include sidebar;
-        margin-top: 2%;
+//     .sidebar {
+//         @include sidebar;
+//         margin-top: 2%;
 
-        form {
-            display: flex;
-            height: 20%;
-            flex-direction: column;
-            align-items: center;
+//         form {
+//             display: flex;
+//             height: 20%;
+//             flex-direction: column;
+//             align-items: center;
 
-            input {
-                width: 75%;
-                height: 10%;
-                border-radius: 5px;
-                border: 1px solid $oxfordBlue;
-                text-align: center;
-                margin-bottom: 5%;
-            }
+//             input {
+//                 width: 75%;
+//                 height: 10%;
+//                 border-radius: 5px;
+//                 border: 1px solid $oxfordBlue;
+//                 text-align: center;
+//                 margin-bottom: 5%;
+//             }
 
-            button {
-                width: 50%;
-                height: 10%;
-                border-radius: 10px;
-                background: $oxfordBlue;
-                color: $platinum;
-                border: 2px solid $orangeWeb;
-            }
+//             button {
+//                 width: 50%;
+//                 height: 10%;
+//                 border-radius: 10px;
+//                 background: $oxfordBlue;
+//                 color: $platinum;
+//                 border: 2px solid $orangeWeb;
+//             }
 
-            h3 {
-                margin-left: 5%;
-            }
-        }
-    }
-}
+//             h3 {
+//                 margin-left: 5%;
+//             }
+//         }
+//     }
+// }
 
-#games-results {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    // justify-content: flex-end;
-    // align-items: space-evenly;
-}
+// #games-results {
+//     width: 80%;
+//     display: flex;
+//     flex-wrap: wrap;
+//     // justify-content: flex-end;
+//     // align-items: space-evenly;
+// }
 
 
 //Game Page
-.main-content {
-    display: flex;
-    max-width: 100vw;
+// .main-content {
+//     display: flex;
+//     max-width: 100vw;
 
-}
+// }
 
-#game-info {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    padding: 1% 0 5% 5%;
-}
+// #game-info {
+//     width: 20%;
+//     display: flex;
+//     flex-direction: column;
+//     padding: 1% 0 5% 5%;
+// }
 
-#game-image {
-    display: flex;
-    width: 80%;
-    max-height: 100vh;
-    justify-content: center;
-    padding-top: 10%;
+// #game-image {
+//     display: flex;
+//     width: 80%;
+//     max-height: 100vh;
+//     justify-content: center;
+//     padding-top: 10%;
 
-    img {
-        max-width: 50%;
-        max-height: 50%;
-    }
+//     img {
+//         max-width: 50%;
+//         max-height: 50%;
+//     }
 
-}
+// }
 
 //User Header
 
-.user-container {
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
+// .user-container {
+//     width: 40%;
+//     display: flex;
+//     justify-content: flex-end;
 
-    .user-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-        .nav-button{
-            @include user-button;
-            :hover {
-                cursor: pointer;
-            }
-        }
-    }
+//     .user-nav {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-evenly;
+//         width: 100%;
+//         .nav-button{
+//             @include user-button;
+//             :hover {
+//                 cursor: pointer;
+//             }
+//         }
+//     }
 
-    .user-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 20%;
-        height: 100%;
-        h3 {
-            color: $platinum;
-        }
-        #avatar-container {
-            height: 3em;
-            width: 3em;
-            border-radius: 50%;
-            border: 3px solid $orangeWeb;
-            background: $platinum;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+//     .user-info {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         width: 20%;
+//         height: 100%;
+//         h3 {
+//             color: $platinum;
+//         }
+//         #avatar-container {
+//             height: 3em;
+//             width: 3em;
+//             border-radius: 50%;
+//             border: 3px solid $orangeWeb;
+//             background: $platinum;
+//             display: flex;
+//             justify-content: center;
+//             align-items: center;
 
-            img {
-                max-width: 60%;
-            }
-        }
-    }
+//             img {
+//                 max-width: 60%;
+//             }
+//         }
+//     }
 
-}
+// }
 
 //home page
 
-#home {
-    display: flex;
-    width: 100%;
-    .sidebar {
-        @include sidebar;
-        h4 {
-            padding-left: 5%;
-            color: $oxfordBlue;
-        }
-    }
+// #home {
+//     display: flex;
+//     width: 100%;
+//     .sidebar {
+//         @include sidebar;
+//         h4 {
+//             padding-left: 5%;
+//             color: $oxfordBlue;
+//         }
+//     }
 
-    .top-games {
-        display: flex;
-        width: 80%;
-        flex-direction: column;
-        .home-games-container {
-            width: 100%;
-            height: 20%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-    }
+//     .top-games {
+//         display: flex;
+//         width: 80%;
+//         flex-direction: column;
+//         .home-games-container {
+//             width: 100%;
+//             height: 20%;
+//             display: flex;
+//             flex-wrap: wrap;
+//         }
+//     }
 
-}
+// }
 
 
 //parties
 
-.members {
-    margin-left: 5%;
-    color: $oxfordBlue;
-}
+// .members {
+//     margin-left: 5%;
+//     color: $oxfordBlue;
+// }
 
-.top-10 {
-    margin-left: 5%;
-    color: $oxfordBlue;
-}
+// .top-10 {
+//     margin-left: 5%;
+//     color: $oxfordBlue;
+// }
 
-.parties-main {
-    display: flex;
-    .sidebar {
-        @include sidebar;
-    }
-    .party-list {
-        width: 80%;
-        // margin-left: 5%;
-        margin-top: 1%;
-        display: flex;
-        flex-direction: column;
-    }
+// .parties-main {
+//     display: flex;
+//     .sidebar {
+//         @include sidebar;
+//     }
+//     .party-list {
+//         width: 80%;
+//         // margin-left: 5%;
+//         margin-top: 1%;
+//         display: flex;
+//         flex-direction: column;
+//     }
 
-}
+// }
 
 //create/join party
 
-.party-main {
-    background: $platinum;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    * {
-        color: $oxfordBlue;
-        font-family: $lato;
-    }
-}
+// .party-main {
+//     background: $platinum;
+//     height: 100vh;
+//     width: 100vw;
+//     display: flex;
+//     justify-content: center;
+//     * {
+//         color: $oxfordBlue;
+//         font-family: $lato;
+//     }
+// }
 
-.party-view {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    button {
-        margin-left: 7.5%;
-    }
-}
+// .party-view {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     button {
+//         margin-left: 7.5%;
+//     }
+// }
 
-.party-container {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-}
+// .party-container {
+//     width: 50%;
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 5%;
+// }
 
-.party-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    form {
-        display: flex;
-        height: 20%;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        input {
-            width: 90%;
-            height: 15%;
-            border-radius: 5px;
-            border: 1px solid $oxfordBlue;
-            text-align: center;
-        }
-        button {
-            width: 75%;
-            height: 20%;
-            border-radius: 10px;
-            background: $oxfordBlue;
-            color: $platinum;
-            border: 2px solid $orangeWeb;
-        }
-    }
-}
+// .party-action {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     form {
+//         display: flex;
+//         height: 20%;
+//         flex-direction: column;
+//         justify-content: space-evenly;
+//         align-items: center;
+//         input {
+//             width: 90%;
+//             height: 15%;
+//             border-radius: 5px;
+//             border: 1px solid $oxfordBlue;
+//             text-align: center;
+//         }
+//         button {
+//             width: 75%;
+//             height: 20%;
+//             border-radius: 10px;
+//             background: $oxfordBlue;
+//             color: $platinum;
+//             border: 2px solid $orangeWeb;
+//         }
+//     }
+// }
 
 //collection
-.collection-main {
-    display: flex;
-}
+// .collection-main {
+//     display: flex;
+// }
 
-.sidebar {
-    @include sidebar;
-    margin-top: 2%;
+// .sidebar {
+//     @include sidebar;
+//     margin-top: 2%;
 
-    form {
-        display: flex;
-        height: 20%;
-        flex-direction: column;
-        align-items: center;
-        input {
-            width: 75%;
-            height: 10%;
-            border-radius: 5px;
-            border: 1px solid $oxfordBlue;
-            text-align: center;
-            margin-bottom: 5%;
-        }
-    }
-}
+//     form {
+//         display: flex;
+//         height: 20%;
+//         flex-direction: column;
+//         align-items: center;
+//         input {
+//             width: 75%;
+//             height: 10%;
+//             border-radius: 5px;
+//             border: 1px solid $oxfordBlue;
+//             text-align: center;
+//             margin-bottom: 5%;
+//         }
+//     }
+// }
 
-.collection-container {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-}
+// .collection-container {
+//     width: 80%;
+//     display: flex;
+//     flex-wrap: wrap;
+// }
 
 //party
 
-.party-view-main{
-    display: flex;
+// .party-view-main{
+//     display: flex;
 
-    .members{
-        margin-left: 1%;
-        position: relative;
-    }
-}
+//     .members{
+//         margin-left: 1%;
+//         position: relative;
+//     }
+// }
 
 //winning-game
-.winning-game{
-    width: 750px;
-    height: 750px;
-    border-radius: 5%;
-    box-shadow: 0px 0px 50px $oxfordBlue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    position: fixed;
-    left: 40%;
-    top: 25%;
-    background-color: $platinum;
-        img {
-        max-height: 60%;
-        border-radius: 5%;
-    }
-    #close {
-        text-align: right;
-        width: 5%;
-        border: none;
-        background: none;
-        font-weight: bold;
-        font-size: 1.5em;
-        position: absolute;
-        top: 2%;
-        right: 2%;
-    }
-    #close:hover{
-        cursor: pointer;
-    }
-    #how-to{
-        // @include action-button;
-        width: 200%;
-        height: 50%;
-    }
-    button {
-        @include action-button;
-    }
-}
+// .winning-game{
+//     width: 750px;
+//     height: 750px;
+//     border-radius: 5%;
+//     box-shadow: 0px 0px 50px $oxfordBlue;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: column;
+//     text-align: center;
+//     position: fixed;
+//     left: 40%;
+//     top: 25%;
+//     background-color: $platinum;
+//         img {
+//         max-height: 60%;
+//         border-radius: 5%;
+//     }
+//     #close {
+//         text-align: right;
+//         width: 5%;
+//         border: none;
+//         background: none;
+//         font-weight: bold;
+//         font-size: 1.5em;
+//         position: absolute;
+//         top: 2%;
+//         right: 2%;
+//     }
+//     #close:hover{
+//         cursor: pointer;
+//     }
+//     #how-to{
+//         // @include action-button;
+//         width: 200%;
+//         height: 50%;
+//     }
+//     button {
+//         @include action-button;
+//     }
+// }
 
-.library-preview{
-    @include game-preview;
-    height: 23%;
-    img {
-        max-height: 45%;
-    }
-}
+// .library-preview{
+//     @include game-preview;
+//     height: 23%;
+//     img {
+//         max-height: 45%;
+//     }
+// }
 
-.rating-preview {
-    @include game-preview;
-}
-.roll {
-    width: 50%;
-    height: 2.5%;
-    border: 2px $orangeWeb solid;
-    background: $oxfordBlue;
-    color: $platinum;
-    border-radius: 5%;
-}
+// .rating-preview {
+//     @include game-preview;
+// }
+// .roll {
+//     width: 50%;
+//     height: 2.5%;
+//     border: 2px $orangeWeb solid;
+//     background: $oxfordBlue;
+//     color: $platinum;
+//     border-radius: 5%;
+// }
 
 
 //media queries
+//1500 desktop
 
 @media (max-width: $desktop-breakpoint) {
     .landing-nav {
@@ -914,6 +1013,8 @@ a:hover{
     }
 }
 
+//tablet
+
 @media (max-width: $tablet-breakpoint) {
     .landing-nav {
         display: flex;
@@ -945,5 +1046,37 @@ a:hover{
                 cursor: pointer;
             }
         }
+    }
+}
+
+//phone
+
+@media (max-width: $mobile-breakpoint) {
+   // Registration Page
+    #registration-page {
+        @include auth-page-phone
+    }
+
+    #registration-container {
+        @include auth-container-phone
+    }
+
+    #register {
+        @include auth-phone
+    }
+
+    // End Registration Page
+
+    //Sign In Page
+    #signin-page {
+        @include auth-page-phone
+    }
+
+    #signin-container {
+        @include auth-container-phone
+    }
+
+    #signin {
+        @include auth-phone
     }
 }

@@ -1,0 +1,11 @@
+#registration-page {
+    @include auth-page
+}
+
+#registration-container {
+    @include auth-container
+}
+
+#register {
+    @include auth
+}

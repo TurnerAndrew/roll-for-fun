@@ -1,0 +1,44 @@
+.user-container {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+
+    .user-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        .nav-button{
+            @include user-button;
+            :hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+        h3 {
+            color: $platinum;
+        }
+        #avatar-container {
+            height: 3em;
+            width: 3em;
+            border-radius: 50%;
+            border: 3px solid $orangeWeb;
+            background: $platinum;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-width: 60%;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+}
+
+Link {
+    color: inherit;
+    :hover {
+    cursor: pointer;
+    }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+* {
+    font-family: $lato;
+}

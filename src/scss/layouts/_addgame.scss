@@ -1,0 +1,49 @@
+.game-preview {
+    @include game-preview
+}
+
+#add-game-main {
+    display: flex;
+
+    .sidebar {
+        @include sidebar;
+        margin-top: 2%;
+
+        form {
+            display: flex;
+            height: 20%;
+            flex-direction: column;
+            align-items: center;
+
+            input {
+                width: 75%;
+                height: 10%;
+                border-radius: 5px;
+                border: 1px solid $oxfordBlue;
+                text-align: center;
+                margin-bottom: 5%;
+            }
+
+            button {
+                width: 50%;
+                height: 10%;
+                border-radius: 10px;
+                background: $oxfordBlue;
+                color: $platinum;
+                border: 2px solid $orangeWeb;
+            }
+
+            h3 {
+                margin-left: 5%;
+            }
+        }
+    }
+}
+
+#games-results {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: flex-end;
+    // align-items: space-evenly;
+}
