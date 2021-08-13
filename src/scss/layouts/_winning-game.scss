@@ -46,11 +46,18 @@
     img {
         max-height: 45%;
     }
+    @media (max-width: $mobile-breakpoint){
+        @include game-preview-phone
+    }
 }
 
 .rating-preview {
     @include game-preview;
+    @media (max-width: $mobile-breakpoint){
+        @include game-preview-phone
+    }
 }
+
 .roll {
     width: 50%;
     height: 2.5%;

@@ -11,15 +11,11 @@
 }
 
 @media (max-width: $mobile-breakpoint){
-    #signin-page {
-        @include auth-page-phone
+    #signin {
+        @include auth-phone
     }
 
     #signin-container {
         @include auth-container-phone
     }
-    
-    #signin {
-        @include auth-phone
-    }
-}
+}    

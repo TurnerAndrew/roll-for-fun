@@ -11,15 +11,12 @@
 }
 
 @media (max-width: $mobile-breakpoint){
-    #registration-page {
-        @include auth-page-phone
+    #register {
+        @include auth-phone
     }
-    
+
     #registration-container {
         @include auth-container-phone
     }
     
-    #register {
-        @include auth-phone
-    }
 }

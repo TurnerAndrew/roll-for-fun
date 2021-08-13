@@ -7,6 +7,9 @@
             padding-left: 5%;
             color: $oxfordBlue;
         }
+        @media (max-width: $mobile-breakpoint){
+            @include sidebar-phone
+        }
     }
 
     .top-games {
@@ -19,6 +22,17 @@
             display: flex;
             flex-wrap: wrap;
         }
+        @media(max-width: $mobile-breakpoint) {
+            width: 60%;
+        }
     }
+
+    .game-preview {
+        @include game-preview;
+        @media (max-width: $mobile-breakpoint){
+            @include game-preview-phone
+        }
+    }
+
 
 }
