@@ -81,6 +81,23 @@ button:hover {
   cursor: pointer;
 }
 
+@media (max-width: 400px) {
+  .user-container {
+    width: 100%;
+  }
+  .user-container .nav-button {
+    width: 35%;
+    border-radius: 5px;
+    border: #FCA311 2px solid;
+  }
+  .user-container .nav-button p {
+    font-size: .5em;
+  }
+  .user-container .user-info {
+    display: none;
+  }
+}
+
 .user-container .user-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -479,7 +496,7 @@ button:hover {
   }
   .button-container .action-button {
     width: 25%;
-    border-radius: 7px;
+    border-radius: 5px;
     border: #FCA311 2px solid;
   }
   .button-container .action-button p {

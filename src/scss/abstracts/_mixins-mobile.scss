@@ -15,11 +15,21 @@
     
 @mixin action-button-phone {
     width: 25%;
-    border-radius: 7px;
+    border-radius: 5px;
     border: $orangeWeb 2px solid;
 
     p {
         font-size: .75em;
+    }
+}
+
+@mixin user-button-phone {
+    width: 35%;
+    border-radius: 5px;
+    border: $orangeWeb 2px solid;
+
+    p {
+        font-size: .5em;
     }
 }
 
