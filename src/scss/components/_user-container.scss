@@ -16,16 +16,6 @@
         }
     }
 
-    @media (max-width: $mobile-breakpoint) {
-        width: 100%;
-        .nav-button {
-            @include user-button-phone;
-        }
-        .user-info {
-            display: none;
-        }
-    }
-
     .user-info {
         display: flex;
         justify-content: space-between;
@@ -49,6 +39,27 @@
                 max-width: 60%;
             }
         }
+        @media (max-width: $mobile-breakpoint){
+            display: none;
+        }
     }
+}
 
+@media (max-width: $mobile-breakpoint) {
+    .user-container {
+        width: 75%;
+        .nav-button {
+            @include user-button-phone;
+        }
+        .user-nav {
+            justify-content: space-evenly;
+            width: 100%;
+            .nav-button{
+                @include user-button-phone;
+                :hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }    
 }

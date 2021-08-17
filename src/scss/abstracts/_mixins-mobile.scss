@@ -10,7 +10,6 @@
         font-size: 12px;
         text-indent: 5px;
     }
-
 }
     
 @mixin action-button-phone {
@@ -24,12 +23,12 @@
 }
 
 @mixin user-button-phone {
-    width: 35%;
+    width: 25%;
     border-radius: 5px;
     border: $orangeWeb 2px solid;
-
     p {
-        font-size: .5em;
+        font-size: .75em;
+        margin: 1px;
     }
 }
 

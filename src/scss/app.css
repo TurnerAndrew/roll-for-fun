@@ -81,23 +81,6 @@ button:hover {
   cursor: pointer;
 }
 
-@media (max-width: 400px) {
-  .user-container {
-    width: 100%;
-  }
-  .user-container .nav-button {
-    width: 35%;
-    border-radius: 5px;
-    border: #FCA311 2px solid;
-  }
-  .user-container .nav-button p {
-    font-size: .5em;
-  }
-  .user-container .user-info {
-    display: none;
-  }
-}
-
 .user-container .user-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -135,6 +118,45 @@ button:hover {
 
 .user-container .user-info #avatar-container img {
   max-width: 60%;
+}
+
+@media (max-width: 400px) {
+  .user-container .user-info {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .user-container {
+    width: 75%;
+  }
+  .user-container .nav-button {
+    width: 25%;
+    border-radius: 5px;
+    border: #FCA311 2px solid;
+  }
+  .user-container .nav-button p {
+    font-size: .75em;
+    margin: 1px;
+  }
+  .user-container .user-nav {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100%;
+  }
+  .user-container .user-nav .nav-button {
+    width: 25%;
+    border-radius: 5px;
+    border: #FCA311 2px solid;
+  }
+  .user-container .user-nav .nav-button p {
+    font-size: .75em;
+    margin: 1px;
+  }
+  .user-container .user-nav .nav-button :hover {
+    cursor: pointer;
+  }
 }
 
 .game-preview {
