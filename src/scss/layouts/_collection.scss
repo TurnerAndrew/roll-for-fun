@@ -29,6 +29,13 @@
 }
 
 @media (max-width: $mobile-breakpoint){
+    .collection-main {
+        flex-direction: column;
+        align-items: center;
+    .sidebar {
+        @include game-sidebar-phone;
+    }
+    }
     .collection-container {
         .library-preview {
             height: 10%;

@@ -209,6 +209,29 @@ button:hover {
   padding-left: 1%;
 }
 
+@media (max-width: 400px) {
+  #add-game-main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #add-game-main .sidebar {
+    width: 100%;
+    height: 10%;
+  }
+  #add-game-main .sidebar form input {
+    width: 50%;
+  }
+  #add-game-main .sidebar form button {
+    width: 50%;
+    border-radius: 5px;
+  }
+}
+
 #games-results {
   width: 80%;
   display: -webkit-box;
@@ -264,6 +287,26 @@ button:hover {
 }
 
 @media (max-width: 400px) {
+  .collection-main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .collection-main .sidebar {
+    width: 100%;
+    height: 10%;
+  }
+  .collection-main .sidebar form input {
+    width: 50%;
+  }
+  .collection-main .sidebar form button {
+    width: 50%;
+    border-radius: 5px;
+  }
   .collection-container .library-preview {
     height: 10%;
   }
