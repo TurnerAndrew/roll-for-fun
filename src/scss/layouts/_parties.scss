@@ -87,3 +87,12 @@
         }
     }
 }
+
+@media (max-width: $mobile-breakpoint){
+    .parties-main {
+        flex-direction: column;
+        .sidebar {
+            @include sidebar-phone;
+        }
+    }
+}

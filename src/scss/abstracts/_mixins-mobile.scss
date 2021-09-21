@@ -59,3 +59,15 @@
         }
     }
 }
+
+@mixin party-sidebar-phone {
+    width: 100%;
+    .party-list {
+        .party-view {
+            .roll {
+                width: 50%;
+            }
+        }
+    }
+   
+}
