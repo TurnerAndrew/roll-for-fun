@@ -48,6 +48,7 @@ app.post('/auth/register', userCtrl.register)
 app.post('/auth/signin', userCtrl.signin)
 app.get('/auth/me', userCtrl.getUser)
 app.post('/auth/logout', userCtrl.logout)
+app.post('/demo', userCtrl.demo)
 
 
 //collection

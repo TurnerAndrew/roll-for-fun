@@ -24,4 +24,23 @@
         font-size: 18px;
         color: $blue;
     }
+
+}
+
+.action-button {
+    height: 25%;
+    width: 15%;
+    border-radius: 7.5px;
+    background: $platinum;
+    border: $orangeWeb 3px solid;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: $oxfordBlue;
+        font-weight: bold;
+        font-size: 1em;
+    }
 }

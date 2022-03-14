@@ -61,8 +61,17 @@ module.exports = {
         delete existingUser.hash
 
         req.session.user = existingUser
-        console.log(req.session.user)
 
+        res.status(200).send(req.session.user)
+    },
+
+    demo: async (req, res) => {
+        const db = req.app.get('db')
+        
+        const [existingUser] = await db.user.find_user(['demo'])
+
+        req.session.user = existingUser
+        console.log(req.session.user)
         res.status(200).send(req.session.user)
     },
 
