@@ -4,4 +4,5 @@ SELECT * FROM (
   JOIN collection c ON pj.member = c.owner
   JOIN games g ON c.game = g.game_id
   WHERE party_id = $1
-  GROUP BY g.game_id, p.party_id, pj.pj_id)
+  GROUP BY g.game_id, p.party_id, pj.pj_id
+) AS party_info

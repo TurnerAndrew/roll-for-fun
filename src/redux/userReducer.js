@@ -15,6 +15,7 @@ const LOGOUT = 'LOGOUT'
 //action creator
 export const getUserData = (user) => {
 
+    console.log(user)
     return {
         type: GET_USER_DATA,
         payload: user,

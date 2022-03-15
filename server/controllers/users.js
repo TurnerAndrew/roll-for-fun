@@ -71,7 +71,7 @@ module.exports = {
         const [existingUser] = await db.user.find_user(['demo'])
 
         req.session.user = existingUser
-        console.log(req.session.user)
+        
         res.status(200).send(req.session.user)
     },
 
