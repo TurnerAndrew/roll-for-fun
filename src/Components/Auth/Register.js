@@ -20,7 +20,7 @@ const Register = (props) => {
     <div id="registration-page">
       <section id="registration-container">
         <h1>CREATE ACCOUNT</h1>
-        <form id='register'>
+        <form id='register'  onSubmit={register}>
           <input
             type="text"
             name='username'
@@ -57,7 +57,7 @@ const Register = (props) => {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
 
-          <button type="button" id="register-button" onClick={register}>
+          <button type="submit" id="register-button">
             REGISTER
           </button>
         </form>

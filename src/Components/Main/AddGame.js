@@ -19,7 +19,8 @@ const AddGame = (props) => {
   const [title, setTitle] = useState("");
   const [games, setGames] = useState([]);
 
-  const search = () => {
+  const search = (e) => {
+    e.preventDefault()
     axios
       .get(
         `https://api.boardgameatlas.com/api/search?name=${title}&client_id=${REACT_APP_CLIENT_ID}`
@@ -51,13 +52,13 @@ const AddGame = (props) => {
       {isLoggedIn ? <UserHeader /> : <Header />}
       <div id="add-game-main">
         <nav className="sidebar">
-          <form>
+          <form onSubmit={search}>
             <input
               type="text"
               placeholder="SEARCH TITLES"
               onChange={(e) => setTitle(e.target.value)}
             ></input>
-            <button type="button" onClick={search}>
+            <button type="submit">
               SEARCH
             </button>
           </form>

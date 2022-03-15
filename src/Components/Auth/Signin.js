@@ -24,7 +24,7 @@ const Signin = (props) => {
     <div id='signin-page'>
       <section id='signin-container'>
         <h1>SIGN IN</h1>
-        <form id='signin'>
+        <form id='signin' onSubmit={login}>
           <input
             type='text'
             name='username'
@@ -39,7 +39,7 @@ const Signin = (props) => {
             className='form-input'
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          <button type='button' id='signin-button' onClick={login}>
+          <button type='submit' id='signin-button'>
             SIGN IN
           </button>
         </form>

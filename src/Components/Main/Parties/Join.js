@@ -27,13 +27,13 @@ const Join = (props) => {
         <div className="party-container">
           <div className="party-action">
             <h1>JOIN A PARTY</h1>
-            <form>
+            <form onSubmit={joinParty}>
               <input
                 type="text"
                 placeholder="INVITE KEY"
                 onChange={(e) => setInvite(e.target.value)}
               ></input>
-              <button type="submit" onClick={joinParty}>
+              <button type="submit">
                 JOIN
               </button>
             </form>

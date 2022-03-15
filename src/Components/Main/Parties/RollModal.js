@@ -14,7 +14,7 @@ const RollModal = (props) => {
               {winner.game.min_players} - {winner.game.max_players} players
             </h4>
             <h4>{winner.game.max_playtime} minutes</h4>
-            <a href={`https://www.youtube.com/results?search_query=how+to+play+${winner.game.title}`}
+            <a href={`https://www.youtube.com/results?search_query=how+to+play+${winner.game.title}`} target='_blank'}
             >
               <button className='action-button'>How to Play</button>
             </a>

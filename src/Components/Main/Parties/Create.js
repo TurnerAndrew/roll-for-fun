@@ -28,13 +28,13 @@ const Create = (props) => {
         <div className="party-container">
           <div className="party-action">
             <h1>CREATE A PARTY</h1>
-            <form>
+            <form onSubmit={createParty}>
               <input
                 type="text"
                 placeholder="PARTY NAME"
                 onChange={(e) => setPartyName(e.target.value)}
               ></input>
-              <button type="submit" onClick={createParty}>Create</button>
+              <button type="submit">Create</button>
             </form>
           </div>
         </div>
