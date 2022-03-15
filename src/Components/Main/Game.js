@@ -22,6 +22,7 @@ const Game = (props) => {
     }, [REACT_APP_CLIENT_ID, props.match.params.game_id])   
 
     const addToCollection = async (game) => {
+        console.log(game)
         axios.post("/collection/add", game).then(alert('Game Added'))
       };
 
