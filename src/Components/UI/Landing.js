@@ -1,10 +1,23 @@
 import Header from './Header'
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
+import { getUserData } from '../../redux/userReducer'
 
 const Landing = (props) => {
   if(props.isLoggedIn) {
     props.history.push('/home')
+  }
+
+
+  const demo = (e) => {
+    axios
+      .post('/demo')
+      .then(res => {
+        props.getUserData(res.data)
+        props.history.push('/home')
+      })
+      .catch(err => console.log(err))
   }
 
   return (
@@ -33,10 +46,8 @@ const Landing = (props) => {
           </div>
         </section>
       </div>
-      <Link className="action-button" to="/demo">
-        <p>Demo</p>
-      </Link>
-    </div>
+        <p className='user-button' onClick={demo}>Demo</p>
+      </div>
   );
 };
 
@@ -46,4 +57,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Landing);
+export default connect(mapStateToProps, { getUserData })(Landing);

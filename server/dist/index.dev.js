@@ -57,7 +57,7 @@ app.post('/auth/logout', userCtrl.logout); //collection
 
 app.get('/collection', colCtrl.getCollection);
 app.post('/collection/add', colCtrl.addGame);
-app["delete"]('/collection/delete', colCtrl.deleteGame);
+app.delete('/collection/delete', colCtrl.deleteGame);
 app.get('/collection/topgames', colCtrl.getTopGames); //parties
 
 app.get('/parties', partyCtrl.getParties);
